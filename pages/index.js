@@ -10,7 +10,7 @@ const Index = (props) => (
           <div key={i} className="card">
             <img src={news.mainImage} alt={news.title} />
             <h1>{news.title}</h1>
-            <p>{news.date}</p>
+            <p>{new Date(news.date).toLocaleDateString()}</p>
           </div>
         ))}
       </div>
@@ -21,19 +21,27 @@ const Index = (props) => (
   </Layout>
 );
 
-Index.getInitialProps = async function () {
-  const res = await fetch(
-    "https://blog.99smartphones.in/api/common/get_news_list",
-    {
-      method: "post",
-      body: {},
-    }
-  );
-  const data = await res.json();
 
-  return {
-    news: data,
-  };
-};
+Index.getInitialProps = async (ctx) => {
+  const res = await fetch('https://blog.99smartphones.in/api/common/get_news_list',
+    {
+      method: "POST",
+      // Adding body or contents to send 
+      body: JSON.stringify({
+        search: ""
+      }),
+   // Adding headers to the request 
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    });
+  let json = await res.json()
+
+  return { news: json }
+
+}
+
+
+
 
 export default Index;
