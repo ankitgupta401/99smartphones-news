@@ -15,7 +15,7 @@ const Layout = (props) => (
         href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       />
     </Head>
-    <Header />
+    <Header {...props.header} />
     <div className="container-fluid"></div>
     {props.children}
     <Footer />
