@@ -1,7 +1,16 @@
 import fetch from "node-fetch";
 import Layout from "../components/Layout";
+import React from 'react';
 import * as url from '../pages/api.json';
-const Index = (props) => (
+const Index = (props) => {
+
+ const [state, setState] = React.useState({data: 'something'});
+
+React.useEffect(() => {
+  setState({data: 'Something changed'});
+},[]);
+
+ return (
   <Layout  header={props.header}>
     <div>
       <h1>List Page</h1>
@@ -10,15 +19,16 @@ const Index = (props) => (
           <div key={i} className="card">
             <img src={news.mainImage} alt={news.title} />
             <h1>{news.title}</h1>
-            <p>{new Date(news.date).toLocaleDateString()}</p>
+            <p>{new Date(news.date).toDateString()}</p>
           </div>
         ))}
       </div>
-
-      {console.log(props.news)}
+{console.log(state)}
     </div>
-  </Layout>
-);
+  </Layout>);
+}
+
+
 
 Index.getInitialProps = async (ctx) => {
   const res = await fetch(
