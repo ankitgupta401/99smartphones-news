@@ -71,11 +71,10 @@ const Index = (props) => (
     <div className="container">
       <div className="video-gallery">
         <h3 className="category-header">Video Gallery</h3>
-        
       </div>
     </div>
     <div className="container">
-    <h3 className="category-header">Photo Galleries</h3>
+      <h3 className="category-header">Photo Galleries</h3>
       <div className="row">
         <div className="col-3">
           <NewsCardSmall />
