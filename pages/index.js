@@ -1,58 +1,143 @@
 import fetch from "node-fetch";
 import Layout from "../components/Layout";
-import * as url from '../pages/api.json';
+import * as url from "../pages/api.json";
+import NewsCard from "../components/NewsCard";
+import NewsCardSmall from "../components/NewsCardSmall";
 const Index = (props) => (
-  <Layout  header={props.header}>
-    <div>
-      <h1>List Page</h1>
-      <div className="container news-container">
-        {props.news.result.map((news, i) => (
-          <div key={i} className="card">
-            <img src={news.mainImage} alt={news.title} />
-            <h1>{news.title}</h1>
-            <p>{new Date(news.date).toLocaleDateString()}</p>
+  <Layout header={props.header}>
+    <div className="container">
+      <div className="news-section">
+        <div className="row">
+          <div className="col-6">
+            <h3 className="category-header">Top Stories</h3>
+            <div className="row">
+              <div className="col-12">
+                <NewsCard />
+              </div>
+              <div className="col-6">
+                <NewsCardSmall />
+              </div>
+              <div className="col-6">
+                <NewsCardSmall />
+              </div>
+            </div>
           </div>
-        ))}
+          <div className="col-6">
+            <div className="row">
+              <div className="col-6">
+                <h3 className="category-header">World</h3>
+                <NewsCardSmall />
+              </div>
+              <div className="col-6">
+                <h3 className="category-header">Sponsored</h3>
+                <NewsCardSmall />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      {console.log(props.news)}
+      <div className="row">
+        <div className="col-4">
+          <h3 className="category-header">Tech & Gadgets</h3>
+          <NewsCardSmall />
+        </div>
+        <div className="col-4">
+          <h3 className="category-header">Featured News</h3>
+          <NewsCardSmall />
+        </div>
+        <div className="col-4">
+          <h3 className="category-header">United Kingdom</h3>
+          <NewsCardSmall />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-3">
+          <h3 className="category-header">Economy</h3>
+          <NewsCardSmall />
+        </div>
+        <div className="col-4">
+          <h3 className="category-header">Banking</h3>
+          <NewsCardSmall />
+        </div>
+        <div className="col-5">
+          <h3 className="category-header">Market</h3>
+          <NewsCardSmall />
+        </div>
+      </div>
+    </div>
+    <div className="container-fluid">
+      <h3 className="category-header">Ads Section</h3>
+    </div>
+    <div className="container">
+      <div className="video-gallery">
+        <h3 className="category-header">Video Gallery</h3>
+        
+      </div>
+    </div>
+    <div className="container">
+    <h3 className="category-header">Photo Galleries</h3>
+      <div className="row">
+        <div className="col-3">
+          <NewsCardSmall />
+        </div>
+        <div className="col-3">
+          <NewsCardSmall />
+        </div>
+        <div className="col-3">
+          <NewsCardSmall />
+        </div>
+        <div className="col-3">
+          <NewsCardSmall />
+        </div>
+      </div>
+    </div>
+    <div className="container">
+      <div className="video-gallery">
+        <h3 className="category-header">Video Gallery</h3>
+      </div>
+    </div>
+    <div className="container">
+      <h3 className="category-header">Last Section</h3>
+      <div className="row">
+        <div className="col-8">
+          <NewsCard />
+        </div>
+        <div className="col-4">
+          <NewsCardSmall />
+        </div>
+      </div>
     </div>
   </Layout>
 );
 
 Index.getInitialProps = async (ctx) => {
-  const res = await fetch(
-    url.url + "get_news_list",
-    {
-      method: "POST",
-      // Adding body or contents to send
-      body: JSON.stringify({
-        search: "",
-      }),
-      // Adding headers to the request
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    }
-  );
-  const header =  await fetch(
-    url.url+  "common_get_with_table_name",
-    {
-      method: "POST",
-      // Adding body or contents to send
-      body: JSON.stringify({
-        table: "news_navbar",
-        data: {},
-      }),
-      //Adding header to the request
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    }
-  );
+  const res = await fetch(url.url + "get_news_list", {
+    method: "POST",
+    // Adding body or contents to send
+    body: JSON.stringify({
+      search: "",
+    }),
+    // Adding headers to the request
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+
+  const header = await fetch(url.url + "common_get_with_table_name", {
+    method: "POST",
+    // Adding body or contents to send
+    body: JSON.stringify({
+      table: "news_navbar",
+      data: {},
+    }),
+    //Adding header to the request
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
   let json = await res.json();
-let head = await header.json();
-  return { news: json  , header:head};
+  let head = await header.json();
+  return { news: json, header: head };
 };
 
 export default Index;
