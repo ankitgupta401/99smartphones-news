@@ -1,6 +1,7 @@
 const Navbar = () => {
+  
   return (
-    <div className="container-fluid">
+    <div className="container-fluid-navq">
       <div className="container">
         <nav className="navbar">
           <div className="li-div">
@@ -34,12 +35,11 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="icon-div">
-            <i className="fab fa-facebook-f"></i>
-            <i className="fab fa-twitter"></i>
-            <i className="fab fa-google-plus-g"></i>
-            <i className="fab fa-behance"></i>
-            <i className="fab fa-pinterest-p"></i>
-            <i className="material-icons">search</i>
+            <i className="fa fa-facebook-official" aria-hidden="true"></i>
+            <i className="fa fa-twitter" aria-hidden="true"></i>
+            <i className="fa fa-google-plus" aria-hidden="true"></i>
+            <i className="fa fa-pinterest-p" aria-hidden="true"></i>
+            <i className="fa fa-search " aria-hidden="true"></i>
           </div>
         </nav>
       </div>

@@ -1,3 +1,4 @@
+
 const Header = () => {
   return (
     <>
@@ -5,28 +6,28 @@ const Header = () => {
         <div className="sub-header">
           <div className="container">
             <div className="row">
-              <h6>BREAKING NEWS</h6>
-              <p>Some description in the sub header with date</p>
+              <h6 className="text-danger">BREAKING NEWS</h6>
+              <p><marquee>Some description in the sub header with date</marquee></p>
             </div>
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid secondhead">
         <div className="sub-header-second">
           <div className="container">
             <div className="row justify-content">
               <div className="date">
-                <p>18, July 2020</p>
+                <p className="text-white fa fa-calendar" aria-hidden="true">18, July 2020</p>
               </div>
               <div className="contact">
                 <a href="#">
-                  <i className="far fa-envelope-open"></i> Contact
+                  <i className="fa fa-address-book" aria-hidden="true"></i> Contact
                 </a>
                 <a href="#">
-                  <i className="fas fa-heart"></i> 99Smartphones News
+                  <i className="fa fa-heart" aria-hidden="true"></i> 99Smartphones News
                 </a>
                 <a href="#">
-                  <i className="far fa-newspaper"></i> About
+                  <i className="fa fa-newspaper-o" aria-hidden="true"></i> About
                 </a>
               </div>
             </div>
@@ -36,7 +37,9 @@ const Header = () => {
       <div className="main-header">
         <div className="logo">
           <div className="container">
-            <h1>Logo</h1>
+            {/* <div className="log"> */}
+            <img className="log" src="images/newslogo99.png"/>
+            {/* </div> */}
           </div>
         </div>
       </div>
