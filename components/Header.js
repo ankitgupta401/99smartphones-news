@@ -7,7 +7,7 @@ const Header = () => {
           <div className="container">
             <div className="row">
               <h6 className="text-danger">BREAKING NEWS</h6>
-              <p><marquee>Some description in the sub header with date</marquee></p>
+              <p><marquee direction = "up" scrolldelay="140">Some description in the sub header with date</marquee></p>
             </div>
           </div>
         </div>
@@ -17,17 +17,19 @@ const Header = () => {
           <div className="container">
             <div className="row justify-content">
               <div className="date">
-                <p className="fa fa-calendar" aria-hidden="true">18, July 2020</p>
+              <a>
+                <i className="text-danger fa fa-calendar" aria-hidden="true"></i>18, July 2020
+                </a>
               </div>
               <div className="contact">
                 <a href="#">
-                  <i className="fa fa-address-book" aria-hidden="true"></i> Contact
+                  <i className="text-danger fa fa-address-book" aria-hidden="true"></i> Contact
                 </a>
                 <a href="#">
-                  <i className="fa fa-heart" aria-hidden="true"></i> 99Smartphones News
+                  <i className="text-danger fa fa-heart" aria-hidden="true"></i> 99Smartphones News
                 </a>
                 <a href="#">
-                  <i className="fa fa-newspaper-o" aria-hidden="true"></i> About
+                  <i className="text-danger fa fa-newspaper-o" aria-hidden="true"></i> About
                 </a>
               </div>
             </div>

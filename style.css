@@ -93,6 +93,12 @@ a:hover {
   margin: 0px 10px;
 }
 
+.date{
+  color: black;
+  line-height: 40px;
+
+}
+
 .main-header {
   height: 100px;
   background-color:white;
