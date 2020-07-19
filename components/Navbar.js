@@ -7,7 +7,7 @@ const Navbar = () => {
           <div className="li-div">
             <ul>
               <li className="navbar-li">
-                <a>Home</a>
+                <a className="text-danger">Home</a>
                 <div className="sub-ul">
                   <li>Sub Li Tag</li>
                   <li>Sub Li Tag</li>

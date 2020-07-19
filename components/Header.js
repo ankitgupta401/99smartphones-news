@@ -17,7 +17,7 @@ const Header = () => {
           <div className="container">
             <div className="row justify-content">
               <div className="date">
-                <p className="text-white fa fa-calendar" aria-hidden="true">18, July 2020</p>
+                <p className="fa fa-calendar" aria-hidden="true">18, July 2020</p>
               </div>
               <div className="contact">
                 <a href="#">
