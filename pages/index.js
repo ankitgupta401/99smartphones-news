@@ -1,6 +1,14 @@
 import fetch from "node-fetch";
 import Layout from "../components/Layout";
 import * as url from "../pages/api.json";
+import ListNews from "../components/ListNews";
+import ListCard from "../components/ListCard";
+import AuthorBig from "../components/AuthorBig";
+import AuthorDetailed from "../components/AuthorDetailed";
+import AuthorSmall from "../components/AuthorSmall";
+import Category from "../components/Category";
+import CardNews from "../components/CardNews";
+import BigCard from "../components/BigCard"
 import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
 const Index = (props) => (
@@ -106,6 +114,13 @@ const Index = (props) => (
         </div>
       </div>
     </div>
+    <ListNews />
+    <ListCard />
+    <Category />
+    <BigCard />
+    <AuthorSmall />
+    <AuthorDetailed />
+    <AuthorBig />
   </Layout>
 );
 

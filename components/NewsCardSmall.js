@@ -11,7 +11,7 @@ const NewsCardSmall = () => {
           6 ways to market your small business cheap
         </h4>
       </div>
-      <div class="article-img-holder"></div>
+      <div className="article-img-holder"></div>
     </div>
   );
 };

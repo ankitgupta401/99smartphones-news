@@ -27,7 +27,6 @@ const Layout = (props) => (
     </Head>
     <Header {...props.header} />
     <Navbar />
-    <div className="container-fluid"></div>
     {props.children}
     <Footer />
   </>

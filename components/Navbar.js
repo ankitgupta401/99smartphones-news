@@ -1,20 +1,37 @@
 const Navbar = () => {
-  
   return (
     <div className="container-fluid-navq">
       <div className="container">
         <nav className="navbar">
           <div className="li-div">
             <ul>
-              <li className="navbar-li">
-                <a className="text-danger">Home</a>
-                <div className="sub-ul">
-                  <li>Sub Li Tag</li>
-                  <li>Sub Li Tag</li>
-                  <li>Sub Li Tag</li>
-                  <li>Sub Li Tag</li>
-                  <li>Sub Li Tag</li>
-                  <li>Sub Li Tag</li>
+              <li>
+                <a>Home</a>
+                <div className="sub-ul" style={{display:"flex"}}>
+                  <div className="sub-u">
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                  </div>
+                  <div className="sub-u">
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                  </div>
+                  <div className="sub-u">
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                  </div>
                 </div>
               </li>
               <li>

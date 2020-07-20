@@ -3,7 +3,7 @@ const Header = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="sub-header">
+        <div className="sub-header" >
           <div className="container">
             <div className="row">
               <h6 className="text-danger">BREAKING NEWS</h6>
