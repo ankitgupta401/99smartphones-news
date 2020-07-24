@@ -5,7 +5,7 @@ const Footer = () => (
         <div className="row">
           <div className="col-xl-4 col-md-4 mb-30">
             <div className="single-cta">
-              <i className="fas fa-map-marker-alt"></i>
+              <i aria-hidden className="fas fa-map-marker-alt"></i>
               <div className="cta-text">
                 <h4>Find us</h4>
                 <span>1010 Avenue, sw 54321, chandigarh</span>
@@ -14,7 +14,7 @@ const Footer = () => (
           </div>
           <div className="col-xl-4 col-md-4 mb-30">
             <div className="single-cta">
-              <i className="fas fa-phone"></i>
+              <i aria-hidden className="fas fa-phone"></i>
               <div className="cta-text">
                 <h4>Call us</h4>
                 <span>9876543210 0</span>
@@ -23,7 +23,7 @@ const Footer = () => (
           </div>
           <div className="col-xl-4 col-md-4 mb-30">
             <div className="single-cta">
-              <i className="far fa-envelope-open"></i>
+              <i aria-hidden className="far fa-envelope-open"></i>
               <div className="cta-text">
                 <h4>Mail us</h4>
                 <span>mail@info.com</span>
@@ -55,13 +55,13 @@ const Footer = () => (
               <div className="footer-social-icon">
                 <span>Follow us</span>
                 <a href="#">
-                  <i className="fab fa-facebook-f facebook-bg"></i>
+                  <i aria-hidden className="fab fa-facebook-f facebook-bg"></i>
                 </a>
                 <a href="#">
-                  <i className="fab fa-twitter twitter-bg"></i>
+                  <i aria-hidden className="fab fa-twitter twitter-bg"></i>
                 </a>
                 <a href="#">
-                  <i className="fab fa-google-plus-g google-bg"></i>
+                  <i aria-hidden  className="fab fa-google-plus-g google-bg"></i>
                 </a>
               </div>
             </div>
@@ -120,7 +120,7 @@ const Footer = () => (
                 <form action="#">
                   <input type="text" placeholder="Email Address" />
                   <button>
-                    <i className="fab fa-telegram-plane"></i>
+                    <i aria-hidden className="fab fa-telegram-plane"></i>
                   </button>
                 </form>
               </div>

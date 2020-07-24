@@ -26,7 +26,7 @@ const ListCard = () => {
             fontWeight: "lighter",
           }}
         >
-          <i className="fas fa-calender"></i> March 17,2020
+          <i aria-hidden className="fas fa-calender"></i> March 17,2020
         </p>
       </div>
     </div>

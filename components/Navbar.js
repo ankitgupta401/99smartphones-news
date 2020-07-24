@@ -3,6 +3,7 @@ const Navbar = () => {
     <div className="container-fluid-navq">
       <div className="container">
         <nav className="navbar">
+        
           <div className="li-div">
             <ul>
               <li>
@@ -35,7 +36,7 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <a>Sub Section</a>
+                {/* <a>Sub Section</a>
                 <div className="sub-ul">
                   <li>Sub Li Tag</li>
                   <li>Sub Li Tag</li>
@@ -43,7 +44,7 @@ const Navbar = () => {
                   <li>Sub Li Tag</li>
                   <li>Sub Li Tag</li>
                   <li>Sub Li Tag</li>
-                </div>
+                </div> */}
               </li>
               <li>Posts</li>
               <li>Post Archives</li>
