@@ -2,7 +2,7 @@ import React from "react";
 
 const NewsCardSmall = () => {
   return (
-    <div class="article-container">
+    <div className="article-container">
       <div className="card-category">
         <div className="category">Business</div>
       </div>

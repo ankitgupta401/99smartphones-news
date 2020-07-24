@@ -2,7 +2,7 @@ import React from "react";
 
 const CardNews = () => {
   return (
-    <div class="article-container">
+    <div className="article-container">
       <div className="card-category">
         <div className="category">Business</div>
         <div className="category">Business</div>
@@ -17,7 +17,7 @@ const CardNews = () => {
           solutions.
         </p>
       </div>
-      <div class="article-img-holder"></div>
+      <div className="article-img-holder"></div>
     </div>
   );
 };

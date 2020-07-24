@@ -20,7 +20,7 @@ const Index = (props) => (
             <h3 className="category-header">Top Stories</h3>
             <div className="row">
               <div className="col-12">
-                <NewsCard />
+                <NewsCard news={props.news}/>
               </div>
               <div className="col-6">
                 <NewsCardSmall />
@@ -125,12 +125,14 @@ const Index = (props) => (
 );
 
 Index.getInitialProps = async (ctx) => {
-  const res = await fetch(url.url + "get_news_list", {
+  const news = await fetch(url.url + "get_news_list", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
-      search: "",
-    }),
+      "no_of_news": 10,
+      "page_no": 0,
+      "search": ""
+  }),
     // Adding headers to the request
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -149,7 +151,7 @@ Index.getInitialProps = async (ctx) => {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-  let json = await res.json();
+  let json = await news.json();
   let head = await header.json();
   return { news: json, header: head };
 };

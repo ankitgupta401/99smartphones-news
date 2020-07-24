@@ -1,11 +1,15 @@
 import React from "react";
 
-const NewsCard = (props) => {
+const NewsCard = ({ news }) => {
+  // {console.log("News", news.msg)}
   return (
     <div className="article-container">
       <div className="card-category">
-        <div className="category">Business</div>
-        <div className="category">Business</div>
+        {/* {news.result[0].category.map((category, i) => (
+          <div key={i} className="category">
+            {category}
+          </div>
+        ))} */}
       </div>
       <div className="card-header">
         <h4 className="header-text">
@@ -16,6 +20,7 @@ const NewsCard = (props) => {
           Dramatically maintain clicks-and-mortar solutions without functional
           solutions.
         </p>
+        {console.log(news)}
       </div>
       <div className="article-img-holder"></div>
     </div>
