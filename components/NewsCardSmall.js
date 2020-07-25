@@ -1,18 +1,34 @@
 import React from "react";
+import Link from "next/link";
 
-const NewsCardSmall = () => {
+const NewsCardSmall = ({ data }) => {
   return (
-    <div className="article-container">
-      <div className="card-category">
-        <div className="category">Business</div>
-      </div>
-      <div className="card-header">
-        <h4 className="header-text-small">
-          6 ways to market your small business cheap
-        </h4>
-      </div>
-      <div className="article-img-holder"></div>
-    </div>
+    <>
+      <h3 className="category-header">{data.category}</h3>
+      {data.data.length === 0 ? (
+        <div></div>
+      ) : (
+        <div className="article-container">
+          <div className="card-category">
+            {data.data[0].category.map((category, i) => (
+              <div key={i} className="category">
+                {category}
+              </div>
+            ))}
+          </div>
+          <div className="card-header">
+            <Link href={data.category + "/" + data.data[0].link}>
+              <a className="header-text">{data.data[0].title}</a>
+            </Link>
+          </div>
+          <div
+            className="article-img-holder"
+            style={{ backgroundImage: "url(" + data.data[0].mainImage + ")" }}
+          ></div>
+          {console.log(data)}
+        </div>
+      )}
+    </>
   );
 };
 

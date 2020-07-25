@@ -1,29 +1,35 @@
 import React from "react";
+import Link from "next/link";
 
-const NewsCard = ({ news }) => {
+const NewsCard = ({ data }) => {
   // {console.log("News", news.msg)}
   return (
-    <div className="article-container">
-      <div className="card-category">
-        {/* {news.result[0].category.map((category, i) => (
-          <div key={i} className="category">
-            {category}
-          </div>
-        ))} */}
+    <>
+      <h3 className="category-header">{data.category}</h3>
+      <div className="article-container">
+        <div className="card-category">
+          {data.data[0].category.map((category, i) => (
+            <div key={i} className="category">
+              {category}
+            </div>
+          ))}
+        </div>
+        <div className="card-header">
+          <p className="header-date">
+            {new Date(data.data[0].date).toDateString}
+          </p>
+          <Link href={data.category + "/" + data.data[0].link}>
+            <a className="header-text">{data.data[0].title}</a>
+          </Link>
+          <p className="desc-text">{data.data[0].description}</p>
+          {console.log(data.data)}
+        </div>
+        <div
+          className="article-img-holder"
+          style={{ backgroundImage: "url(" + data.data[0].mainImage + ")" }}
+        ></div>
       </div>
-      <div className="card-header">
-        <h4 className="header-text">
-          6 ways to market your small business cheap
-        </h4>
-        <p className="desc-text">
-          Quickly maximize timely deliverables for real-time schemas.
-          Dramatically maintain clicks-and-mortar solutions without functional
-          solutions.
-        </p>
-        {console.log(news)}
-      </div>
-      <div className="article-img-holder"></div>
-    </div>
+    </>
   );
 };
 

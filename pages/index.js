@@ -8,7 +8,7 @@ import AuthorDetailed from "../components/AuthorDetailed";
 import AuthorSmall from "../components/AuthorSmall";
 import Category from "../components/Category";
 import CardNews from "../components/CardNews";
-import BigCard from "../components/BigCard"
+import BigCard from "../components/BigCard";
 import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
 const Index = (props) => (
@@ -17,28 +17,25 @@ const Index = (props) => (
       <div className="news-section">
         <div className="row">
           <div className="col-6">
-            <h3 className="category-header">Top Stories</h3>
             <div className="row">
               <div className="col-12">
-                <NewsCard news={props.news}/>
+                <NewsCard data={props.gadgetsCategory} />
               </div>
               <div className="col-6">
-                <NewsCardSmall />
+                <NewsCardSmall data={props.technologyCategory} />
               </div>
               <div className="col-6">
-                <NewsCardSmall />
+                <NewsCardSmall data={props.businessCategory} />
               </div>
             </div>
           </div>
           <div className="col-6">
             <div className="row">
               <div className="col-6">
-                <h3 className="category-header">World</h3>
-                <NewsCardSmall />
+                <NewsCardSmall data={props.businessCategory} />
               </div>
               <div className="col-6">
-                <h3 className="category-header">Sponsored</h3>
-                <NewsCardSmall />
+                <NewsCardSmall data={props.gamesCategory} />
               </div>
             </div>
           </div>
@@ -46,31 +43,23 @@ const Index = (props) => (
       </div>
       <div className="row">
         <div className="col-4">
-          <h3 className="category-header">Tech & Gadgets</h3>
-          <NewsCardSmall />
+          <NewsCardSmall data={props.laptopsCategory} />
         </div>
         <div className="col-4">
-          <h3 className="category-header">Featured News</h3>
-          <NewsCardSmall />
+          <NewsCardSmall data={props.mobilesCategory} />
         </div>
         <div className="col-4">
-          <h3 className="category-header">United Kingdom</h3>
-          <NewsCardSmall />
+          <NewsCardSmall data={props.entertainmentCategory} />
         </div>
       </div>
       <div className="row">
         <div className="col-3">
-          <h3 className="category-header">Economy</h3>
-          <NewsCardSmall />
+          <NewsCardSmall data={props.worldCategory} />
         </div>
         <div className="col-4">
-          <h3 className="category-header">Banking</h3>
-          <NewsCardSmall />
+          <NewsCardSmall data={props.indiaCategory} />
         </div>
-        <div className="col-5">
-          <h3 className="category-header">Market</h3>
-          <NewsCardSmall />
-        </div>
+        <div className="col-5">{/* <NewsCardSmall /> */}</div>
       </div>
     </div>
     <div className="container-fluid">
@@ -84,18 +73,10 @@ const Index = (props) => (
     <div className="container">
       <h3 className="category-header">Photo Galleries</h3>
       <div className="row">
-        <div className="col-3">
-          <NewsCardSmall />
-        </div>
-        <div className="col-3">
-          <NewsCardSmall />
-        </div>
-        <div className="col-3">
-          <NewsCardSmall />
-        </div>
-        <div className="col-3">
-          <NewsCardSmall />
-        </div>
+        <div className="col-3">{/* <NewsCardSmall /> */}</div>
+        <div className="col-3">{/* <NewsCardSmall /> */}</div>
+        <div className="col-3">{/* <NewsCardSmall /> */}</div>
+        <div className="col-3">{/* <NewsCardSmall /> */}</div>
       </div>
     </div>
     <div className="container">
@@ -106,12 +87,8 @@ const Index = (props) => (
     <div className="container">
       <h3 className="category-header">Last Section</h3>
       <div className="row">
-        <div className="col-8">
-        <NewsCard news={props.news} />
-        </div>
-        <div className="col-4">
-          <NewsCardSmall />
-        </div>
+        <div className="col-8">{/* <NewsCard news={props.news} /> */}</div>
+        <div className="col-4">{/* <NewsCardSmall />  */}</div>
       </div>
     </div>
     <ListNews />
@@ -129,10 +106,10 @@ Index.getInitialProps = async (ctx) => {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
-      "no_of_news": 10,
-      "page_no": 0,
-      "search": ""
-  }),
+      no_of_news: 10,
+      page_no: 0,
+      search: "",
+    }),
     // Adding headers to the request
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -151,9 +128,49 @@ Index.getInitialProps = async (ctx) => {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
+
+  const homeData = await fetch(url.url + "get_news_for_home_page", {
+    method: "POST",
+    // Adding body or contents to send
+    body: JSON.stringify({
+      data: {},
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+
+  let home = await homeData.json();
   let json = await news.json();
   let head = await header.json();
-  return { news: json, header: head };
+  // home.result.map((category, i) => {
+  //   let i1 = category
+  //   console.log(i)
+  // });
+  let games = home.result[0];
+  let business = home.result[1];
+  let gadgets = home.result[2];
+  let laptops = home.result[3];
+  let mobiles = home.result[4];
+  let technology = home.result[5];
+  let entertainment = home.result[6];
+  let world = home.result[7];
+  let india = home.result[8];
+
+  return {
+    news: json,
+    header: head,
+    home: home,
+    gadgetsCategory: gadgets,
+    technologyCategory: technology,
+    businessCategory: business,
+    gamesCategory: games,
+    laptopsCategory: laptops,
+    mobilesCategory: mobiles,
+    entertainmentCategory: entertainment,
+    worldCategory: world,
+    indiaCategory: india,
+  };
 };
 
 export default Index;
