@@ -107,7 +107,7 @@ const Index = (props) => (
       <h3 className="category-header">Last Section</h3>
       <div className="row">
         <div className="col-8">
-          <NewsCard />
+        <NewsCard news={props.news} />
         </div>
         <div className="col-4">
           <NewsCardSmall />
