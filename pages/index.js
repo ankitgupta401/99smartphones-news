@@ -96,7 +96,7 @@ const Index = (props) => (
     <ListCard />
 
     <AuthorSmall />
-    <AuthorDetailed />
+    
     <AuthorBig />
   </Layout>
 );
