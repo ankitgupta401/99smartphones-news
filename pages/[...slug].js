@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 //
 // posts will be populated at build time by getStaticProps()
-const Category = () => {
+const Pages = () => {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -17,10 +17,10 @@ const Category = () => {
   );
 };
 
-Category.getInitialProps = ({ query }) => {
+Pages.getInitialProps = ({ query }) => {
   console.log(query.slug);
   return { data: query };
   //...
 };
 
-export default Category;
+export default Pages;

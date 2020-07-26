@@ -2,36 +2,87 @@
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import BigCard from "../components/BigCard";
-
+import Category from "../components/Category";
+import Link from "next/link";
+import AuthorSmall from "../components/AuthorSmall";
 // posts will be populated at build time by getStaticProps()
-const Category = (props) => {
+const Pages = (props) => {
   const router = useRouter();
   const { pid } = router.query;
 
   return (
-    <Layout>
-      <h1 className="container">
-        <div>Category: {pid}</div>
-        <div className="row">
-          <div className="col-sm-2 col-md-2 col-lg-2">
-            <Category />
-          </div>
-          <div className="col-sm-8 col-md-8 col-lg-8">
-            <BigCard />
-          </div>
-          <div className="col-sm-2 col-md-2 col-lg-2">
-            <Category />
+    <Layout data={pid}>
+      <div className="container-fluid">
+        <div className="shadow-section">
+          <div className="container">
+            <div
+              className="category-section"
+              style={{ display: "flex", paddingTop: "20px" }}
+            >
+              <Link href="/">
+                <a style={{ color: "black" }} className="address-header">
+                  Home
+                </a>
+              </Link>
+              <div className="dot"></div>
+              <p className="address-header">{pid}</p>
+            </div>
+            <div className="" style={{ paddingTop: "20px" }}>
+              <h1 className="category-header">Category: {pid}</h1>
+            </div>
           </div>
         </div>
-      </h1>
+      </div>
+      <div className="container">
+        <div className="row">
+          <div
+            className="col-sm-10 col-md-10 col-lg-10 "
+            style={{ marginTop: "20px", display: "flex",justifyContent: "space-evenly" }}
+          >
+            <div
+              className="left-side" style={{marginTop:"20px"}}
+            >
+              <AuthorSmall />
+            </div>
+            <div>
+              <BigCard />
+            </div>
+          </div>
+          <div
+            className="col-sm-10 col-md-10 col-lg-10 "
+            style={{ marginTop: "20px", display: "flex",justifyContent: "space-evenly" }}
+          >
+            <div
+              className="left-side" style={{marginTop:"20px"}}
+            >
+              <AuthorSmall />
+            </div>
+            <div>
+              <BigCard />
+            </div>
+          </div>
+          
+          {/* <div className="col-sm-8 col-md-8 col-lg-8"> */}
+
+          {/* </div> */}
+          <div
+            className="col-sm-2 col-md-2 col-lg-2 right-side"
+            style={{ marginTop: "20px",position:"absolute",right:"0"}}
+          >
+            <div style={{ border: "1px solid gray", padding: "10px",position:"absolute",marginTop:"20px" }}>
+              <Category />
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };
 
-Category.getInitialProps = ({ query }) => {
+Pages.getInitialProps = ({ query }) => {
   console.log(query.pid);
   return { data: query };
   //...
 };
 
-export default Category;
+export default Pages;

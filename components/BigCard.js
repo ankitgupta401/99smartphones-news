@@ -1,6 +1,7 @@
 import React from "react";
+import Link from "next/link";
 
-const BigCard = () => {
+const BigCard = (props) => {
   return (
     <div style={{ padding: "20px" }}>
       <img
@@ -24,16 +25,18 @@ const BigCard = () => {
       <span>
         <i className=""></i>1
       </span>
-      <p style={{fontSize:"16px",fontWeight:"500"}}>
+      <p style={{ fontSize: "16px", fontWeight: "500" }}>
         Capitalize on low hanging fruit to identity a ballpark value added
         activity to beta test. Override the digital divide with click through
       </p>
-      <div style={{display:"flex",justifyContent:"space-between"}}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="share-area">
-          <i className="">He</i>
+          <i className="">Icons</i>
         </div>
-        <div>
-          <a>Continue Reading</a>
+        <div style={{padding:"7px",backgroundColor:"red"}}>
+          <Link href="/">
+            <a className="continue-reading">Continue Reading<i className="fas"></i></a>
+          </Link>
         </div>
       </div>
     </div>

@@ -78,10 +78,7 @@ const Index = (props) => (
     <div className="container">
       <h3 className="category-header">Photo Galleries</h3>
       <div className="row">
-        <div className="col-3">{/* <NewsCardSmall /> */}</div>
-        <div className="col-3">{/* <NewsCardSmall /> */}</div>
-        <div className="col-3">{/* <NewsCardSmall /> */}</div>
-        <div className="col-3">{/* <NewsCardSmall /> */}</div>
+        
       </div>
     </div>
     <div className="container">
@@ -92,8 +89,7 @@ const Index = (props) => (
     <div className="container">
       <h3 className="category-header">Last Section</h3>
       <div className="row">
-        <div className="col-8">{/* <NewsCard news={props.news} /> */}</div>
-        <div className="col-4">{/* <NewsCardSmall />  */}</div>
+        
       </div>
     </div>
     <ListNews />
@@ -147,10 +143,6 @@ Index.getInitialProps = async (ctx) => {
   let home = await homeData.json();
   let json = await news.json();
   let head = await header.json();
-  // home.result.map((category, i) => {
-  //   let i1 = category
-  //   console.log(i)
-  // });
   let games = home.result[0];
   let business = home.result[1];
   let gadgets = home.result[2];

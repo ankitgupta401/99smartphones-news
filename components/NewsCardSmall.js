@@ -14,7 +14,7 @@ const NewsCardSmall = ({ data }) => {
               <div key={i} className="category">
                 {category}
               </div>
-            ))}
+            ))} 
           </div>
           <div className="card-header">
             <Link href={data.category + "/" + data.data[0].link}>
