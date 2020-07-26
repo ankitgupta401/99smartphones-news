@@ -18,7 +18,7 @@ const NewsCardSmall = ({ data }) => {
           </div>
           <div className="card-header">
             <Link href={data.category + "/" + data.data[0].link}>
-              <a className="header-text">{data.data[0].title}</a>
+              <a style={{fontSize:"20px"}} className="header-text">{data.data[0].title}</a>
             </Link>
           </div>
           <div

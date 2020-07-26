@@ -10,7 +10,9 @@ const NewsCard = ({ data }) => {
         <div className="card-category">
           {data.data[0].category.map((category, i) => (
             <div key={i} className="category">
-              {category}
+              <Link href={category}>
+                <a>{category}</a>
+              </Link>
             </div>
           ))}
         </div>
@@ -22,12 +24,13 @@ const NewsCard = ({ data }) => {
             <a className="header-text">{data.data[0].title}</a>
           </Link>
           <p className="desc-text">{data.data[0].description}</p>
-          {console.log(data.data)}
         </div>
+        {/* <div className="overlay"> */}
         <div
           className="article-img-holder"
-          style={{ backgroundImage: "url(" + data.data[0].mainImage + ")" }}
+          style={{ backgroundImage: "url(" + data.data[0].mainImage + ")",width:"100%" }}
         ></div>
+        {/* </div> */}
       </div>
     </>
   );

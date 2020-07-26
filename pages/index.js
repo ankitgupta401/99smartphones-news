@@ -16,25 +16,25 @@ const Index = (props) => (
     <div className="container">
       <div className="news-section">
         <div className="row">
-          <div className="col-6">
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <div className="row">
-              <div className="col-12">
+              <div className="col-sm-12 col-md-12">
                 <NewsCard data={props.gadgetsCategory} />
               </div>
-              <div className="col-6">
+              <div className="col-sm-12 col-md-6">
                 <NewsCardSmall data={props.technologyCategory} />
               </div>
-              <div className="col-6">
+              <div className="col-sm-12 col-md-6">
                 <NewsCardSmall data={props.businessCategory} />
               </div>
             </div>
           </div>
-          <div className="col-6">
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <div className="row">
-              <div className="col-6">
+              <div className="col-sm-6 col-md-6">
                 <NewsCardSmall data={props.businessCategory} />
               </div>
-              <div className="col-6">
+              <div className="col-sm-6 col-md-6">
                 <NewsCardSmall data={props.gamesCategory} />
               </div>
             </div>
@@ -42,24 +42,29 @@ const Index = (props) => (
         </div>
       </div>
       <div className="row">
-        <div className="col-4">
+        <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <NewsCardSmall data={props.laptopsCategory} />
         </div>
-        <div className="col-4">
+        <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <NewsCardSmall data={props.mobilesCategory} />
         </div>
-        <div className="col-4">
+        <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <NewsCardSmall data={props.entertainmentCategory} />
         </div>
       </div>
       <div className="row">
-        <div className="col-3">
+        <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <NewsCardSmall data={props.worldCategory} />
         </div>
-        <div className="col-4">
+        <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <NewsCardSmall data={props.indiaCategory} />
         </div>
-        <div className="col-5">{/* <NewsCardSmall /> */}</div>
+        <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <NewsCardSmall data={props.worldCategory} />
+        </div>
+        <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <NewsCardSmall data={props.indiaCategory} />
+        </div>
       </div>
     </div>
     <div className="container-fluid">
@@ -93,8 +98,7 @@ const Index = (props) => (
     </div>
     <ListNews />
     <ListCard />
-    <Category />
-    <BigCard />
+
     <AuthorSmall />
     <AuthorDetailed />
     <AuthorBig />

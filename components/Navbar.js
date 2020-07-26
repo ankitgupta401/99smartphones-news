@@ -36,15 +36,15 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                {/* <a>Sub Section</a>
+                <a>Sub Section</a>
                 <div className="sub-ul">
-                  <li>Sub Li Tag</li>
-                  <li>Sub Li Tag</li>
-                  <li>Sub Li Tag</li>
-                  <li>Sub Li Tag</li>
-                  <li>Sub Li Tag</li>
-                  <li>Sub Li Tag</li>
-                </div> */}
+                  <a>Sub Li Tag</a>
+                  <a>Sub Li Tag</a>
+                  <a>Sub Li Tag</a>
+                  <a>Sub Li Tag</a>
+                  <a>Sub Li Tag</a>
+                  <a>Sub Li Tag</a>
+                </div>
               </li>
               <li>Posts</li>
               <li>Post Archives</li>

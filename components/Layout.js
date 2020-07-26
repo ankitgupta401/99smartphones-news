@@ -26,7 +26,7 @@ const Layout = (props) => (
       ></link>
     </Head>
     <Header {...props.header} />
-    <Navbar />
+    <Navbar data={props.navbar}/>
     {props.children}
     <Footer />
   </>
