@@ -190,6 +190,17 @@ p {
   margin-bottom: 15px;
 }
 
+.continue-reading{
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.category-list:hover{
+  padding-left: 30px;
+    
+}
 /* Zooming Background */
 .article-container {
   width: 100%;

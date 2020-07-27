@@ -77,9 +77,7 @@ const Index = (props) => (
     </div>
     <div className="container">
       <h3 className="category-header">Photo Galleries</h3>
-      <div className="row">
-        
-      </div>
+      <div className="row"></div>
     </div>
     <div className="container">
       <div className="video-gallery">
@@ -88,16 +86,14 @@ const Index = (props) => (
     </div>
     <div className="container">
       <h3 className="category-header">Last Section</h3>
-      <div className="row">
-        
-      </div>
+      <div className="row"></div>
     </div>
-    <ListNews />
+    {/* <ListNews />
     <ListCard />
 
     <AuthorSmall />
     
-    <AuthorBig />
+    <AuthorBig /> */}
   </Layout>
 );
 

@@ -37,53 +37,41 @@ const Pages = (props) => {
       <div className="container">
         <div className="row">
           {props.news.result.map((val, i) => {
-            return (<div
-              key={i}
-              className="col-sm-10 col-md-10 col-lg-10 "
-              style={{ marginTop: "20px", display: "flex", justifyContent: "space-evenly" }}
-            >
+            return (
               <div
-                className="left-side" style={{ marginTop: "20px" }}
+                key={i}
+                className="col-sm-10 col-md-10 col-lg-10 "
+                style={{
+                  marginTop: "20px",
+                  display: "flex",
+                  justifyContent: "space-evenly",
+                }}
               >
-                {/* {console.log('writer:' , props.writer)} */}
-                <AuthorSmall author={props.writer[props.news.result[i].writer]} />
+                <div className="row" style={{ width: "100%" }}>
+                  <div
+                    className="col-md-2 left-side"
+                    style={{ marginTop: "20px" }}
+                  >
+                    <AuthorSmall
+                      author={props.writer[props.news.result[i].writer]}
+                    />
+                  </div>
+                  <div className="col-md-10">
+                    <BigCard news={props.news.result[i]} pid={pid} />
+                  </div>
+                </div>
+
               </div>
-              <div>
-                <BigCard news={props.news.result[i]} pid={pid} />
-              </div>
-            </div>)
+              
+            );
           })}
 
-          {/* <div
-            className="col-sm-10 col-md-10 col-lg-10 "
-            style={{ marginTop: "20px", display: "flex",justifyContent: "space-evenly" }}
-          >
-            <div
-              className="left-side" style={{marginTop:"20px"}}
-            >
-              <AuthorSmall />
-            </div>
-            <div>
-              <BigCard />
-            </div>
-          </div> */}
-
-          {/* <div className="col-sm-8 col-md-8 col-lg-8"> */}
-
-          {/* </div> */}
-         
-        
           <div
-        
             className="col-sm-2 col-md-2 col-lg-2 right-side"
-            style={{ marginTop: "20px", position: "absolute", right: "0" }}
+            style={{ marginTop: "20px",position:"absolute",right:"15px"}}
           >
-          
-          
-  
-                <Category category={props.category} />
+            <Category category={props.category} />
           </div>
-       
         </div>
       </div>
     </Layout>
@@ -100,9 +88,8 @@ Pages.getInitialProps = async ({ query }) => {
       page_no: 0,
       search: "",
       data: {
-        category: query.pid
-      }
-
+        category: query.pid,
+      },
     }),
     // Adding headers to the request
     headers: {
@@ -116,7 +103,7 @@ Pages.getInitialProps = async ({ query }) => {
     // Adding body or contents to send
     body: JSON.stringify({
       table: "writer",
-      data: {}
+      data: {},
     }),
     // Adding headers to the request
     headers: {
@@ -124,13 +111,12 @@ Pages.getInitialProps = async ({ query }) => {
     },
   });
 
-
   const category = await fetch(url.url + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
       table: "news_category_list",
-      data: {}
+      data: {},
     }),
     // Adding headers to the request
     headers: {
@@ -143,7 +129,10 @@ Pages.getInitialProps = async ({ query }) => {
   //  console.log(writer);
   let actualWriter = {};
   for (let i = 0; i < writer.result.length; i++) {
-    actualWriter = { ...actualWriter, [writer.result[i].email]: writer.result[i] }
+    actualWriter = {
+      ...actualWriter,
+      [writer.result[i].email]: writer.result[i],
+    };
   }
   //console.log(actualWriter);
   return { data: query, news: data, writer: actualWriter, category: cat };
