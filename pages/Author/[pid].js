@@ -1,11 +1,11 @@
 // import { parseBody } from "next/dist/next-server/server/api-utils";
 import { useRouter } from "next/router";
-import Layout from "../components/Layout";
-import BigCard from "../components/BigCard";
-import Category from "../components/Category";
+import Layout from "../../components/Layout";
+import BigCard from "../../components/BigCard";
+import Category from "../../components/Category";
 import Link from "next/link";
-import AuthorSmall from "../components/AuthorSmall";
-import * as url from "../pages/api.json";
+import AuthorSmall from "../../components/AuthorSmall";
+import * as url from "../api.json";
 // posts will be populated at build time by getStaticProps()
 const Pages = (props) => {
   const router = useRouter();
@@ -26,22 +26,22 @@ const Pages = (props) => {
                 </a>
               </Link>
               <div className="dot"></div>
-              <p className="address-header">{pid.split("-").join(" ")}</p>
+              <p className="address-header">{props.writer[pid].name}</p>
             </div>
             <div className="" style={{ paddingTop: "20px" }}>
-              <h1 className="category-header">Category: {pid.split("-").join(" ")}</h1>
+  <h1 className="category-header">Author: {props.writer[pid].name}</h1>
             </div>
           </div>
         </div>
       </div>
       <div className="container">
         <div className="row">
-        {props.news.result.length === 0 ? <div>
+
+            {props.news.result.length === 0 ? <div key="1">
                 <br/>
                <h3>Sorry No Results Found</h3>
                <br/>
             </div> :""}
-
           {props.news.result.map((val, i) => {
             return (
               <div
@@ -94,7 +94,7 @@ Pages.getInitialProps = async ({ query }) => {
       page_no: 0,
       search: "",
       data: {
-        category: query.pid,
+        writer: query.pid,
       },
     }),
     // Adding headers to the request
@@ -109,7 +109,9 @@ Pages.getInitialProps = async ({ query }) => {
     // Adding body or contents to send
     body: JSON.stringify({
       table: "writer",
-      data: {},
+      data: {
+          email: query.pid
+      },
     }),
     // Adding headers to the request
     headers: {

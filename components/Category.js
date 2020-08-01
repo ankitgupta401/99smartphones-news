@@ -14,7 +14,7 @@ const Navbar = (props) => {
     >
       {props.category.result.map((val, i) => {
         return (
-          <div>
+          <div key={i}>
             <Link href={"/" + props.category.result[i].category}>
               <div
                 style={{
@@ -32,7 +32,7 @@ const Navbar = (props) => {
                     lineHeight: "30px",
                   }}
                 >
-                  {props.category.result[i].category}
+                  {props.category.result[i].category.split("-").join(" ")}
                 </a>
               </div>
             </Link>

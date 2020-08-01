@@ -5,13 +5,13 @@ const NewsCard = ({ data }) => {
   // {console.log("News", news.msg)}
   return (
     <>
-      <h3 className="category-header">{data.category}</h3>
+      <h3 className="category-header">{data.category.split("-").join(" ")}</h3>
       <div className="article-container">
         <div className="card-category">
           {data.data[0].category.map((category, i) => (
             <div key={i} className="category">
               <Link href={category}>
-                <a>{category}</a>
+                <a>{category.split("-").join(" ")}</a>
               </Link>
             </div>
           ))}

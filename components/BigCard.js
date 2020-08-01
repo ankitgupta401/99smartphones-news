@@ -43,7 +43,7 @@ const BigCard = (props) => {
             boxShadow: "0px 0px 4px 1px rgba(0,0,0,0.35)",
           }}
         >
-          <Link href={"./" + props.pid + "/" + props.news.link}>
+          <Link href={"../" + props.pid + "/" + props.news.link}>
             <a className="continue-reading" style={{ display: "flex" }}>
               Continue Reading{" "}
               <div

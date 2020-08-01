@@ -14,7 +14,7 @@ const Pages = (props) => {
           <div className="container">
             <h1 style={{ lineHeight: "150px", margin: "0px 40px" }}>
               {/* {slug[1]} */}
-           {/* {console.log(props)} */}
+           {console.log(props)}
            {props.news.title}
             </h1>
           </div>
@@ -102,7 +102,9 @@ let parasData = [];
     // Adding body or contents to send
     body: JSON.stringify({
       table: "writer",
-      data: {},
+      data: {
+        email: data.result[0].writer
+      },
     }),
     // Adding headers to the request
     headers: {

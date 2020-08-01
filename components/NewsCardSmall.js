@@ -12,7 +12,7 @@ const NewsCardSmall = ({ data }) => {
           <div className="card-category">
             {data.data[0].category.map((category, i) => (
               <div key={i} className="category">
-                {category}
+                <a href={category}>{category.split("-").join(" ")}</a>
               </div>
             ))}
           </div>
