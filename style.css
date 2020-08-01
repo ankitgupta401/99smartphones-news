@@ -1,3 +1,25 @@
+blockquote  {
+  font: 14px/20px italic;
+  padding: 8px;
+  background-color: #eee;
+  border-top: 1px solid #e1cc89;
+  border-bottom: 1px solid #e1cc89;
+  margin: 5px;
+  background-image: url("./public/images/quote.png");
+  background-size: 20px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  text-indent: 23px;
+  }
+ blockquote {
+    	display: block;
+      background-image: url("./public/images/quote.png");
+      background-size: 20px;
+    	background-repeat: no-repeat;
+    	background-position: top left;
+  	}
+
+
 .container-fluid {
   padding: 0px;
 }
