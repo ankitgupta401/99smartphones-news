@@ -93,7 +93,7 @@ let parasData = [];
     });
    
   let dataParas = await paras.json();
- ;
+ 
   parasData.push({sub_title:data.result[0].paras[i].sub_title,  image : data.result[0].paras[i].image, paras: dataParas.result});
   }
  
