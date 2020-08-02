@@ -110,7 +110,7 @@ Pages.getInitialProps = async ({ query }) => {
     body: JSON.stringify({
       table: "writer",
       data: {
-          email: query.pid
+          username: query.pid
       },
     }),
     // Adding headers to the request
@@ -139,10 +139,10 @@ Pages.getInitialProps = async ({ query }) => {
   for (let i = 0; i < writer.result.length; i++) {
     actualWriter = {
       ...actualWriter,
-      [writer.result[i].email]: writer.result[i],
+      [writer.result[i].username]: writer.result[i],
     };
   }
-  //console.log(actualWriter);
+  console.log(actualWriter);
   return { data: query, news: data, writer: actualWriter, category: cat };
   //...
 };

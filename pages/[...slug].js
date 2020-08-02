@@ -103,7 +103,7 @@ let parasData = [];
     body: JSON.stringify({
       table: "writer",
       data: {
-        email: data.result[0].writer
+        username: data.result[0].writer
       },
     }),
     // Adding headers to the request
