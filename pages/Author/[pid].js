@@ -7,7 +7,7 @@ import Link from "next/link";
 import AuthorSmall from "../../components/AuthorSmall";
 import * as url from "../api.json";
 // posts will be populated at build time by getStaticProps()
-const Pages = (props) => {
+const Author = (props) => {
   const router = useRouter();
   const { pid } = router.query;
 
@@ -84,7 +84,7 @@ const Pages = (props) => {
   );
 };
 
-Pages.getInitialProps = async ({ query }) => {
+Author.getInitialProps = async ({ query }) => {
   console.log(query.pid);
   const news = await fetch(url.url + "get_news_list", {
     method: "POST",
@@ -147,4 +147,4 @@ Pages.getInitialProps = async ({ query }) => {
   //...
 };
 
-export default Pages;
+export default Author;
