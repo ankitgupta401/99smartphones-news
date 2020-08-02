@@ -29,19 +29,24 @@ const Pages = (props) => {
               <p className="address-header">{props.writer[pid].name}</p>
             </div>
             <div className="" style={{ paddingTop: "20px" }}>
-  <h1 className="category-header">Author: {props.writer[pid].name}</h1>
+              <h1 className="category-header">
+                Author: {props.writer[pid].name}
+              </h1>
             </div>
           </div>
         </div>
       </div>
       <div className="container">
         <div className="row">
-
-            {props.news.result.length === 0 ? <div key="1">
-                <br/>
-               <h3>Sorry No Results Found</h3>
-               <br/>
-            </div> :""}
+          {props.news.result.length === 0 ? (
+            <div key="1">
+              <br />
+              <h3>Sorry No Results Found</h3>
+              <br />
+            </div>
+          ) : (
+            ""
+          )}
           {props.news.result.map((val, i) => {
             return (
               <div
@@ -66,15 +71,13 @@ const Pages = (props) => {
                     <BigCard news={props.news.result[i]} pid={pid} />
                   </div>
                 </div>
-
               </div>
-              
             );
           })}
 
           <div
             className="col-sm-2 col-md-2 col-lg-2 right-side"
-            style={{ marginTop: "20px",position:"absolute",right:"15px"}}
+            style={{ marginTop: "20px", position: "absolute", right: "15px" }}
           >
             <Category category={props.category} />
           </div>
@@ -110,7 +113,7 @@ Pages.getInitialProps = async ({ query }) => {
     body: JSON.stringify({
       table: "writer",
       data: {
-          email: query.pid
+        email: query.pid,
       },
     }),
     // Adding headers to the request
