@@ -17,7 +17,7 @@ const AuthorDetailed = (props) => {
          {props.designation}
         </p>
         <div style={{display:"flex"}}>
-          <a href={ "../author/" + props.email }>VIEW ALL POSTS</a>
+          <a href={ "../author/" + props.username }>VIEW ALL POSTS</a>
           <i className=""></i>
         </div>
       </div>

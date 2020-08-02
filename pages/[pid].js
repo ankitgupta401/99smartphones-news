@@ -137,7 +137,7 @@ Pages.getInitialProps = async ({ query }) => {
   for (let i = 0; i < writer.result.length; i++) {
     actualWriter = {
       ...actualWriter,
-      [writer.result[i].email]: writer.result[i],
+      [writer.result[i].username]: writer.result[i],
     };
   }
   //console.log(actualWriter);
