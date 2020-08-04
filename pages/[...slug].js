@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import AuthorDetailed from "../components/AuthorDetailed";
+import AuthorSmall from "../components/AuthorSmall";
 import * as url from "../pages/api.json";
 // posts will be populated at build time by getStaticProps()
 const Pages = (props) => {
@@ -12,7 +13,13 @@ const Pages = (props) => {
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">
-            <h1 style={{ lineHeight: "150px", margin: "0px 40px" }}>
+            <h1
+              style={{
+                lineHeight: "60px",
+                margin: "0px 40px",
+                padding: "10px 0px",
+              }}
+            >
               {/* {slug[1]} */}
               {console.log(props)}
               {props.news.title}
@@ -20,49 +27,58 @@ const Pages = (props) => {
           </div>
         </div>
         <div className="container">
-          <div className="row">
+          <div className="row" style={{ marginTop: "60px" }}>
+            <div className="col-sm-2 col-md-2 col-lg-2">
+              <div className="small-author">
+                <AuthorSmall author={props.writer} />
+                {console.log(props.writer)}
+              </div>
+            </div>
+            <div className="col-sm-7 col-md-7 col-lg-7">
+              {/* All The Content Begins Here */}
+              <div>
+                <img
+                  className="img-fluid"
+                  src={props.news.mainImage}
+                  style={{ height: "auto" }}
+                  alt={props.news.alt_image ? props.news.alt_image : ""}
+                />
+                {/* Printing The paragraphs */}
+                {props.paras.map((val, i) => {
+                  return (
+                    <div key={i}>
+                      <br />
+                      {/* Subtitle for the news paragraph */}
+                      <h2 style={{ color: "black" }}>
+                        {" "}
+                        {props.paras[i].sub_title}
+                      </h2>
+                      <br />
+                      {/* image for the paragraph */}
+                      {props.paras[i].image ? (
+                        <img
+                          src={props.paras[i].image}
+                          style={{ height: "400px" }}
+                          alt={props.paras[i].sub_title}
+                        />
+                      ) : (
+                        ""
+                      )}
+                      {/* content of the paragraph */}
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: props.paras[i].paras,
+                        }}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
             <div className="col-sm-2 col-md-2 col-lg-2"></div>
-            <div className="col-sm-8 col-md-8 col-lg-8"></div>
-            <div className="col-sm-2 col-md-2 col-lg-2"></div>
-          </div>
-          {/* All The Content Begins Here */}
-          <div>
-            <img
-              src={props.news.mainImage}
-              style={{ height: "400px" }}
-              alt={props.news.alt_image ? props.news.alt_image : ""}
-            />
-            {/* Printing The paragraphs */}
-            {props.paras.map((val, i) => {
-              return (
-                <div key={i}>
-                  <br />
-                  {/* Subtitle for the news paragraph */}
-                  <h2 style={{ color: "black" }}>
-                    {" "}
-                    {props.paras[i].sub_title}
-                  </h2>
-                  <br />
-                  {/* image for the paragraph */}
-                  {props.paras[i].image ? (
-                    <img
-                      src={props.paras[i].image}
-                      style={{ height: "400px" }}
-                      alt={props.paras[i].sub_title}
-                    />
-                  ) : (
-                    ""
-                  )}
-                  {/* content of the paragraph */}
-                  <div
-                    dangerouslySetInnerHTML={{ __html: props.paras[i].paras }}
-                  />
-                </div>
-              );
-            })}
           </div>
 
-          <div className="row">
+          <div className="row" style={{ margin: "30px 0px" }}>
             <div className="col-sm-10 col-md-10 col-lg-10">
               <AuthorDetailed {...props.writer} />
             </div>
@@ -122,7 +138,7 @@ Pages.getInitialProps = async ({ query }) => {
     body: JSON.stringify({
       table: "writer",
       data: {
-        username: data.result[0].writer
+        username: data.result[0].writer,
       },
     }),
     // Adding headers to the request

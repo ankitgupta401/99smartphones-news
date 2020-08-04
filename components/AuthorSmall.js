@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const AuthorSmall = ({ author }) => {
   return (
-    <div style={{ textAlign: "center", width: "100px" }}>
+    <div style={{ textAlign: "center", width: "100px",margin:"auto" }}>
       <img
         src={author.image1}
         alt="author"
