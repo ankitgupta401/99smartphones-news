@@ -1,23 +1,10 @@
-blockquote {
-  font: 14px/20px italic;
-  padding: 8px;
-  background-color: #eee;
-  border-top: 1px solid #e1cc89;
-  border-bottom: 1px solid #e1cc89;
-  margin: 5px;
-  background-image: url("./public/images/quote.png");
-  background-size: 20px;
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  text-indent: 23px;
-}
-blockquote {
-  display: block;
-  background-image: url("./public/images/quote.png");
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: top left;
-}
+@import url("https://fonts.googleapis.com/css2?family=Antic+Slab&family=Crimson+Text:wght@400;600;700&family=Oswald:wght@200;300;400&family=Poiret+One&family=Tenor+Sans&family=Thasadith:wght@400;700&display=swap");
+
+/* 
+font-family: 'Antic Slab', serif;
+font-family: 'Crimson Text', serif;
+font-family: 'Thasadith', sans-serif;
+ */
 
 .container-fluid {
   padding: 0px;
@@ -75,15 +62,18 @@ p {
 .sub-header h6,
 .sub-header p {
   line-height: 40px;
+  font-family: "Crimson Text", serif;
   margin: 0px 20px;
 }
 
 .sub-header-second {
   height: 40px;
   background-color: rgba(0, 0, 0, 0.06);
+
   display: flex;
 }
 .sub-header-second p {
+  font-family: "Thasadith", sans-serif;
   line-height: 40px;
   font-weight: 700;
   margin: 0px 20px;
@@ -97,6 +87,8 @@ p {
   line-height: 40px;
   color: black;
   margin: 0px 10px;
+  font-family: "Thasadith", sans-serif;
+  font-weight: 700;
 }
 
 .date {
@@ -110,6 +102,17 @@ p {
 }
 
 /* Navbar */
+
+.burger{
+  display: none;
+  position: absolute;
+  right: 15px;
+  top:70px;
+}
+
+.burger-icon{
+  font-size: 40px;
+}
 
 .navbar {
   /* display: none; */
@@ -135,6 +138,8 @@ p {
   cursor: pointer;
   border-radius: 3px;
   line-height: 14px;
+  font-family: "Thasadith", sans-serif;
+  font-weight: 700;
 }
 
 .navbar-li {
@@ -184,6 +189,15 @@ p {
 }
 
 .category-header {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Crimson Text", serif;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.text-danger {
+  margin-right: 10px;
 }
 /* News-Section */
 .news-section {
@@ -203,11 +217,6 @@ p {
 
 .icon-div i:hover {
   color: #999;
-}
-
-.category-header {
-  font-weight: 700;
-  margin-bottom: 15px;
 }
 
 .continue-reading {
@@ -263,21 +272,23 @@ h2 {
   box-shadow: 0px 0px 15px 3px rgba(180, 174, 174, 0.719);
 }
 /* News Card */
+
 .card-category {
   position: absolute;
   display: flex;
   z-index: 999;
   margin: 15px;
+  width: max-content;
 }
 
 .category {
   padding: 5px 10px;
-  background-color: #999;
-  margin: 5px;
+  background-color: rgba(255, 11, 11, 0.678);
+  margin: 1.5px;
   color: #fff;
-  font-weight: 500;
+  font-weight: 700;
   border-radius: 2px;
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
 }
 
@@ -290,10 +301,11 @@ h2 {
 
 .header-text {
   color: #fff;
-  font-weight: 800;
+  font-weight: 500;
   margin: 5px 10px;
-  word-spacing: 3px;
-  font-size: 30px;
+  word-spacing: 1px;
+  font-size: 22px;
+  font-family: "Oswald", sans-serif;
 }
 
 .header-text-small {
@@ -302,6 +314,18 @@ h2 {
   margin: 5px 10px;
   word-spacing: 3px;
   font-size: 20px;
+}
+
+.header-date {
+  color: #fff;
+  font-weight: 100;
+  margin: 5px 10px;
+  word-spacing: 3px;
+  font-size: 14px;
+  font-family: "Antic Slab", serif;
+  background-color: rgb(54, 42, 42);
+  width: fit-content;
+  padding: 2px 10px;
 }
 
 .desc-text {
@@ -371,7 +395,7 @@ h2 {
   border-radius: 2px;
 }
 
-.view-all-author:hover{
+.view-all-author:hover {
   background-color: #333232;
   color: #fff;
 }
@@ -393,8 +417,36 @@ h2 {
     font-size: 25px;
     line-height: 30px !important;
   }
+  .sub-header-second {
+    display: none;
+  }
+
+  .container-fluid-navq {
+    background-color: rgba(0, 0, 0, 0.06);
+    height: 40px;
+  }
+  .navbar {
+    display: none;
+  }
+
+  .burger{
+    display: block;
+  }
 }
 @media only screen and (max-width: 767px) {
+  .container-fluid-navq {
+    background-color: rgba(0, 0, 0, 0.06);
+    height: 40px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .burger{
+    display: block  ;
+  }
+
   .shadow-section {
     padding: 15px 5px;
   }
@@ -432,7 +484,7 @@ h2 {
     display: none;
   }
 
-  .small-author{
+  .small-author {
     display: none;
   }
 }
@@ -475,7 +527,7 @@ h2 {
     display: none;
   }
 
-  .small-author{
+  .small-author {
     display: none;
   }
 }
@@ -483,7 +535,6 @@ h2 {
 .news-card {
   margin: 10px;
 }
-
 
 /* Footer */
 
@@ -668,9 +719,6 @@ ul {
   }
 }
 @media (max-width: 1100px) {
-  .navbar {
-    display: none;
-  }
 }
 
 /* Container Fixed for Width */

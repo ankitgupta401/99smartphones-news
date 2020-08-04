@@ -10,7 +10,6 @@ const AuthorDetailed = (props) => {
           alt=""
           className="img-fluid"
         />
-        {/* {console.log(props)} */}
       </div>
       <div style={{ margin: "10px" }}>
         <h3 style={{ fontSize: "27px", fontWeight: "bolder" }}>{props.name}</h3>

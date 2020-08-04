@@ -30,7 +30,7 @@ const Header = () => {
                     className="text-danger fa fa-calendar"
                     aria-hidden="true"
                   ></i>
-                  18, July 2020
+                  {new Date().toLocaleDateString()}
                 </a>
               </div>
               <div className="contact">
@@ -40,10 +40,6 @@ const Header = () => {
                     aria-hidden="true"
                   ></i>{" "}
                   Contact
-                </a>
-                <a href="#">
-                  <i className="text-danger fa fa-heart" aria-hidden="true"></i>{" "}
-                  99Smartphones News
                 </a>
                 <a href="#">
                   <i
@@ -60,12 +56,9 @@ const Header = () => {
       <div className="main-header">
         <div className="logo">
           <div className="container">
-            {/* <div className="log"> */}
-            {/* <img className="log" src="images/newslogo99.png"/> */}
-            {/* </div> */}
             <Link href="/">
               <a>
-                <h1 style={{ lineHeight: "100px",color:"black" }}>99 News</h1>
+                <h1 style={{ lineHeight: "100px", color: "black" }}>99 News</h1>
               </a>
             </Link>
           </div>

@@ -1,14 +1,22 @@
+const handleSidebar = () => {
+  console.log("Clicked");
+  let element = document.getElementById("nav");
+  element.classList.toggle("Open");
+};
+
 const Navbar = () => {
   return (
     <div className="container-fluid-navq">
       <div className="container">
-        <nav className="navbar">
-        
+        <div className="burger" id="burgerId" onClick={handleSidebar}>
+          <i className="burger-icon fa fa-bars"></i>
+        </div>
+        <nav className="navbar" id="nav">
           <div className="li-div">
             <ul>
               <li>
                 <a>Home</a>
-                <div className="sub-ul" style={{display:"flex"}}>
+                <div className="sub-ul" style={{ display: "flex" }}>
                   <div className="sub-u">
                     <p>Sub Li Tag</p>
                     <p>Sub Li Tag</p>

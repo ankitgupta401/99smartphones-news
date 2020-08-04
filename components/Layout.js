@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 const Layout = (props) => (
   <>
     <Head>
-      <title>99Smartphones</title>
+      <title>99Smartphones News</title>
       <link
         rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
