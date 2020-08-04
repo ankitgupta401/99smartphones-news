@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const AuthorDetailed = (props) => {
   return (
     <div className="author-detail-div" style={{ borderRadius: "5px" }}>

@@ -25,7 +25,7 @@ const BigCard = (props) => {
       </h2>
 
       <span>
-        <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;{" "}
+        <i className="fa fa-calendar" aria-hidden="true"></i> &nbsp;{" "}
         {new Date(props.news.date).toDateString()}
       </span>
 
@@ -43,7 +43,7 @@ const BigCard = (props) => {
             boxShadow: "0px 0px 4px 1px rgba(0,0,0,0.35)",
           }}
         >
-          <Link href={"../" + props.pid + "/" + props.news.link}>
+          <Link  href="../[...slug]" as={"../" + props.pid + "/" + props.news.link}>
             <a className="continue-reading" style={{ display: "flex" }}>
               Continue Reading{" "}
               <div
@@ -57,7 +57,7 @@ const BigCard = (props) => {
               ></div>
               <i
                 style={{ lineHeight: "25px" }}
-                class="fa fa-arrow-right"
+                className="fa fa-arrow-right"
                 aria-hidden="true"
               ></i>
             </a>

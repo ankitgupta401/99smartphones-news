@@ -10,7 +10,7 @@ const NewsCard = ({ data }) => {
         <div className="card-category">
           {data.data[0].category.map((category, i) => (
             <div key={i} className="category">
-              <Link href={category}>
+              <Link href={"/[pid]"} as={"/"+category}>
                 <a>{category.split("-").join(" ")}</a>
               </Link>
             </div>
@@ -18,9 +18,9 @@ const NewsCard = ({ data }) => {
         </div>
         <div className="card-header">
           <p className="header-date">
-            {new Date(data.data[0].date).toDateString}
+            {new Date(data.data[0].date).toDateString()}
           </p>
-          <Link href={data.category + "/" + data.data[0].link}>
+          <Link href="/[...slug]" as={"/"+data.category + "/" + data.data[0].link}>
             <a className="header-text">{data.data[0].title}</a>
           </Link>
           <p className="desc-text">{data.data[0].description}</p>
