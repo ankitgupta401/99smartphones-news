@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const AuthorDetailed = (props) => {
   return (
     <div style={{ backgroundColor: "rgba(0,0,0,.1)",padding:"30px 50px",display:"flex" }}>

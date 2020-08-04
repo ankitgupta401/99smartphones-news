@@ -15,7 +15,7 @@ const Navbar = (props) => {
       {props.category.result.map((val, i) => {
         return (
           <div key={i}>
-            <Link href={"/" + props.category.result[i].category}>
+            <Link href="/[pid]" as={"/" + props.category.result[i].category}>
               <div
                 style={{
                   display: "flex",
