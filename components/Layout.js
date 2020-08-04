@@ -24,6 +24,10 @@ const Layout = (props) => (
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
       ></link>
+      <meta
+        name="google-site-verification"
+        content="We8K8T-425qt2XvSNSocsbnBOqDQLQdElUv8vw8WFQE"
+      />
     </Head>
     <Header {...props.header} />
     <Navbar data={props.navbar} />
