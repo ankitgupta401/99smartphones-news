@@ -1,4 +1,12 @@
 import Link from "next/link";
+import moment from "moment";
+
+// const interval = () => {
+//   let time = setInterval(() => {
+//     moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+//   }, 1000);
+//   return time;
+// };
 
 const Header = () => {
   return (
@@ -30,7 +38,8 @@ const Header = () => {
                     className="text-danger fa fa-calendar"
                     aria-hidden="true"
                   ></i>
-                  {new Date().toLocaleDateString()}
+                  <div id="time"></div>
+                  
                 </a>
               </div>
               <div className="contact">

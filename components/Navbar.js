@@ -25,33 +25,19 @@ const Navbar = () => {
                     <p>Sub Li Tag</p>
                     <p>Sub Li Tag</p>
                   </div>
-                  <div className="sub-u">
-                    <p>Sub Li Tag</p>
-                    <p>Sub Li Tag</p>
-                    <p>Sub Li Tag</p>
-                    <p>Sub Li Tag</p>
-                    <p>Sub Li Tag</p>
-                    <p>Sub Li Tag</p>
-                  </div>
-                  <div className="sub-u">
-                    <p>Sub Li Tag</p>
-                    <p>Sub Li Tag</p>
-                    <p>Sub Li Tag</p>
-                    <p>Sub Li Tag</p>
-                    <p>Sub Li Tag</p>
-                    <p>Sub Li Tag</p>
-                  </div>
                 </div>
               </li>
               <li>
                 <a>Sub Section</a>
                 <div className="sub-ul">
-                  <a>Sub Li Tag</a>
-                  <a>Sub Li Tag</a>
-                  <a>Sub Li Tag</a>
-                  <a>Sub Li Tag</a>
-                  <a>Sub Li Tag</a>
-                  <a>Sub Li Tag</a>
+                  <div className="sub-u">
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                    <p>Sub Li Tag</p>
+                  </div>
                 </div>
               </li>
               <li>Posts</li>

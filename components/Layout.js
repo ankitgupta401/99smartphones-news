@@ -19,6 +19,7 @@ const Layout = (props) => (
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
+      <script src="/js/custom.js"></script>
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
       <link
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -28,6 +29,7 @@ const Layout = (props) => (
         name="google-site-verification"
         content="We8K8T-425qt2XvSNSocsbnBOqDQLQdElUv8vw8WFQE"
       />
+      
     </Head>
     <Header {...props.header} />
     <Navbar data={props.navbar} />
