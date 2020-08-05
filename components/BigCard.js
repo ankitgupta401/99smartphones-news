@@ -20,9 +20,13 @@ const BigCard = (props) => {
           );
         })}
       </div>
-      <h2 style={{ fontSize: "40px", fontWeight: "bolder", color: "#000" }}>
+      <Link  href="../[...slug]" as={"../" + props.pid + "/" + props.news.link}>
+      <a style={{ fontSize: "32px", fontWeight: "bolder", color: "#000" }}>
         {props.news.title}
-      </h2>
+      </a>
+      
+      </Link>
+      <br/>
 
       <span>
         <i className="fa fa-calendar" aria-hidden="true"></i> &nbsp;{" "}
