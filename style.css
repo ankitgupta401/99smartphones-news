@@ -121,6 +121,12 @@ p {
   transition: all 1s;
 }
 
+#col{
+  display: none;
+}
+.open{
+  display: block !important;
+}
 
 
 .burger{
@@ -506,6 +512,9 @@ h2 {
 
   .small-author {
     display: none;
+  }
+  .big-card-link{
+    font-size: 20px !important;
   }
 }
 
