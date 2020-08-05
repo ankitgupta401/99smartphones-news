@@ -34,6 +34,7 @@ const Layout = (props) => (
     <Header {...props.header} />
     <Navbar data={props.navbar} />
     {props.children}
+    {console.log(props.children)}
     <Footer />
   </>
 );

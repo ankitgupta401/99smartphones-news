@@ -68,7 +68,7 @@ p {
 
 .sub-header-second {
   height: 40px;
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: rgb(255, 238, 0);
 
   display: flex;
 }
@@ -309,7 +309,7 @@ h2 {
 
 .category {
   padding: 5px 10px;
-  background-color: rgba(255, 11, 11, 0.678);
+  background-color: rgb(255, 0, 0);
   margin: 1.5px;
   color: #fff;
   font-weight: 700;
@@ -448,7 +448,7 @@ h2 {
   }
 
   .container-fluid-navq {
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: rgb(255, 238, 0);
     height: 40px;
   }
   .navbar {
@@ -461,7 +461,7 @@ h2 {
 }
 @media only screen and (max-width: 767px) {
   .container-fluid-navq {
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: rgb(255, 238, 0);
     height: 40px;
   }
 
