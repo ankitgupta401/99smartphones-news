@@ -54,7 +54,7 @@ const Pages = (props) => {
                     ""
                   )}
                   {/* content of the paragraph */}
-                  <div
+                  <div className="ck-content"
                     dangerouslySetInnerHTML={{ __html: props.paras[i].paras }}
                   />
                 </div>

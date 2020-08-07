@@ -24,6 +24,7 @@ const Layout = (props) => (
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
       ></link>
+       <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
     </Head>
     <Header {...props.header} />
     <Navbar data={props.navbar} />
