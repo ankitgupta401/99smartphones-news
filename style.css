@@ -21,6 +21,16 @@ font-family: 'Thasadith', sans-serif;
   bottom: 75px;
 }
 
+img {
+  width: 100%;
+  height: auto;
+  margin: 20px 0px;
+}
+
+p{
+  font-size: 20px;
+}
+/* 
 a:hover {
   text-decoration: none;
   color: #fff;
@@ -28,11 +38,11 @@ a:hover {
 
 a {
   color: #fff;
-}
+} */
 
-p {
+/* p {
   margin: 0px;
-}
+} */
 
 .list-news {
   padding: 20px;
@@ -103,7 +113,7 @@ p {
 
 /* Navbar */
 
-#nav{
+#nav {
   left: -80%;
   background-color: rgba(141, 129, 129, 0.932);
   height: 100%;
@@ -113,30 +123,29 @@ p {
   color: #fff;
   padding: 10px;
   top: 0px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
-.Open{
+.Open {
   left: 0 !important;
   transition: all 1s;
 }
 
-#col{
+#col {
   display: none;
 }
-.open{
+.open {
   display: block !important;
 }
 
-
-.burger{
+.burger {
   display: none;
   position: absolute;
   right: 15px;
-  top:70px;
+  top: 70px;
 }
 
-.burger-icon{
+.burger-icon {
   font-size: 40px;
 }
 
@@ -252,9 +261,24 @@ p {
   line-height: 25px;
 }
 
-.category-list:hover {
-  padding-left: 30px;
+.category a {
+  color: #fff !important;
+  text-decoration: none;
 }
+
+.category a:hover,
+.header-text:hover {
+  /* padding-left: 30px; */
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.category-list:hover{
+  padding-left: 20px !important;
+  transition: all .2s;
+  /* background-color: rgba(192, 192, 192, 0.418); */
+}
+
 /* Zooming Background */
 .article-container {
   width: 100%;
@@ -283,7 +307,7 @@ h2 {
   content: "";
   display: block;
   background: #000;
-  opacity: 0.55;
+  opacity: 0.45;
 }
 
 .article-container:hover .article-img-holder {
@@ -297,6 +321,7 @@ h2 {
 .article-container:hover {
   box-shadow: 0px 0px 15px 3px rgba(180, 174, 174, 0.719);
 }
+
 /* News Card */
 
 .card-category {
@@ -326,9 +351,9 @@ h2 {
 }
 
 .header-text {
-  color: #fff;
+  color: #fff !important;
   font-weight: 500;
-  margin: 5px 10px;
+  margin: 5px 0px;
   word-spacing: 1px;
   font-size: 22px;
   font-family: "Oswald", sans-serif;
@@ -345,7 +370,7 @@ h2 {
 .header-date {
   color: #fff;
   font-weight: 100;
-  margin: 5px 10px;
+  margin: 5px 0px;
   word-spacing: 3px;
   font-size: 14px;
   font-family: "Antic Slab", serif;
@@ -455,7 +480,7 @@ h2 {
     display: none;
   }
 
-  .burger{
+  .burger {
     display: block;
   }
 }
@@ -469,8 +494,8 @@ h2 {
     display: none;
   }
 
-  .burger{
-    display: block  ;
+  .burger {
+    display: block;
   }
 
   .shadow-section {
@@ -513,7 +538,7 @@ h2 {
   .small-author {
     display: none;
   }
-  .big-card-link{
+  .big-card-link {
     font-size: 20px !important;
   }
 }

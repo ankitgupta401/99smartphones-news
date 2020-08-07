@@ -61,14 +61,20 @@ const Pages = (props) => {
               >
                 <div className="row" style={{ width: "100%" }}>
                   <div
-                    className="col-md-2 left-side"
-                    style={{ marginTop: "20px" }}
+                    className="col-md-2 col-lg-2 col-sm-2 left-side"
+                    style={{ margin: "20px auto" }}
                   >
                     <AuthorSmall
                       author={props.writer[props.news.result[i].writer]}
                     />
                   </div>
-                  <div className="col-md-10">
+                  <div
+                    className="col-md-10 col-lg-8 col-sm-10"
+                    style={{
+                      margin: "20px auto",
+                      boxShadow: "0px 0px 5px 5px rgba(227,227,227,.3)",
+                    }}
+                  >
                     <BigCard news={props.news.result[i]} pid={pid} />
                   </div>
                 </div>

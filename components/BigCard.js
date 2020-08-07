@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const BigCard = (props) => {
   return (
-    <div style={{ padding: "20px 0px" }}>
+    <div style={{ padding: "20px" }}>
       <img
         src={props.news.mainImage}
         alt={props.news.alt_image}
@@ -42,13 +42,13 @@ const BigCard = (props) => {
         </div>
         <div
           style={{
-            padding: "7px 20px",
-            backgroundColor: "#52343499",
-            boxShadow: "0px 0px 4px 1px rgba(0,0,0,0.35)",
+            padding: "4px 8px",
+            backgroundColor: "rgb(255 0 0)",
+            boxShadow: "rgb(236 45 45 / 35%) 0px 0px 4px 1px",
           }}
         >
           <Link  href="../[...slug]" as={"../" + props.pid + "/" + props.news.link}>
-            <a className="continue-reading" style={{ display: "flex" }}>
+            <a className="continue-reading" style={{ display: "flex",color:"#fff" }}>
               Continue Reading{" "}
               <div
                 className="line-div"
