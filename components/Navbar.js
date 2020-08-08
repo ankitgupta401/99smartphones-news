@@ -112,6 +112,7 @@ const Navbar = (props) => {
                 <li>Compare</li>
                 <li>Product Finder</li>
                 <li>Deals</li>
+                <li>Blogs</li>
               </ul>
             </div>
             <div className="icon-div">
