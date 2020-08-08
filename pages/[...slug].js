@@ -17,10 +17,9 @@ const Pages = (props) => {
               style={{
                 lineHeight: "60px",
                 margin: "0px 40px",
-                padding: "10px 0px",
+                padding: "20px 0px",
               }}
             >
-              {/* {slug[1]} */}
               {console.log(props)}
               {props.news.title}
             </h1>
@@ -66,6 +65,7 @@ const Pages = (props) => {
                       )}
                       {/* content of the paragraph */}
                       <div
+                      className="ck-content container"
                         dangerouslySetInnerHTML={{
                           __html: props.paras[i].paras,
                         }}
@@ -79,7 +79,8 @@ const Pages = (props) => {
           </div>
 
           <div className="row" style={{ margin: "30px 0px" }}>
-            <div className="col-sm-10 col-md-10 col-lg-10">
+          <div className="col-sm-2 col-md-2 col-lg-2"></div>
+            <div className="col-sm-7 col-md-7 col-lg-7">
               <AuthorDetailed {...props.writer} />
             </div>
           </div>

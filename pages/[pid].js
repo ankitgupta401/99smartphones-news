@@ -29,18 +29,24 @@ const Pages = (props) => {
               <p className="address-header">{pid.split("-").join(" ")}</p>
             </div>
             <div className="" style={{ paddingTop: "20px" }}>
-              <h1 className="category-header">Category: {pid.split("-").join(" ")}</h1>
+              <h1 className="category-header">
+                Category: {pid.split("-").join(" ")}
+              </h1>
             </div>
           </div>
         </div>
       </div>
       <div className="container">
         <div className="row">
-        {props.news.result.length === 0 ? <div>
-                <br/>
-               <h3>Sorry No Results Found</h3>
-               <br/>
-            </div> :""}
+          {props.news.result.length === 0 ? (
+            <div>
+              <br />
+              <h3>Sorry No Results Found</h3>
+              <br />
+            </div>
+          ) : (
+            ""
+          )}
 
           {props.news.result.map((val, i) => {
             return (
@@ -55,26 +61,30 @@ const Pages = (props) => {
               >
                 <div className="row" style={{ width: "100%" }}>
                   <div
-                    className="col-md-2 left-side"
-                    style={{ marginTop: "20px" }}
+                    className="col-md-2 col-lg-2 col-sm-2 left-side"
+                    style={{ margin: "20px auto" }}
                   >
                     <AuthorSmall
                       author={props.writer[props.news.result[i].writer]}
                     />
                   </div>
-                  <div className="col-md-10">
+                  <div
+                    className="col-md-10 col-lg-8 col-sm-10"
+                    style={{
+                      margin: "20px auto",
+                      boxShadow: "0px 0px 5px 5px rgba(227,227,227,.3)",
+                    }}
+                  >
                     <BigCard news={props.news.result[i]} pid={pid} />
                   </div>
                 </div>
-
               </div>
-              
             );
           })}
 
           <div
             className="col-sm-2 col-md-2 col-lg-2 right-side"
-            style={{ marginTop: "20px",position:"absolute",right:"15px"}}
+            style={{ marginTop: "20px", position: "absolute", right: "15px" }}
           >
             <Category category={props.category} />
           </div>

@@ -70,7 +70,7 @@ const Index = (props) => (
     <div className="container-fluid">
       <h3 className="category-header">Ads Section</h3>
     </div>
-    <div className="container">
+    {/* <div className="container">
       <div className="video-gallery">
         <h3 className="category-header">Video Gallery</h3>
       </div>
@@ -87,7 +87,7 @@ const Index = (props) => (
     <div className="container">
       <h3 className="category-header">Last Section</h3>
       <div className="row"></div>
-    </div>
+    </div> */}
     {/* <ListNews />
     <ListCard />
 

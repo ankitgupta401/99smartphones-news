@@ -20,9 +20,13 @@ const BigCard = (props) => {
           );
         })}
       </div>
-      <h2 style={{ fontSize: "40px", fontWeight: "bolder", color: "#000" }}>
+      <Link  href="../[...slug]" as={"../" + props.pid + "/" + props.news.link}>
+      <a className="big-card-link" style={{ fontSize: "32px", fontWeight: "bolder", color: "#000" }}>
         {props.news.title}
-      </h2>
+      </a>
+      
+      </Link>
+      <br/>
 
       <span>
         <i className="fa fa-calendar" aria-hidden="true"></i> &nbsp;{" "}
@@ -38,13 +42,13 @@ const BigCard = (props) => {
         </div>
         <div
           style={{
-            padding: "7px 20px",
-            backgroundColor: "#52343499",
-            boxShadow: "0px 0px 4px 1px rgba(0,0,0,0.35)",
+            padding: "4px 8px",
+            backgroundColor: "rgb(255 0 0)",
+            boxShadow: "rgb(236 45 45 / 35%) 0px 0px 4px 1px",
           }}
         >
           <Link  href="../[...slug]" as={"../" + props.pid + "/" + props.news.link}>
-            <a className="continue-reading" style={{ display: "flex" }}>
+            <a className="continue-reading" style={{ display: "flex",color:"#fff" }}>
               Continue Reading{" "}
               <div
                 className="line-div"
