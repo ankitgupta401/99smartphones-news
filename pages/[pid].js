@@ -12,7 +12,7 @@ const Pages = (props) => {
   const { pid } = router.query;
 
   return (
-    <Layout data={pid}>
+    <Layout data={props}>
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">
@@ -92,8 +92,6 @@ const Pages = (props) => {
       </div>
     </Layout>
   );
-
-  
 };
 
 Pages.getInitialProps = async ({ query }) => {

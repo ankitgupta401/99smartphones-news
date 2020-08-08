@@ -21,7 +21,6 @@ const AuthorSmall = ({ author }) => {
 
       <div className="icon-div">
         <i className="fa fa-facebook-official" aria-hidden="true"></i>
-
         <i className="fa fa-twitter" aria-hidden="true"></i>
         <i className="fa fa-instagram" aria-hidden="true"></i>
       </div>

@@ -35,7 +35,6 @@ const NewsCardSmall = ({ data }) => {
               className="article-img-holder"
               style={{ backgroundImage: "url(" + data.data[0].mainImage + ")" }}
             ></div>
-            {console.log(data)}
           </div>
         </Link>
       )}

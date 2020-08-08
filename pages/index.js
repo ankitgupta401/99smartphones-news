@@ -12,93 +12,69 @@ import BigCard from "../components/BigCard";
 import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
 
+
+
 const Index = (props) => {
   return (
-    <div>
-      <Layout header={props.header}>
-        <div className="container">
-          <div className="news-section">
-            <div className="row">
-              <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                <div className="row">
-                  <div className="col-sm-12 col-md-12">
-                    <NewsCard data={props.gadgetsCategory} />
-                  </div>
-                  <div className="col-sm-12 col-md-6">
-                    <NewsCardSmall data={props.technologyCategory} />
-                  </div>
-                  <div className="col-sm-12 col-md-6">
-                    <NewsCardSmall data={props.businessCategory} />
-                  </div>
+    <Layout {...props} data={props}>
+      <div className="container">
+        <div className="news-section">
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+              <div className="row">
+                <div className="col-sm-12 col-md-12">
+                  <NewsCard data={props.gadgetsCategory} />
                 </div>
-              </div>
-              <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                <div className="row">
-                  <div className="col-sm-6 col-md-6">
-                    <NewsCardSmall data={props.businessCategory} />
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <NewsCardSmall data={props.gamesCategory} />
-                  </div>
+                <div className="col-sm-12 col-md-6">
+                  <NewsCardSmall data={props.technologyCategory} />
+                </div>
+                <div className="col-sm-12 col-md-6">
+                  <NewsCardSmall data={props.businessCategory} />
                 </div>
               </div>
             </div>
-          </div>
-          <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-              <NewsCardSmall data={props.laptopsCategory} />
-            </div>
-            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-              <NewsCardSmall data={props.mobilesCategory} />
-            </div>
-            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-              <NewsCardSmall data={props.entertainmentCategory} />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-              <NewsCardSmall data={props.worldCategory} />
-            </div>
-            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-              <NewsCardSmall data={props.indiaCategory} />
-            </div>
-            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-              <NewsCardSmall data={props.worldCategory} />
-            </div>
-            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-              <NewsCardSmall data={props.indiaCategory} />
+              <div className="row">
+                <div className="col-sm-6 col-md-6">
+                  <NewsCardSmall data={props.businessCategory} />
+                </div>
+                <div className="col-sm-6 col-md-6">
+                  <NewsCardSmall data={props.gamesCategory} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="container-fluid">
-          <h3 className="category-header">Ads Section</h3>
+        <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <NewsCardSmall data={props.laptopsCategory} />
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <NewsCardSmall data={props.mobilesCategory} />
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <NewsCardSmall data={props.entertainmentCategory} />
+          </div>
         </div>
-        {/* <div className="container">
-      <div className="video-gallery">
-        <h3 className="category-header">Video Gallery</h3>
+        <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <NewsCardSmall data={props.worldCategory} />
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <NewsCardSmall data={props.indiaCategory} />
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <NewsCardSmall data={props.worldCategory} />
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <NewsCardSmall data={props.indiaCategory} />
+          </div>
+        </div>
       </div>
-    </div>
-    <div className="container">
-      <h3 className="category-header">Photo Galleries</h3>
-      <div className="row"></div>
-    </div>
-    <div className="container">
-      <div className="video-gallery">
-        <h3 className="category-header">Video Gallery</h3>
+      <div className="container-fluid">
+        <h3 className="category-header">Ads Section</h3>
       </div>
-    </div>
-    <div className="container">
-      <h3 className="category-header">Last Section</h3>
-      <div className="row"></div>
-    </div> */}
-        {/* <ListNews />
-    <ListCard />
-
-    <AuthorSmall />
-    
-    <AuthorBig /> */}
-      </Layout>
-    </div>
+    </Layout>
   );
 };
 

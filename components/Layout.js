@@ -4,9 +4,14 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Meta from "./Meta";
 
+const handleBackdrop = () => {
+  let element = document.getElementById("nav");
+  element.classList.remove("Open");
+};
+
 const Layout = (props) => (
   <>
-    <Meta meta={props.children} />
+    <Meta meta={props} />
     <Head>
       <link
         rel="stylesheet"
@@ -36,11 +41,13 @@ const Layout = (props) => (
       <script src="/js/custom.js"></script>
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </Head>
-    <Header {...props.header} />
-    <Navbar data={props.navbar} />
-    {props.children}
-    {console.log(props.children)}
+    <div onClick={handleBackdrop}>
+      <Header {...props.header} />
+    </div>
+    <Navbar data={props} />
+    <div onClick={handleBackdrop}>{props.children}</div>
     <Footer />
+    {/* </div> */}
   </>
 );
 

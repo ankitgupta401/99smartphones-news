@@ -3,7 +3,7 @@ import Link from "next/link";
 const AuthorDetailed = (props) => {
   return (
     <div className="author-detail-div" style={{ borderRadius: "5px" }}>
-      <div style={{ margin: "10px auto", width: "100px", height: "100px" }}>
+      <div style={{ margin: "10px", width: "200px", height: "120px" }}>
         <img
           style={{ borderRadius: "50%", width: "inherit", height: "inherit" }}
           src={props.image2}

@@ -47,8 +47,8 @@ const Header = (props) => {
     // add a zero in front of numbers<10
     m = checkTime(m);
     s = checkTime(s);
-    console.log()
-    if(!document.getElementById("time")){
+    console.log();
+    if (!document.getElementById("time")) {
       return;
     } else {
       document.getElementById("time").innerHTML = " " + h + ":" + m + ":" + s;
@@ -56,7 +56,6 @@ const Header = (props) => {
         startTime();
       }, 1000);
     }
-   
   }
 
   return (
@@ -113,11 +112,22 @@ const Header = (props) => {
       <div className="main-header">
         <div className="logo">
           <div className="container">
-            <Link href="/">
-              <a>
-                <h1 style={{ lineHeight: "100px", color: "black" }}>99 News</h1>
-              </a>
-            </Link>
+            <div>
+              <Link href="/">
+                <a>
+                  <span
+                    style={{
+                      lineHeight: "100px",
+                      color: "black",
+                      width: "200px",
+                      fontSize: "50px",
+                    }}
+                  >
+                    99 News
+                  </span>
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

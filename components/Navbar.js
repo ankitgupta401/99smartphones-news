@@ -3,14 +3,13 @@ import moment from "moment";
 import { useEffect } from "react";
 
 const handleSidebar = () => {
-  console.log("Clicked");
   let element = document.getElementById("nav");
   element.classList.toggle("Open");
 };
 
-const handleCol = () => {
-  let element = document.getElementById("col");
-  element.classList.toggle("open");
+const handleBackdrop = () => {
+  let element = document.getElementById("nav");
+  element.classList.remove("Open");
 };
 
 const Navbar = (props) => {
@@ -38,11 +37,11 @@ const Navbar = (props) => {
     var day = today.getDate();
     var month = today.getMonth();
     var year = today.getFullYear();
-    if(!   document.getElementById("dateNav")){
+    if (!document.getElementById("dateNav")) {
       return;
-    } else{
-    document.getElementById("dateNav").innerHTML =
-      months[month] + " " + day + ", " + year + "  ";
+    } else {
+      document.getElementById("dateNav").innerHTML =
+        months[month] + " " + day + ", " + year + "  ";
     }
   };
 
@@ -62,15 +61,15 @@ const Navbar = (props) => {
     // add a zero in front of numbers<10
     m = checkTime(m);
     s = checkTime(s);
-    if(! document.getElementById("timeNav")){
+    if (!document.getElementById("timeNav")) {
       return;
-    } else{
-      document.getElementById("timeNav").innerHTML = " " + h + ":" + m + ":" + s;
-    let t = setTimeout(function () {
-      startTime();
-    }, 1000);
+    } else {
+      document.getElementById("timeNav").innerHTML =
+        " " + h + ":" + m + ":" + s;
+      let t = setTimeout(function () {
+        startTime();
+      }, 1000);
     }
-    
   }
   return (
     <>
@@ -78,15 +77,13 @@ const Navbar = (props) => {
         <a id="dateNav"></a>
         <br />
         <a id="timeNav"></a>
-        <p onClick={handleCol}>Hello
-         Hi
-        </p>
+        <p>Hello Hi</p>
       </div>
-      <div className="container-fluid-navq">
+      <div className="burger" id="burgerId" onClick={handleSidebar}>
+        <i aria-hidden className="burger-icon fa fa-bars"></i>
+      </div>
+      <div onClick={handleBackdrop} className="container-fluid-navq">
         <div className="container">
-          <div className="burger" id="burgerId" onClick={handleSidebar}>
-            <i aria-hidden className="burger-icon fa fa-bars"></i>
-          </div>
           <nav className="navbar">
             <div className="li-div">
               <ul>
@@ -97,7 +94,7 @@ const Navbar = (props) => {
                   <a>News Categories</a>
                   <div className="sub-ul">
                     <div className="sub-u">
-                      <p>Smart Watches</p>
+                      <a>Smart Watches</a>
                       <p>Linux</p>
                       <p>Windows</p>
                       <p>IOS</p>
@@ -114,7 +111,7 @@ const Navbar = (props) => {
                       <p>Gadgets</p>
                       <p>Business</p>
                       <p>Games</p>
-
+                      {console.log(props)}
                     </div>
                   </div>
                 </li>
