@@ -64,12 +64,14 @@ const Pages = (props) => {
                         ""
                       )}
                       {/* content of the paragraph */}
+                      <div className="ql-snow">
                       <div
-                      className="ck-content container"
+                      className="ql-editor container"
                         dangerouslySetInnerHTML={{
                           __html: props.paras[i].paras,
                         }}
                       />
+                      </div>
                     </div>
                   );
                 })}
