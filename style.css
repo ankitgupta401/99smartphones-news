@@ -198,6 +198,8 @@ a {
   margin-left: -15px;
   margin-top: 14px;
   padding: 10px 10px;
+  height: 250px;
+  overflow-y: scroll;
 }
 
 .sub-ul p {
@@ -694,7 +696,7 @@ ul {
 }
 .footer-widget ul li {
   display: inline-block;
-  float: left;
+  /* float: left; */
   width: 50%;
   margin-bottom: 12px;
 }

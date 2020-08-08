@@ -92,6 +92,8 @@ const Pages = (props) => {
       </div>
     </Layout>
   );
+
+  
 };
 
 Pages.getInitialProps = async ({ query }) => {
