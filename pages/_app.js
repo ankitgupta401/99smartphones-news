@@ -1,9 +1,7 @@
 import "../style.css";
 import Router from 'next/router';
-import NProgress from 'nprogress'; //nprogress module
-import 'nprogress/nprogress.css'; //styles of nprogress
+
 import HashLoader from "react-spinners/HashLoader";
-import { css } from "@emotion/core";
 
 
 // This default export is required in a new `pages/_app.js` file.
