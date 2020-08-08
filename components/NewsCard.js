@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 
-const NewsCard = ({ data , click}) => {
-  console.log(click)
+const NewsCard = ({ data }) => {
+ 
   return (
     <>
 
@@ -10,14 +10,14 @@ const NewsCard = ({ data , click}) => {
       <Link
         href="/[...slug]"
         as={"/" + data.category + "/" + data.data[0].link}
-        onClick={() => {click()}}
+       
       >
        
         <div className="article-container" style={{cursor:"pointer"}}>
           <div className="card-category">
             {data.data[0].category.map((category, i) => (
-              <Link  onClick={() => {click()}} href={"/[pid]"} as={"/" + category}>
-              <div key={i} className="category">
+              <Link key={i}  href={"/[pid]"} as={"/" + category}>
+              <div  className="category">
                 
                   <a>{category.split("-").join(" ")}</a>
                 

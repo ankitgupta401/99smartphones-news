@@ -38,8 +38,12 @@ const Navbar = (props) => {
     var day = today.getDate();
     var month = today.getMonth();
     var year = today.getFullYear();
+    if(!   document.getElementById("dateNav")){
+      return;
+    } else{
     document.getElementById("dateNav").innerHTML =
       months[month] + " " + day + ", " + year + "  ";
+    }
   };
 
   function checkTime(i) {
@@ -58,26 +62,30 @@ const Navbar = (props) => {
     // add a zero in front of numbers<10
     m = checkTime(m);
     s = checkTime(s);
- 
+    if(! document.getElementById("timeNav")){
+      return;
+    } else{
+      document.getElementById("timeNav").innerHTML = " " + h + ":" + m + ":" + s;
     let t = setTimeout(function () {
       startTime();
     }, 1000);
-    return ( " " + h + ":" + m + ":" + s);
+    }
+    
   }
   return (
     <>
       <div id="nav">
         <a id="dateNav"></a>
         <br />
-  <a id="timeNav">{startTime()}</a>
+        <a id="timeNav"></a>
         <p onClick={handleCol}>Hello
-          <div id="col">Hi</div>
+         Hi
         </p>
       </div>
       <div className="container-fluid-navq">
         <div className="container">
           <div className="burger" id="burgerId" onClick={handleSidebar}>
-            <i className="burger-icon fa fa-bars"></i>
+            <i aria-hidden className="burger-icon fa fa-bars"></i>
           </div>
           <nav className="navbar">
             <div className="li-div">
