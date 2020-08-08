@@ -65,7 +65,7 @@ const Pages = (props) => {
                       )}
                       {/* content of the paragraph */}
                       <div
-                      className="ck-content container"
+                      className="ql-editor container"
                         dangerouslySetInnerHTML={{
                           __html: props.paras[i].paras,
                         }}
