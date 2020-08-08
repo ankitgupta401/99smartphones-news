@@ -1,53 +1,69 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-const Meta = (props) => (      
-<Head>
-<meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+const Meta = (props) => (
+  <Head>
+    <meta charset="UTF-8" />
+    
     <title>99News</title>
     <link rel="shortcut icon" href="/images/favicon.ico" />
-    <link rel="icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="/images/favicon.ico"
+    />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <link rel="icon" href="/images/favicon-32x32.png" />
 
     {/* <!-- All Basic MetaTags Starts Here  */}
     <meta name="keywords" content="mobiles,games,free,2020" />
-    <meta name="description" content="Here is the top 9 free games for mobile which you can download in 2020" />
-    <meta name="subject" content="99Smartphones based on high quality data-driven comparison">
-    <meta name="copyright" content="99Smartphones">
-    <meta name="language" content="ES">
+    <meta
+      name="description"
+      content="Here is the top 9 free games for mobile which you can download in 2020"
+    />
+    <meta
+      name="subject"
+      content="99Smartphones based on high quality data-driven comparison"
+    />
+    <meta name="copyright" content="99Smartphones" />
+    <meta name="language" content="ES" />
     <meta name="robots" content="index,follow" />
     <meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm" />
-    <meta name="abstract" content="">
-    <meta name="topic" content="">
-    <meta name="summary" content="">
-    <meta name="Classification" content="Business">
-    <meta name="author" content="sanjay sarkar, email@hotmail.com">
-    <meta name="designer" content="">
-    <meta name="copyright" content="">
-    <meta name="reply-to" content="email@hotmail.com">
-    <meta name="owner" content="">
-    <meta name="url" content="https://99smartphones.com">
-    <meta name="identifier-URL" content="http://www.websiteaddress.com">
-    <meta name="directory" content="submission">
-    <meta name="category" content="">
-    <meta name="coverage" content="Worldwide">
-    <meta name="distribution" content="Global">
-    <meta name="rating" content="General">
-    <meta name="revisit-after" content="7 days">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="abstract" content="" />
+    <meta name="topic" content="" />
+    <meta name="summary" content="" />
+    <meta name="Classification" content="Business" />
+    <meta name="author" content="sanjay sarkar, email@hotmail.com" />
+    <meta name="designer" content="" />
+    <meta name="copyright" content="" />
+    <meta name="reply-to" content="email@hotmail.com" />
+    <meta name="owner" content="" />
+    <meta name="url" content="https://99smartphones.com" />
+    <meta name="identifier-URL" content="http://www.websiteaddress.com" />
+    <meta name="directory" content="submission" />
+    <meta name="category" content="" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="7 days" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
     {/* All Basic Meta Tags Ends Here --> */}
 
-     {/* OpenGraph Meta Tags Start Here --> */}
+    {/* OpenGraph Meta Tags Start Here --> */}
 
-    <meta name="og:title" content="Here is the top 9 free games for mobile which you can download in 2020" />
+    <meta
+      name="og:title"
+      content="Here is the top 9 free games for mobile which you can download in 2020"
+    />
     <meta name="og:type" content="blog" />
     <meta name="og:url" content="https://99smartphones.com" />
     <meta name="og:image" content="/images/2.jpg" />
     <meta name="og:site_name" content="IMDb" />
-    <meta name="og:description" content="A group of U.S. Marines, under command of..." />
+    <meta
+      name="og:description"
+      content="A group of U.S. Marines, under command of..."
+    />
     <meta name="fb:page_id" content="43929265776" />
     <meta name="og:email" content="me@example.com" />
     <meta name="og:phone_number" content="650-123-4567" />
@@ -77,8 +93,6 @@ const Meta = (props) => (
     <meta property="og:audio:artist" content="Amazing Band" />
     <meta property="og:audio:album" content="Amazing Album" />
     <meta property="og:audio:type" content="application/mp3" />
-
-
-</Head>
-)
-export default Meta
+  </Head>
+);
+export default Meta;
