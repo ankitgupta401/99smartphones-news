@@ -27,8 +27,7 @@ const Header = (props) => {
     var day = today.getDate();
     var month = today.getMonth();
     var year = today.getFullYear();
-    document.getElementById("date").innerHTML =
-      months[month] + " " + day + ", " + year + "  ";
+   return  (months[month] + " " + day + ", " + year + "  ");
   };
 
   function checkTime(i) {
@@ -47,10 +46,11 @@ const Header = (props) => {
     // add a zero in front of numbers<10
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById("time").innerHTML = " " + h + ":" + m + ":" + s;
+
     let t = setTimeout(function () {
       startTime();
     }, 1000);
+    return( " " + h + ":" + m + ":" + s);
   }
 
   return (
@@ -81,8 +81,8 @@ const Header = (props) => {
                   className="text-danger fa fa-calendar"
                   aria-hidden="true"
                 ></i>
-                <a id="date"></a>
-                <a id="time"></a>
+                <a id="date">{getDate()}</a>
+  <a id="time">{startTime()}</a>
               </div>
               <div className="contact">
                 <a href="#">

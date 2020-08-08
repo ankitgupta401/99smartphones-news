@@ -1,22 +1,28 @@
 import React from "react";
 import Link from "next/link";
 
-const NewsCard = ({ data }) => {
+const NewsCard = ({ data , click}) => {
+  console.log(click)
   return (
     <>
+
       <h3 className="category-header">{data.category.split("-").join(" ")}</h3>
       <Link
         href="/[...slug]"
         as={"/" + data.category + "/" + data.data[0].link}
+        onClick={() => {click()}}
       >
+       
         <div className="article-container" style={{cursor:"pointer"}}>
           <div className="card-category">
             {data.data[0].category.map((category, i) => (
+              <Link  onClick={() => {click()}} href={"/[pid]"} as={"/" + category}>
               <div key={i} className="category">
-                <Link href={"/[pid]"} as={"/" + category}>
+                
                   <a>{category.split("-").join(" ")}</a>
-                </Link>
+                
               </div>
+              </Link>
             ))}
           </div>
           <div className="card-header">

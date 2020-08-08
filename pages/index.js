@@ -11,8 +11,17 @@ import CardNews from "../components/CardNews";
 import BigCard from "../components/BigCard";
 import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
-const Index = (props) => (
-  <Layout header={props.header}>
+
+const Index = (props) => {
+
+
+
+ return ( 
+
+  <div>
+   
+ <Layout header={props.header}>
+  
     <div className="container">
       <div className="news-section">
         <div className="row">
@@ -95,7 +104,7 @@ const Index = (props) => (
     
     <AuthorBig /> */}
   </Layout>
-);
+  </div>)};
 
 Index.getInitialProps = async (ctx) => {
   const news = await fetch(url.url + "get_news_list", {

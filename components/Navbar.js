@@ -58,17 +58,18 @@ const Navbar = (props) => {
     // add a zero in front of numbers<10
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById("timeNav").innerHTML = " " + h + ":" + m + ":" + s;
+ 
     let t = setTimeout(function () {
       startTime();
     }, 1000);
+    return ( " " + h + ":" + m + ":" + s);
   }
   return (
     <>
       <div id="nav">
         <a id="dateNav"></a>
         <br />
-        <a id="timeNav"></a>
+  <a id="timeNav">{startTime()}</a>
         <p onClick={handleCol}>Hello
           <div id="col">Hi</div>
         </p>
