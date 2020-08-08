@@ -83,34 +83,35 @@ const Navbar = (props) => {
               <ul>
                 <li>
                   <a>Home</a>
-                  <div className="sub-ul" style={{ display: "flex" }}>
-                    <div className="sub-u">
-                      <p>Sub Li Tag</p>
-                      <p>Sub Li Tag</p>
-                      <p>Sub Li Tag</p>
-                      <p>Sub Li Tag</p>
-                      <p>Sub Li Tag</p>
-                      <p>Sub Li Tag</p>
-                    </div>
-                  </div>
                 </li>
                 <li>
-                  <a>Sub Section</a>
+                  <a>News Categories</a>
                   <div className="sub-ul">
                     <div className="sub-u">
-                      <p>Sub Li Tag</p>
-                      <p>Sub Li Tag</p>
-                      <p>Sub Li Tag</p>
-                      <p>Sub Li Tag</p>
-                      <p>Sub Li Tag</p>
-                      <p>Sub Li Tag</p>
+                      <p>Smart Watches</p>
+                      <p>Linux</p>
+                      <p>Windows</p>
+                      <p>IOS</p>
+                      <p>Android</p>
+                      <p>Applications</p>
+                      <p>Smart Band</p>
+                      <p>Smart Glasses</p>
+                      <p>India</p>
+                      <p>World</p>
+                      <p>Entertainment</p>
+                      <p>Technology</p>
+                      <p>Mobiles</p>
+                      <p>Laptops</p>
+                      <p>Gadgets</p>
+                      <p>Business</p>
+                      <p>Games</p>
+
                     </div>
                   </div>
                 </li>
-                <li>Posts</li>
-                <li>Post Archives</li>
-                <li>Shop</li>
-                <li>Pages</li>
+                <li>Compare</li>
+                <li>Product Finder</li>
+                <li>Deals</li>
               </ul>
             </div>
             <div className="icon-div">
