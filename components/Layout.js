@@ -25,7 +25,7 @@ const Layout = (props) => (
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
       ></link>
-       <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+     <link rel="stylesheet" href="//cdn.quilljs.com/1.2.6/quill.snow.css"/>
       <meta
         name="google-site-verification"
         content="We8K8T-425qt2XvSNSocsbnBOqDQLQdElUv8vw8WFQE"
