@@ -5,7 +5,11 @@ const NewsCard = ({ data }) => {
  
   return (
     <>
-
+ 
+ {data.data.length === 0 ? (
+        <div></div>
+      ) : (
+        <div>
       <h3 className="category-header">{data.category.split("-").join(" ")}</h3>
       <Link
         href="/[...slug]"
@@ -46,6 +50,8 @@ const NewsCard = ({ data }) => {
           ></div>
         </div>
       </Link>
+</div>
+      )}
     </>
   );
 };

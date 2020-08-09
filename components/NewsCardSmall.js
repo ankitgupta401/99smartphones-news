@@ -4,10 +4,12 @@ import Link from "next/link";
 const NewsCardSmall = ({ data }) => {
   return (
     <>
-      <h3 className="category-header">{data.category}</h3>
+     
       {data.data.length === 0 ? (
         <div></div>
       ) : (
+        <div>
+        <h3 className="category-header">{data.category}</h3>
         <Link
           href="/[...slug]"
           as={"/" + data.category + "/" + data.data[0].link}
@@ -37,6 +39,7 @@ const NewsCardSmall = ({ data }) => {
             ></div>
           </div>
         </Link>
+        </div>
       )}
     </>
   );
