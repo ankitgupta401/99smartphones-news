@@ -111,7 +111,6 @@ const Navbar = (props) => {
                       <p>Gadgets</p>
                       <p>Business</p>
                       <p>Games</p>
-                      {console.log(props)}
                     </div>
                   </div>
                 </li>

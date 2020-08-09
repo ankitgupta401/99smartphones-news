@@ -12,7 +12,24 @@ const Pages = (props) => {
   const { pid } = router.query;
 
   return (
-    <Layout data={props}>
+    <Layout
+      data={props}
+      title={
+        props.data.pid +
+        " : Latest News on " +
+        props.data.pid +
+        " at 99News 2020"
+      }
+      desc={props.data.pid + "update The description"} // Update the desc to update the meta
+      keyword={props.data.pid}
+      subject="99news based on high quality data-driven comparison"
+      author="99smartphones"
+      url={"https://news.99smartphones.in/" + props.data.pid}
+      category="News"
+      revised=""
+      image="" //image for social share
+    >
+      
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">

@@ -11,8 +11,23 @@ const Author = (props) => {
   const router = useRouter();
   const { pid } = router.query;
 
+  const title = props.writer + "." + props.pid + "." + name;
+
   return (
-    <Layout data={pid}>
+    <Layout
+      data={pid}
+      title={props.writer.name}
+      desc={props.news.description} // Update the desc to update the meta
+      keyword={props.news.description}
+      subject="99news based on high quality data-driven comparison"
+      author={props.writer.name}
+      url="https://news.99smartphones.in/"
+      category={props.category}
+      revised={props.news.date}
+      image={props.news.mainImage} //image for social share
+    >
+      {console.log(props.writer.name)}
+      {console.log(title)}
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">
@@ -113,7 +128,7 @@ Author.getInitialProps = async ({ query }) => {
     body: JSON.stringify({
       table: "writer",
       data: {
-          username: query.pid
+        username: query.pid,
       },
     }),
     // Adding headers to the request

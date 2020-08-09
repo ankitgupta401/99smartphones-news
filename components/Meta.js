@@ -4,37 +4,48 @@ import React from "react";
 const Meta = ({ meta }) => {
   return (
     <Head>
-      {console.log(meta)}
-      {/* <title>
-        {meta.data.code !== 0 
-          ? meta.data.news.title
-          : "99Smartphones News"}
-      </title> */}
-      <title>99smartphones</title>
-      <meta charset="UTF-8" />
-      {/* <link rel="shortcut icon" href="/images/favicon.ico" /> */}
+      {/* {console.log(meta)} */}
 
-      {/* <!-- All Basic MetaTags Starts Here  */}
-      <meta name="keywords" content="mobiles,games,free,2020" />
+      <title>
+        {!meta.title
+          ? "Tech News, Latest Technology, Mobiles, Laptops,Business 2020 – 99News"
+          : meta.title}
+      </title>
+
+      <meta charset="UTF-8" />
+
+      <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+      <meta name="description" content={!meta.desc ? "" : meta.desc} />
+
       <meta
-        name="description"
-        content={!meta.desc ?"Here is the top 9 free games for mobile which you can download in 2020": meta.desc }
+        name="keywords"
+        content={
+          !meta.keyword
+            ? "Mobiles News,Tech News,Laptop,Mobiles,Laptop News"
+            : meta.keyword
+        }
       />
+
       <meta
         name="subject"
-        content="99Smartphones based on high quality data-driven comparison"
+        content={
+          !meta.subject
+            ? "99news based on high quality data-driven comparison"
+            : meta.subject
+        }
       />
       <meta name="copyright" content="99Smartphones" />
       <meta name="language" content="ES" />
       <meta name="robots" content="index,follow" />
-      <meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm" />
+
+      <meta name="revised" content={meta.revised ? "" : ""} />
       <meta name="abstract" content="" />
       <meta name="topic" content="" />
       <meta name="summary" content="" />
       <meta name="Classification" content="" />
       <meta name="author" content="sanjay sarkar, email@hotmail.com" />
       <meta name="designer" content="" />
-      <meta name="copyright" content="" />
       <meta name="reply-to" content="email@hotmail.com" />
       <meta name="owner" content="" />
       <meta name="url" content="https://99smartphones.com" />
@@ -48,23 +59,28 @@ const Meta = ({ meta }) => {
       <meta http-equiv="Expires" content="0" />
       <meta http-equiv="Pragma" content="no-cache" />
       <meta http-equiv="Cache-Control" content="no-cache" />
-      {/* All Basic Meta Tags Ends Here --> */}
-
-      {/* OpenGraph Meta Tags Start Here --> */}
 
       <meta
         name="og:title"
-        content="Here is the top 9 free games for mobile which you can download in 2020"
+        content={
+          !meta.title
+            ? "Tech News, Latest Technology, Mobiles, Laptops,Business 2020 – 99News"
+            : meta.title
+        }
       />
-      <meta name="og:type" content="blog" />
+      <meta name="og:type" content="news" />
       <meta name="og:url" content="https://99smartphones.com" />
-      <meta name="og:image" content="/images/2.jpg" />
-      <meta name="og:site_name" content="IMDb" />
+
       <meta
-        name="og:description"
-        content="A group of U.S. Marines, under command of..."
+        name="og:image"
+        content={!meta.image ? "https://99smartphones.com" : meta.image}
       />
-      <meta name="fb:page_id" content="43929265776" />
+
+      <meta name="og:site_name" content="99News" />
+
+      <meta name="og:description" content={!meta.desc ? "" : meta.desc} />
+
+      {/* <meta name="fb:page_id" content="43929265776" />
       <meta name="og:email" content="me@example.com" />
       <meta name="og:phone_number" content="650-123-4567" />
       <meta name="og:fax_number" content="+1-415-123-4567" />
@@ -92,7 +108,7 @@ const Meta = ({ meta }) => {
       <meta property="og:audio:title" content="Amazing Song" />
       <meta property="og:audio:artist" content="Amazing Band" />
       <meta property="og:audio:album" content="Amazing Album" />
-      <meta property="og:audio:type" content="application/mp3" />
+      <meta property="og:audio:type" content="application/mp3" /> */}
     </Head>
   );
 };

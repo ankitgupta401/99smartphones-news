@@ -9,7 +9,19 @@ const Pages = (props) => {
   const { slug } = router.query;
 
   return (
-    <Layout data={props} desc="hii this is content" >
+    <Layout
+      data={props}
+      title={props.news.title}
+      desc={props.news.description} // Update the desc to update the meta
+      keyword={props.news.description}
+      subject="99news based on high quality data-driven comparison"
+      author={props.writer.name}
+      url="https://news.99smartphones.in/"
+      category={props.category}
+      revised={props.news.date}
+      image={props.news.mainImage} //image for social share
+    >
+      {/* {console.log(props)} */}
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">
@@ -20,7 +32,6 @@ const Pages = (props) => {
                 padding: "20px 0px",
               }}
             >
-              {console.log(props)}
               {props.news.title}
             </h1>
           </div>
@@ -30,7 +41,6 @@ const Pages = (props) => {
             <div className="col-sm-2 col-md-2 col-lg-2">
               <div className="small-author">
                 <AuthorSmall author={props.writer} />
-                {console.log(props.writer)}
               </div>
             </div>
             <div className="col-sm-7 col-md-7 col-lg-7">
@@ -65,12 +75,12 @@ const Pages = (props) => {
                       )}
                       {/* content of the paragraph */}
                       <div className="ql-snow">
-                      <div
-                      className="ql-editor container"
-                        dangerouslySetInnerHTML={{
-                          __html: props.paras[i].paras,
-                        }}
-                      />
+                        <div
+                          className="ql-editor container"
+                          dangerouslySetInnerHTML={{
+                            __html: props.paras[i].paras,
+                          }}
+                        />
                       </div>
                     </div>
                   );
@@ -81,7 +91,7 @@ const Pages = (props) => {
           </div>
 
           <div className="row" style={{ margin: "30px 0px" }}>
-          <div className="col-sm-2 col-md-2 col-lg-2"></div>
+            <div className="col-sm-2 col-md-2 col-lg-2"></div>
             <div className="col-sm-7 col-md-7 col-lg-7">
               <AuthorDetailed {...props.writer} />
             </div>

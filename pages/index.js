@@ -12,11 +12,21 @@ import BigCard from "../components/BigCard";
 import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
 
-
-
 const Index = (props) => {
   return (
-    <Layout {...props } desc="hii this is desc"  data={props}>
+    <Layout
+      {...props}
+      title="Tech News,Business News,Review Products,Best News, News Tips, Top News ,Find News 2020 – 99News" // Update the title to update the title
+      desc="99news is a place for latest news in Mobiles, Laptops, Business" // Update the desc to update the meta
+      keyword="Mobiles News,Tech News,Laptop,Mobiles,Laptop News"
+      subject="99news based on high quality data-driven comparison"
+      author="99smartphones"
+      url="https://news.99smartphones.in/"
+      category="News"
+      revised=""
+      image="" //image for social share
+      data={props}
+    >
       <div className="container">
         <div className="news-section">
           <div className="row">
@@ -120,7 +130,7 @@ Index.getInitialProps = async (ctx) => {
   let home = await homeData.json();
   let json = await news.json();
   let head = await header.json();
- 
+
   let games = home.result[0];
   let business = home.result[1];
   let gadgets = home.result[2];
