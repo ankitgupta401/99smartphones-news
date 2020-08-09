@@ -12,7 +12,7 @@ const Meta = ({ meta }) => {
       </title> */}
       <title>99smartphones</title>
       <meta charset="UTF-8" />
-      <link rel="shortcut icon" href="/images/favicon.ico" />
+      {/* <link rel="shortcut icon" href="/images/favicon.ico" /> */}
 
       {/* <!-- All Basic MetaTags Starts Here  */}
       <meta name="keywords" content="mobiles,games,free,2020" />
