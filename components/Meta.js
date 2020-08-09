@@ -18,7 +18,7 @@ const Meta = ({ meta }) => {
       <meta name="keywords" content="mobiles,games,free,2020" />
       <meta
         name="description"
-        content="Here is the top 9 free games for mobile which you can download in 2020"
+        content={!meta.desc ?"Here is the top 9 free games for mobile which you can download in 2020": meta.desc }
       />
       <meta
         name="subject"
@@ -31,7 +31,7 @@ const Meta = ({ meta }) => {
       <meta name="abstract" content="" />
       <meta name="topic" content="" />
       <meta name="summary" content="" />
-      <meta name="Classification" content="Business" />
+      <meta name="Classification" content="" />
       <meta name="author" content="sanjay sarkar, email@hotmail.com" />
       <meta name="designer" content="" />
       <meta name="copyright" content="" />

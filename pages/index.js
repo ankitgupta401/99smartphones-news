@@ -16,7 +16,7 @@ import NewsCardSmall from "../components/NewsCardSmall";
 
 const Index = (props) => {
   return (
-    <Layout {...props} data={props}>
+    <Layout {...props } desc="hii this is desc"  data={props}>
       <div className="container">
         <div className="news-section">
           <div className="row">

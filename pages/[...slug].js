@@ -9,7 +9,7 @@ const Pages = (props) => {
   const { slug } = router.query;
 
   return (
-    <Layout data={props}>
+    <Layout data={props} desc="hii this is content" >
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">
