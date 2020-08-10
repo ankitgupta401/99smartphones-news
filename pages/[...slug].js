@@ -16,12 +16,17 @@ const Pages = (props) => {
       keyword={props.news.description}
       subject="99news based on high quality data-driven comparison"
       author={props.writer.name}
-      url="https://news.99smartphones.in/"
+      url={
+        "https://news.99smartphones.in/" +
+        props.data.slug[0] +
+        "/" +
+        props.data.slug[1]
+      }
       category={props.category}
       revised={props.news.date}
       image={props.news.mainImage} //image for social share
     >
-      {/* {console.log(props)} */}
+      {console.log(props)}
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">

@@ -69,7 +69,7 @@ const Meta = ({ meta }) => {
         }
       />
       <meta name="og:type" content="news" />
-      <meta name="og:url" content="https://99smartphones.com" />
+      <meta name="og:url" content={!meta.url?"https://99smartphones.com":meta.url} />
 
       <meta
         name="og:image"
