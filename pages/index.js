@@ -22,7 +22,7 @@ const Index = (props) => {
       subject="99news based on high quality data-driven comparison"
       author="99smartphones"
       url="https://news.99smartphones.in/"
-      category="News"
+      category2="News & Media"
       revised=""
       image="" //image for social share
       data={props}
@@ -171,7 +171,7 @@ Index.getInitialProps = async (ctx) => {
     entertainmentCategory: entertainment,
     worldCategory: world,
     indiaCategory: india,
-    cat: cat,
+    category: cat,
   };
 };
 

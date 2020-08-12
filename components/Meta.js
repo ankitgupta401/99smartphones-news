@@ -51,7 +51,7 @@ const Meta = ({ meta }) => {
       <meta name="url" content={!meta.url?"https://99smartphones.com":meta.url} />
       <meta name="identifier-URL" content="http://www.websiteaddress.com" />
       <meta name="directory" content="submission" />
-      <meta name="category" content="" />
+      <meta name="category" content={!meta.category2?"News":meta.category2}/>
       <meta name="coverage" content="Worldwide" />
       <meta name="distribution" content="Global" />
       <meta name="rating" content="General" />

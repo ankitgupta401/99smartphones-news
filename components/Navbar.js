@@ -97,7 +97,7 @@ const Navbar = (props) => {
                   <div className="sub-ul">
                     <div className="sub-u">
                      
-                      {props.data.cat.result.map((val, i) => {
+                      {props.data.category.result.map((val, i) => {
                         return (
                           <Link href={"/" + val.category}>
                             <a className="navbar-link">{val.category}</a>
