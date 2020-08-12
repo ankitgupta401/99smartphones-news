@@ -96,7 +96,7 @@ const Navbar = (props) => {
                   <a>News Categories</a>
                   <div className="sub-ul">
                     <div className="sub-u">
-                      {console.log(props.data.cat.result)}
+                     
                       {props.data.cat.result.map((val, i) => {
                         return (
                           <Link href={"/" + val.category}>
