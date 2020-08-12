@@ -1,6 +1,7 @@
 import Link from "next/link";
 import moment from "moment";
 import { useEffect } from "react";
+import Category from "./Category";
 
 const handleSidebar = () => {
   let element = document.getElementById("nav");
@@ -82,6 +83,7 @@ const Navbar = (props) => {
       <div className="burger" id="burgerId" onClick={handleSidebar}>
         <i aria-hidden className="burger-icon fa fa-bars"></i>
       </div>
+      {/* {console.log(props)} */}
       <div onClick={handleBackdrop} className="container-fluid-navq">
         <div className="container">
           <nav className="navbar">
@@ -94,23 +96,14 @@ const Navbar = (props) => {
                   <a>News Categories</a>
                   <div className="sub-ul">
                     <div className="sub-u">
-                      <a>Smart Watches</a>
-                      <p>Linux</p>
-                      <p>Windows</p>
-                      <p>IOS</p>
-                      <p>Android</p>
-                      <p>Applications</p>
-                      <p>Smart Band</p>
-                      <p>Smart Glasses</p>
-                      <p>India</p>
-                      <p>World</p>
-                      <p>Entertainment</p>
-                      <p>Technology</p>
-                      <p>Mobiles</p>
-                      <p>Laptops</p>
-                      <p>Gadgets</p>
-                      <p>Business</p>
-                      <p>Games</p>
+                      {console.log(props)}
+                      {/* {props.data.category.result.map((val, i) => {
+                        return (
+                          <Link href={"/" + val.category}>
+                            <a className="navbar-link">{val.category}</a>
+                          </Link>
+                        );
+                      })} */}
                     </div>
                   </div>
                 </li>

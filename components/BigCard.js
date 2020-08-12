@@ -28,13 +28,13 @@ const BigCard = (props) => {
       </Link>
       <br/>
 
-      <span>
+      <label style={{margin:"10px 0px"}}>
         <i className="fa fa-calendar" aria-hidden="true"></i> &nbsp;{" "}
         {new Date(props.news.date).toDateString()}
-      </span>
+      </label>
 
-      <p style={{ fontSize: "16px", fontWeight: "500" }}>
-        {props.news.description}
+      <p style={{ fontSize: "16px", fontWeight: "500",fontWeight:"23px" }}>
+        {props.news.description.slice(0,200)+" ..."}
       </p>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="share-area">

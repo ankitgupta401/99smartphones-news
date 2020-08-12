@@ -48,7 +48,7 @@ const Meta = ({ meta }) => {
       <meta name="designer" content="" />
       <meta name="reply-to" content="email@hotmail.com" />
       <meta name="owner" content="" />
-      <meta name="url" content="https://99smartphones.com" />
+      <meta name="url" content={!meta.url?"https://99smartphones.com":meta.url} />
       <meta name="identifier-URL" content="http://www.websiteaddress.com" />
       <meta name="directory" content="submission" />
       <meta name="category" content="" />

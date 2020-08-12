@@ -3,7 +3,10 @@ import Link from "next/link";
 
 const AuthorSmall = ({ author }) => {
   return (
-    <div style={{ textAlign: "center", boxShadow: "0px 0px 10px 10px rgba(227,227,227,.3)",padding:"10px 50px" }}>
+    <div
+      className="author-small-card"
+      // style={{ boxShadow: "0px 0px 5px 5px rgba(227,227,227,.3)" }}
+    >
       <img
         src={author.image1}
         alt="author"
@@ -12,12 +15,13 @@ const AuthorSmall = ({ author }) => {
           width: "100%",
           marginBottom: "10px",
           height: "100px",
-          
         }}
       />
       <p style={{ fontWeight: "lighter", margin: "0px" }}>{author.name}</p>
       <hr />
-      <p style={{ fontSize: "12px" }}>{author.designation}</p>
+      <p style={{ fontSize: "12px", lineHeight: "16px", wordSpacing: "1px" }}>
+        {author.designation}
+      </p>
 
       <div className="icon-div">
         <i className="fa fa-facebook-official" aria-hidden="true"></i>

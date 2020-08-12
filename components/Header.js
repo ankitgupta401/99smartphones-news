@@ -61,7 +61,7 @@ const Header = (props) => {
   return (
     <>
       <div className="container-fluid">
-        <div className="sub-header">
+        {/* <div className="sub-header">
           <div className="container">
             <div className="row">
               <h6 className="text-danger">BREAKING NEWS</h6>
@@ -72,7 +72,7 @@ const Header = (props) => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="container-fluid">
         <div className="sub-header-second">

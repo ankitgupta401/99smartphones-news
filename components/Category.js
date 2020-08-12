@@ -1,17 +1,19 @@
 import React from "react";
 import Link from "next/link";
 
-const Navbar = (props) => {
+const Category = (props) => {
   return (
     <div
+      className="category-section"
       style={{
-        boxShadow: "0px 0px 5px 5px rgba(227,227,227,.3)",
+        // boxShadow: "0px 0px 5px 5px rgba(227,227,227,.3)",
         padding: "10px 25px",
         position: "absolute",
         marginTop: "20px",
         top: 0,
       }}
     >
+      {console.log(props.category)}
       {props.category.result.map((val, i) => {
         return (
           <div key={i}>
@@ -47,4 +49,4 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;
+export default Category;

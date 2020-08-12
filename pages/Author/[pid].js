@@ -11,7 +11,6 @@ const Author = (props) => {
   const router = useRouter();
   const { pid } = router.query;
 
-  const title = props.writer + "." + props.pid + "." + name;
 
   return (
     <Layout
@@ -26,8 +25,8 @@ const Author = (props) => {
       revised={props.news.date}
       image={props.news.mainImage} //image for social share
     >
-      {console.log(props.writer.name)}
-      {console.log(title)}
+      {/* {console.log(props.writer.name)}
+      {console.log(title)} */}
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">

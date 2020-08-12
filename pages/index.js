@@ -103,6 +103,22 @@ Index.getInitialProps = async (ctx) => {
     },
   });
 
+
+  const category = await fetch(url.url + "common_get_with_table_name", {
+    method: "POST",
+    // Adding body or contents to send
+    body: JSON.stringify({
+      table: "news_category_list",
+      data: {},
+    }),
+    // Adding headers to the request
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+
+  const cat = await category.json();
+
   const header = await fetch(url.url + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
@@ -126,6 +142,7 @@ Index.getInitialProps = async (ctx) => {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
+
 
   let home = await homeData.json();
   let json = await news.json();
@@ -154,6 +171,7 @@ Index.getInitialProps = async (ctx) => {
     entertainmentCategory: entertainment,
     worldCategory: world,
     indiaCategory: india,
+    category: cat,
   };
 };
 

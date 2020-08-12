@@ -29,7 +29,6 @@ const Pages = (props) => {
       revised=""
       image="" //image for social share
     >
-      
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">
@@ -158,6 +157,7 @@ Pages.getInitialProps = async ({ query }) => {
   });
 
   const cat = await category.json();
+
   const writer = await writerapi.json();
   //  console.log(writer);
   let actualWriter = {};

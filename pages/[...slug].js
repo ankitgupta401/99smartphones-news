@@ -26,7 +26,6 @@ const Pages = (props) => {
       revised={props.news.date}
       image={props.news.mainImage} //image for social share
     >
-      {console.log(props)}
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">
@@ -150,6 +149,21 @@ Pages.getInitialProps = async ({ query }) => {
     });
   }
 
+  const category = await fetch(url.url + "common_get_with_table_name", {
+    method: "POST",
+    // Adding body or contents to send
+    body: JSON.stringify({
+      table: "news_category_list",
+      data: {},
+    }),
+    // Adding headers to the request
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+
+  const cat = await category.json();
+
   const writerapi = await fetch(url.url + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
@@ -172,6 +186,7 @@ Pages.getInitialProps = async ({ query }) => {
     news: data.result[0],
     paras: parasData,
     writer: writer.result[0],
+    category: cat,
   };
   //...
 };
