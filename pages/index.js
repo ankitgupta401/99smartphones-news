@@ -171,7 +171,7 @@ Index.getInitialProps = async (ctx) => {
     entertainmentCategory: entertainment,
     worldCategory: world,
     indiaCategory: india,
-    category: cat,
+    cat: cat,
   };
 };
 
