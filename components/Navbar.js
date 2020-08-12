@@ -90,13 +90,16 @@ const Navbar = (props) => {
             <div className="li-div">
               <ul>
                 <li>
-                  <a>Home</a>
+                  <Link href="/">
+                    <a>Home</a>
+                  </Link>
                 </li>
                 <li>
-                  <a>News Categories</a>
+                  <Link href="/">
+                    <a>News Categories</a>
+                  </Link>
                   <div className="sub-ul">
                     <div className="sub-u">
-                     
                       {props.data.category.result.map((val, i) => {
                         return (
                           <Link href={"/" + val.category}>
@@ -107,10 +110,20 @@ const Navbar = (props) => {
                     </div>
                   </div>
                 </li>
-                <li>Compare</li>
-                <li>Product Finder</li>
-                <li>Deals</li>
-                <li>Blogs</li>
+                <li>
+                  <a href="https://99smartphones.in" target="_blank">
+                    Compare
+                  </a>
+                </li>
+                <li>
+                  <a href="https://99smartphones.in" target="_blank">Product Finder</a>
+                </li>
+                <li>
+                  <a href="https://99smartphones.in" target="_blank">Deals</a>
+                </li>
+                <li>
+                  <a href="https://blog.99smartphones.in" target="_blank">Blogs</a>
+                </li>
               </ul>
             </div>
             <div className="icon-div">
