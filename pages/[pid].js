@@ -9,7 +9,7 @@ import * as url from "../pages/api.json";
 // posts will be populated at build time by getStaticProps()
 const Pages = (props) => {
   const router = useRouter();
-  const { pid } = router.query;
+  const { pid } = router.query.split("-").join(" ");
 
   return (
     <Layout
