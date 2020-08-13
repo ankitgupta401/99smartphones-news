@@ -13,12 +13,12 @@ const Category = (props) => {
         top: 0,
       }}
     >
-           {console.log('propsadsfsa: ', props)}
+          
       {props.category.result.map((val, i) => {
         return (
-          <div key={i}>
+          <div key={i} className="category-list">
             <Link
-              className="category-list"
+              
               href="/[pid]"
               as={"/" + props.category.result[i].category}
             >

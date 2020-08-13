@@ -93,8 +93,9 @@ const Navbar = (props) => {
         <div id="mobile-nav">
           {props.data.category.result.map((val, i) => {
             return (
-              <Link href={"/" + val.category}>
-                <a className="navbar-link mobile">{val.category}</a>
+              <Link  key={i} href="/[pid]"
+              as={"/" + val.category} >
+                <a className="navbar-link mobile">{val.category.split("-").join(" ")}</a>
               </Link>
             );
           })}
@@ -206,8 +207,9 @@ const Navbar = (props) => {
                     <div className="sub-u">
                       {props.data.category.result.map((val, i) => {
                         return (
-                          <Link href={"/" + val.category}>
-                            <a className="navbar-link">{val.category}</a>
+                          <Link key={i} href="/[pid]"
+                          as={"/" + val.category} >
+                            <a className="navbar-link">{val.category.split("-").join(" ")}</a>
                           </Link>
                         );
                       })}
@@ -245,7 +247,7 @@ const Navbar = (props) => {
                 <i className="fa fa-facebook-official" aria-hidden="true"></i>
               </a>
               <a
-                href="https://www.facebook.com/99smartphones.in"
+                href="https://twitter.com/99Smartphones"
                 target="_blank"
               >
                 <i className="fa fa-twitter" aria-hidden="true"></i>
@@ -263,10 +265,10 @@ const Navbar = (props) => {
                 <i className="fa fa-pinterest-p" aria-hidden="true"></i>
               </a>
               <a
-                href="https://www.facebook.com/99smartphones.in"
+                href="https://www.instagram.com/99smartphones/?hl=en"
                 target="_blank"
               >
-                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i className="fa fa-instagram" aria-hidden="true"></i>
               </a>
 
               <i className="fa fa-search " aria-hidden="true"></i>
