@@ -37,7 +37,7 @@ const Layout = (props) => (
         name="google-site-verification"
         content="We8K8T-425qt2XvSNSocsbnBOqDQLQdElUv8vw8WFQE"
       />
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8" type="text/javascript" defer=""></script>
       <script src="/js/custom.js"></script>
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </Head>

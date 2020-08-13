@@ -1,4 +1,63 @@
-const Footer = () => (
+import {useState} from 'react'
+import * as url from "../pages/api.json";
+
+
+
+
+const Footer = () => {
+
+  const [state ,setState] = useState('')
+
+  function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+  const addSub = (e) =>{
+    e.preventDefault()
+    
+    var email = state;
+    if (!email) {
+      email = document.getElementById("email").value;
+    }
+  
+    if (!email) {
+      return;
+    } else if (validateEmail(email)) {
+      fetch(url.url + "/add_subscriber", {
+        method: "post",
+        body: JSON.stringify({ email: email, deleted: false }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }).then((res) => {
+        res.json().then((response) => {
+          if (response.code === 0) {
+            Swal.fire({
+              title: "Thank You For Your Subscription!",
+              text: "We will inform you when we have something new",
+              type: "success",
+  
+              confirmButtonColor: "#3085d6",
+              // cancelButtonColor: '#d33',
+              confirmButtonText: "Ok",
+            });
+          } else {
+            Swal.fire("Failed", "Failed To Subscribe", "error");
+          }
+        });
+      });
+    } else {
+      Swal.fire("Failed", "Invalid Email", "error");
+    }
+  }
+
+  const handleChange =(e) => {
+     console.log(e.target.value);
+    setState(e.target.value)
+  }
+ return (
+
+
   <footer className="footer-section">
     <div className="container">
       <div className="footer-cta pt-5 pb-5">
@@ -117,9 +176,9 @@ const Footer = () => (
                 </p>
               </div>
               <div className="subscribe-form">
-                <form action="#">
-                  <input type="text" placeholder="Email Address" />
-                  <button>
+                <form onSubmit={addSub}>
+                  <input type="text" name="email" onChange={handleChange} value={state}  placeholder="Email Address" />
+                  <button type="submit">
                     <i aria-hidden className="fab fa-telegram-plane"></i>
                   </button>
                 </form>
@@ -165,5 +224,5 @@ const Footer = () => (
       </div>
     </div>
   </footer>
-);
+)};
 export default Footer;
