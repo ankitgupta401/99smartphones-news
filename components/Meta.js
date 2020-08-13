@@ -12,7 +12,7 @@ const Meta = ({ meta }) => {
           : meta.title}
       </title>
 
-      <meta charset="UTF-8" />
+      <meta charSet="UTF-8" />
 
       <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
@@ -56,9 +56,9 @@ const Meta = ({ meta }) => {
       <meta name="distribution" content="Global" />
       <meta name="rating" content="General" />
       <meta name="revisit-after" content="7 days" />
-      <meta http-equiv="Expires" content="0" />
-      <meta http-equiv="Pragma" content="no-cache" />
-      <meta http-equiv="Cache-Control" content="no-cache" />
+      <meta httpEquiv="Expires" content="0" />
+      <meta httpEquiv="Pragma" content="no-cache" />
+      <meta httpEquiv="Cache-Control" content="no-cache" />
 
       <meta
         name="og:title"

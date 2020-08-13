@@ -93,8 +93,9 @@ const Navbar = (props) => {
         <div id="mobile-nav">
           {props.data.category.result.map((val, i) => {
             return (
-              <Link href={"/" + val.category}>
-                <a className="navbar-link mobile">{val.category}</a>
+              <Link  key={i} href="/[pid]"
+              as={"/" + val.category} >
+                <a className="navbar-link mobile">{val.category.split("-").join(" ")}</a>
               </Link>
             );
           })}
@@ -103,6 +104,7 @@ const Navbar = (props) => {
           className="mobile-nav-link"
           href="https://99smartphones.in"
           target="_blank"
+          rel="noopener"
         >
           Compare
         </a>
@@ -110,6 +112,7 @@ const Navbar = (props) => {
           className="mobile-nav-link"
           href="https://99smartphones.in"
           target="_blank"
+          rel="noopener"
         >
           Product Finder
         </a>
@@ -117,6 +120,7 @@ const Navbar = (props) => {
           className="mobile-nav-link"
           href="https://99smartphones.in"
           target="_blank"
+          rel="noopener"
         >
           Deals
         </a>
@@ -124,6 +128,7 @@ const Navbar = (props) => {
           className="mobile-nav-link"
           href="https://blog.99smartphones.in"
           target="_blank"
+          rel="noopener"
         >
           Blogs
         </a>
@@ -147,28 +152,29 @@ const Navbar = (props) => {
             <i class="fa fa-instagram" aria-hidden="true"></i>
           </a> */}
 
-          <a href="https://www.facebook.com/99smartphones.in" target="_blank">
+          <a href="https://www.facebook.com/99smartphones.in" rel="noopener" target="_blank">
             <img
               className="social-icon"
               src="/images/icons8-facebook-480.png"
               alt="facebook"
             />
           </a>
-          <a href="">
+          <a href="" rel="noopener">
             <img
               className="social-icon"
               src="/images/icons8-twitter-480.png"
               alt="twitter"
             />
           </a>
-          <a href="">
+          <a href="" rel="noopener">
             <img
               className="social-icon"
               src="/images/icons8-linkedin-480.png"
+              
               alt="linkedin"
             />
           </a>
-          <a href="">
+          <a href="" rel="noopener">
             <img
               className="social-icon"
               src="/images/icons8-youtube-480.png"
@@ -206,8 +212,9 @@ const Navbar = (props) => {
                     <div className="sub-u">
                       {props.data.category.result.map((val, i) => {
                         return (
-                          <Link href={"/" + val.category}>
-                            <a className="navbar-link">{val.category}</a>
+                          <Link key={i} href="/[pid]"
+                          as={"/" + val.category} >
+                            <a className="navbar-link">{val.category.split("-").join(" ")}</a>
                           </Link>
                         );
                       })}
@@ -215,22 +222,22 @@ const Navbar = (props) => {
                   </div>
                 </li>
                 <li>
-                  <a href="https://99smartphones.in" target="_blank">
+                  <a href="https://99smartphones.in" rel="noopener" target="_blank">
                     Compare
                   </a>
                 </li>
                 <li>
-                  <a href="https://99smartphones.in" target="_blank">
+                  <a href="https://99smartphones.in" rel="noopener" target="_blank">
                     Product Finder
                   </a>
                 </li>
                 <li>
-                  <a href="https://99smartphones.in" target="_blank">
+                  <a href="https://99smartphones.in" rel="noopener" target="_blank">
                     Deals
                   </a>
                 </li>
                 <li>
-                  <a href="https://blog.99smartphones.in" target="_blank">
+                  <a href="https://blog.99smartphones.in" rel="noopener" target="_blank">
                     Blogs
                   </a>
                 </li>
@@ -241,32 +248,37 @@ const Navbar = (props) => {
               <a
                 href="https://www.facebook.com/99smartphones.in"
                 target="_blank"
+                rel="noopener"
               >
                 <i className="fa fa-facebook-official" aria-hidden="true"></i>
               </a>
               <a
-                href="https://www.facebook.com/99smartphones.in"
+                href="https://twitter.com/99Smartphones"
                 target="_blank"
+                rel="noopener"
               >
                 <i className="fa fa-twitter" aria-hidden="true"></i>
               </a>
               <a
                 href="https://www.facebook.com/99smartphones.in"
                 target="_blank"
+                rel="noopener"
               >
                 <i className="fa fa-google-plus" aria-hidden="true"></i>
               </a>
               <a
                 href="https://www.facebook.com/99smartphones.in"
                 target="_blank"
+                rel="noopener"
               >
                 <i className="fa fa-pinterest-p" aria-hidden="true"></i>
               </a>
               <a
-                href="https://www.facebook.com/99smartphones.in"
+                href="https://www.instagram.com/99smartphones/?hl=en"
                 target="_blank"
+                rel="noopener"
               >
-                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i className="fa fa-instagram" aria-hidden="true"></i>
               </a>
 
               <i className="fa fa-search " aria-hidden="true"></i>

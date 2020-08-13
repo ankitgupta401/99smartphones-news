@@ -15,16 +15,16 @@ const Pages = (props) => {
     <Layout
       data={props}
       title={
-        props.data.pid +
+        props.data.pid.split("-").join(" ") +
         " : Latest News on " +
-        props.data.pid +
+        props.data.pid.split("-").join(" ") +
         " at 99News 2020"
       }
-      desc={props.data.pid + "update The description"} // Update the desc to update the meta
-      keyword={props.data.pid}
+      desc={props.data.pid.split("-").join(" ") + "update The description"} // Update the desc to update the meta
+      keyword={props.data.pid.split("-").join(" ")}
       subject="99news based on high quality data-driven comparison"
       author="99smartphones"
-      url={"https://news.99smartphones.in/" + props.data.pid}
+      url={"https://news.99smartphones.in/" + props.data.pid.split("-").join(" ")}
       category="News"
       revised=""
       image="" //image for social share
