@@ -13,7 +13,7 @@ const Category = (props) => {
         top: 0,
       }}
     >
-      {console.log(props.category)}
+           {console.log('propsadsfsa: ', props)}
       {props.category.result.map((val, i) => {
         return (
           <div key={i}>

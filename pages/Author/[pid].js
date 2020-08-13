@@ -14,14 +14,14 @@ const Author = (props) => {
 
   return (
     <Layout
-      data={pid}
+      data={{ category: props.category}}
       title={props.writer.name}
       desc={props.news.description} // Update the desc to update the meta
       keyword={props.news.description}
       subject="99news based on high quality data-driven comparison"
       author={props.writer.name}
       url="https://news.99smartphones.in/"
-      category={props.category}
+   
       revised={props.news.date}
       image={props.news.mainImage} //image for social share
     >
@@ -159,7 +159,7 @@ Author.getInitialProps = async ({ query }) => {
       [writer.result[i].username]: writer.result[i],
     };
   }
-  console.log(actualWriter);
+  
   return { data: query, news: data, writer: actualWriter, category: cat };
   //...
 };

@@ -83,7 +83,7 @@ const Navbar = (props) => {
       <div className="burger" id="burgerId" onClick={handleSidebar}>
         <i aria-hidden className="burger-icon fa fa-bars"></i>
       </div>
-      {/* {console.log(props)} */}
+    
       <div onClick={handleBackdrop} className="container-fluid-navq">
         <div className="container">
           <nav className="navbar">
@@ -95,6 +95,7 @@ const Navbar = (props) => {
                   </Link>
                 </li>
                 <li>
+             
                   <Link href="/">
                     <a>News Categories</a>
                   </Link>
