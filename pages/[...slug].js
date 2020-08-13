@@ -47,7 +47,7 @@ const Pages = (props) => {
                 <AuthorSmall author={props.writer} />
               </div>
             </div>
-            <div className="col-sm-7 col-md-7 col-lg-7">
+            <div className="col-sm-12 col-md-12 col-lg-7">
               {/* All The Content Begins Here */}
               <div>
                 <img
