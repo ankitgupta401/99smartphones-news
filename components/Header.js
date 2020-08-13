@@ -106,9 +106,13 @@ const Header = (props) => {
                 </a>
               </div>
             </div>
+            <hr/>
           </div>
+          
         </div>
+       
       </div>
+      <br/>
       <div className="main-header">
         <div className="logo">
           <div className="container">
