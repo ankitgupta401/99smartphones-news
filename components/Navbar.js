@@ -131,7 +131,7 @@ const Navbar = (props) => {
           className="icon-div"
           style={{ marginTop: "85px", textAlign: "center" }}
         >
-          <a href="https://www.facebook.com/99smartphones.in" target="_blank">
+          {/* <a href="https://www.facebook.com/99smartphones.in" target="_blank">
             <i className="fa fa-facebook-official" aria-hidden="true"></i>
           </a>
           <a href="https://www.facebook.com/99smartphones.in" target="_blank">
@@ -145,6 +145,42 @@ const Navbar = (props) => {
           </a>
           <a href="https://www.facebook.com/99smartphones.in" target="_blank">
             <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a> */}
+
+          <a href="https://www.facebook.com/99smartphones.in" target="_blank">
+            <img
+              className="social-icon"
+              src="/images/icons8-facebook-480.png"
+              alt="facebook"
+            />
+          </a>
+          <a href="">
+            <img
+              className="social-icon"
+              src="/images/icons8-twitter-480.png"
+              alt="twitter"
+            />
+          </a>
+          <a href="">
+            <img
+              className="social-icon"
+              src="/images/icons8-linkedin-480.png"
+              alt="linkedin"
+            />
+          </a>
+          <a href="">
+            <img
+              className="social-icon"
+              src="/images/icons8-youtube-480.png"
+              alt="youtube"
+            />
+          </a>
+          <a href="">
+            <img
+              className="social-icon"
+              src="/images/icons8-instagram-512.png"
+              alt="instagram"
+            />
           </a>
         </div>
       </div>
@@ -201,6 +237,7 @@ const Navbar = (props) => {
               </ul>
             </div>
             <div className="icon-div">
+              {/* Font Awesome Icon */}
               <a
                 href="https://www.facebook.com/99smartphones.in"
                 target="_blank"
@@ -233,6 +270,8 @@ const Navbar = (props) => {
               </a>
 
               <i className="fa fa-search " aria-hidden="true"></i>
+
+              {/* Image Icon */}
               {/* <a
                 href="https://www.facebook.com/99smartphones.in"
                 target="_blank"
@@ -242,11 +281,35 @@ const Navbar = (props) => {
                   src="/images/icons8-facebook-480.png"
                   alt="facebook"
                 />
+              </a>
+              <a href="">
+                <img
+                  className="social-icon"
+                  src="/images/icons8-twitter-480.png"
+                  alt="twitter"
+                />
+              </a>
+              <a href="">
+                <img
+                  className="social-icon"
+                  src="/images/icons8-linkedin-480.png"
+                  alt="linkedin"
+                />
+              </a>
+              <a href="">
+                <img
+                  className="social-icon"
+                  src="/images/icons8-youtube-480.png"
+                  alt="youtube"
+                />
+              </a>
+              <a href="">
+                <img
+                  className="social-icon"
+                  src="/images/icons8-instagram-512.png"
+                  alt="instagram"
+                />
               </a> */}
-              {/* <img className="social-icon" src="/images/icons8-twitter-480.png" alt="twitter"/> */}
-              {/* <img className="social-icon" src="/images/icons8-linkedin-480.png" alt="linkedin"/> */}
-              {/* <img className="social-icon" src="/images/icons8-youtube-480.png" alt="youtube"/> */}
-              {/* <img className="social-icon" src="/images/icons8-instagram-512.png" alt="instagram"/> */}
             </div>
           </nav>
         </div>

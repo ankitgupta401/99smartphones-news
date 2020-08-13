@@ -7,6 +7,7 @@ const AuthorSmall = ({ author }) => {
       className="author-small-card"
       // style={{ boxShadow: "0px 0px 5px 5px rgba(227,227,227,.3)" }}
     >
+      {console.log(author)}
       <img
         src={author.image1}
         alt="author"
@@ -24,9 +25,27 @@ const AuthorSmall = ({ author }) => {
       </p>
 
       <div className="icon-div">
-        <i className="fa fa-facebook-official" aria-hidden="true"></i>
-        <i className="fa fa-twitter" aria-hidden="true"></i>
-        <i className="fa fa-instagram" aria-hidden="true"></i>
+        <a href={author.fb_link}>
+          <img
+            className="social-icon"
+            src="/images/icons8-facebook-480.png"
+            alt="facebook"
+          />
+        </a>
+        <a href={author.twitter_link}>
+          <img
+            className="social-icon"
+            src="/images/icons8-twitter-480.png"
+            alt="twitter"
+          />
+        </a>
+        <a href={author.linkedin_link}>
+          <img
+            className="social-icon"
+            src="/images/icons8-linkedin-480.png"
+            alt="linkedin"
+          />
+        </a>
       </div>
     </div>
   );
