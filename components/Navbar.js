@@ -127,6 +127,26 @@ const Navbar = (props) => {
         >
           Blogs
         </a>
+        <div
+          className="icon-div"
+          style={{ marginTop: "85px", textAlign: "center" }}
+        >
+          <a href="https://www.facebook.com/99smartphones.in" target="_blank">
+            <i className="fa fa-facebook-official" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/99smartphones.in" target="_blank">
+            <i className="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/99smartphones.in" target="_blank">
+            <i className="fa fa-google-plus" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/99smartphones.in" target="_blank">
+            <i className="fa fa-pinterest-p" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/99smartphones.in" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
       <div className="burger" id="burgerId" onClick={handleSidebar}>
         <i aria-hidden className="burger-icon fa fa-bars"></i>
@@ -181,11 +201,52 @@ const Navbar = (props) => {
               </ul>
             </div>
             <div className="icon-div">
-              <i className="fa fa-facebook-official" aria-hidden="true"></i>
-              <i className="fa fa-twitter" aria-hidden="true"></i>
-              <i className="fa fa-google-plus" aria-hidden="true"></i>
-              <i className="fa fa-pinterest-p" aria-hidden="true"></i>
+              <a
+                href="https://www.facebook.com/99smartphones.in"
+                target="_blank"
+              >
+                <i className="fa fa-facebook-official" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/99smartphones.in"
+                target="_blank"
+              >
+                <i className="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/99smartphones.in"
+                target="_blank"
+              >
+                <i className="fa fa-google-plus" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/99smartphones.in"
+                target="_blank"
+              >
+                <i className="fa fa-pinterest-p" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/99smartphones.in"
+                target="_blank"
+              >
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+
               <i className="fa fa-search " aria-hidden="true"></i>
+              {/* <a
+                href="https://www.facebook.com/99smartphones.in"
+                target="_blank"
+              >
+                <img
+                  className="social-icon"
+                  src="/images/icons8-facebook-480.png"
+                  alt="facebook"
+                />
+              </a> */}
+              {/* <img className="social-icon" src="/images/icons8-twitter-480.png" alt="twitter"/> */}
+              {/* <img className="social-icon" src="/images/icons8-linkedin-480.png" alt="linkedin"/> */}
+              {/* <img className="social-icon" src="/images/icons8-youtube-480.png" alt="youtube"/> */}
+              {/* <img className="social-icon" src="/images/icons8-instagram-512.png" alt="instagram"/> */}
             </div>
           </nav>
         </div>
