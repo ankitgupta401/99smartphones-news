@@ -71,7 +71,7 @@ const Pages = (props) => {
                       {props.paras[i].image ? (
                         <img
                           src={props.paras[i].image}
-                          style={{ height: "400px" }}
+                          style={{ height: "auto" }}
                           alt={props.paras[i].sub_title}
                         />
                       ) : (
