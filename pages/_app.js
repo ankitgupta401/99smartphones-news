@@ -56,8 +56,9 @@ export default function MyApp({ Component, pageProps }) {
         },});
         id = await (await server_id).json();
      console.log(id)
+    id = id.result
      if(id.code === 0){
-      localStorage.setItem('user_id', id.result);
+      localStorage.setItem('user_id', id);
      } 
       
       }
@@ -69,7 +70,7 @@ export default function MyApp({ Component, pageProps }) {
           method: "POST",
           // Adding body or contents to send
           body: JSON.stringify({
-            user_id: id.result,
+            user_id: id,
             token: tok
           }),
           // Adding headers to the request
