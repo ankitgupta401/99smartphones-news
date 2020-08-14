@@ -22,8 +22,11 @@ self.addEventListener('push', function(event) {
   }
 });
 
+firebase.messaging().setBackgroundMessageHandler((payload) => console.log('payload', payload));
+
 
 function showNotification(notification) {
+  console.log(notification);
   var click_action = notification.click_action; //<-- This is correct!
   var options = {
       body: notification.body,

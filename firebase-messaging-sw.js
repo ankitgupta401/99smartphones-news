@@ -1,13 +1,5 @@
 importScripts('https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/7.6.0/firebase-messaging.js');
-// if ('serviceWorker' in navigator) {
-//     navigator.serviceWorker.register('../firebase-messaging-sw.js')
-//       .then(function(registration) {
-//         console.log('Registration successful, scope is:', registration.scope);
-//       }).catch(function(err) {
-//         console.log('Service worker registration failed, error:', err);
-//       });
-//     }
 
 firebase.initializeApp({
   apiKey: "AIzaSyBYUNWmTBKFV5sCeKYwa62Z4ZUDHQbkqhg",
@@ -30,34 +22,20 @@ self.addEventListener('push', function(event) {
   }
 });
 
-self.addEventListener("notificationclick", (event) => {
-  event.waitUntil(async function () {
-      const allClients = await clients.matchAll({
-          includeUncontrolled: true
-      });
-      let chatClient;
-      for (const client of allClients) {
-          if (client['url'].indexOf(event.notification.data.FCM_MSG.notification.click_action) >= 0) {
-              client.focus();
-              chatClient = client;
-              break;
-          }
-      }
-      if (!chatClient) {
-          chatClient = await clients.openWindow(event.notification.data.FCM_MSG.notification.click_action);
-      }
-  }());
-});
+firebase.messaging().setBackgroundMessageHandler((payload) => console.log('payload', payload));
 
-messaging.setBackgroundMessageHandler(function(payload) {
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
-  // Customize notification here
-  const notificationTitle = payload.notification.title;
-  const notificationOptions = {
-    body: payload.notification.body,
-    icon: 'https://cdn4.iconfinder.com/data/icons/whsr-january-flaticon-set/512/email.png'
+
+function showNotification(notification) {
+  var click_action = notification.click_action; //<-- This is correct!
+  var options = {
+      body: notification.body,
+      icon: notification.icon,
+      subtitle: notification.subtitle,
+      data: {
+          url: click_action
+      }
   };
-
-  return self.registration.showNotification(notificationTitle,
-    notificationOptions);
-});
+  if (self.registration.showNotification) {
+      return self.registration.showNotification(notification.title, options);
+  }
+}

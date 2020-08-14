@@ -1,7 +1,7 @@
 import "../style.css";
 
 import Router from "next/router";
-import firebase from '../components/firebase'
+import firebase from '../firebase'
 import HashLoader from "react-spinners/HashLoader";
 import { ToastContainer, toast } from 'react-toastify';
 import * as url from "../pages/api.json";
@@ -50,6 +50,7 @@ export default function MyApp({ Component, pageProps }) {
     }).then(async (token) => {
       let tok = token;
       let id = localStorage.getItem('user_id');
+      console.log(tok, id);
       if (!id) {
         let server_id = fetch(url.url + "get_user_id_for_news" ,{ headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -86,6 +87,8 @@ export default function MyApp({ Component, pageProps }) {
       console.log(err);
 
     })
+
+
     messaging.onMessage((payload) => {
        console.log(payload);
       notify(payload.notification)
