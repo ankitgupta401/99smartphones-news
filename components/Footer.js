@@ -64,20 +64,20 @@ const Footer = () => {
         <div className="row">
           <div className="col-xl-4 col-md-4 mb-30">
             <div className="single-cta">
-              <i aria-hidden className="fas fa-map-marker-alt"></i>
-              <div className="cta-text">
+              {/* <i aria-hidden className="fas fa-map-marker-alt"></i> */}
+              {/* <div className="cta-text">
                 <h4>Find us</h4>
                 <span>1010 Avenue, sw 54321, chandigarh</span>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-xl-4 col-md-4 mb-30">
             <div className="single-cta">
-              <i aria-hidden className="fas fa-phone"></i>
-              <div className="cta-text">
+              {/* <i aria-hidden className="fas fa-phone"></i> */}
+              {/* <div className="cta-text">
                 <h4>Call us</h4>
                 <span>9876543210 0</span>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-xl-4 col-md-4 mb-30">
@@ -85,7 +85,7 @@ const Footer = () => {
               <i aria-hidden className="far fa-envelope-open"></i>
               <div className="cta-text">
                 <h4>Mail us</h4>
-                <span>mail@info.com</span>
+                <span>99smartphones@protonmail.com</span>
               </div>
             </div>
           </div>
@@ -96,32 +96,34 @@ const Footer = () => {
           <div className="col-xl-4 col-lg-4 mb-50">
             <div className="footer-widget">
               <div className="footer-logo">
-                <a href="index.html">
-                  <img
-                    src="https://i.ibb.co/QDy827D/ak-logo.png"
-                    className="img-fluid"
-                    alt="logo"
-                  />
-                </a>
+                <h1 className="footerl" style={{color:"white"}}>99 News</h1>
               </div>
               <div className="footer-text">
                 <p>
-                  Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed
-                  do eiusmod tempor incididuntut consec tetur adipisicing
-                  elit,Lorem ipsum dolor sit amet.
+                Good news is rare these days, and every glittering ounce of 
+                it should be cherished and hoarded and worshipped and fondled like a priceless diamond.
                 </p>
               </div>
               <div className="footer-social-icon">
                 <span>Follow us</span>
-                <a href="#">
-                  <i aria-hidden className="fab fa-facebook-f facebook-bg"></i>
-                </a>
-                <a href="#">
-                  <i aria-hidden className="fab fa-twitter twitter-bg"></i>
-                </a>
-                <a href="#">
-                  <i aria-hidden  className="fab fa-google-plus-g google-bg"></i>
-                </a>
+                <a href="https://www.facebook.com/99smartphones.in">
+                <img
+              className="social-icon"
+              src="/images/icons8-facebook-480.png"
+              alt="facebook"
+            />                </a>
+                <a href="https://twitter.com/99Smartphones">
+                <img
+              className="social-icon"
+              src="/images/icons8-twitter-480.png"
+              alt="twitter"
+            />                </a>
+                <a href="https://www.instagram.com/99smartphones/?hl=en">
+                <img
+              className="social-icon"
+              src="/images/icons8-instagram-512.png"
+              alt="instagram"
+            />                </a>
               </div>
             </div>
           </div>
@@ -135,32 +137,32 @@ const Footer = () => {
                   <a href="#">Home</a>
                 </li>
                 <li>
-                  <a href="#">about</a>
+                  <a href="#">about us</a>
                 </li>
                 <li>
                   <a href="#">services</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#">portfolio</a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a href="#">Contact</a>
-                </li>
-                <li>
+                </li> */}
+                 {/* <li>
                   <a href="#">About us</a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a href="#">Our Services</a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a href="#">Expert Team</a>
                 </li>
                 <li>
                   <a href="#">Contact us</a>
-                </li>
+                </li> */}
                 <li>
                   <a href="#">Latest News</a>
-                </li>
+                </li> 
               </ul>
             </div>
           </div>
