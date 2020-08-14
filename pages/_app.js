@@ -1,7 +1,7 @@
 import "../style.css";
 
 import Router from "next/router";
-import firebase from '../public/firebase'
+import firebase from '../components/firebase'
 import HashLoader from "react-spinners/HashLoader";
 import { ToastContainer, toast } from 'react-toastify';
 import * as url from "../pages/api.json";
