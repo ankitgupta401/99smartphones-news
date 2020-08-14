@@ -39,7 +39,7 @@ const NewsCard = ({ data }) => {
           > */}
             <a className="header-text">{data.data[0].title}</a>
             {/* </Link> */}
-            <p className="desc-text">{data.data[0].description}</p>
+            {/* <p className="desc-text">{data.data[0].description.substring(0,100)}</p> */}
           </div>
           <div
             className="article-img-holder"

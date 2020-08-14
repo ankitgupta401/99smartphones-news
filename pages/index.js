@@ -13,6 +13,57 @@ import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
 
 const Index = (props) => {
+
+const check =(data ,i) => {
+  if(!data[i]){
+    return ''
+  } else {
+    return  (<div className="col-sm-12 col-md-3">
+    <NewsCardSmall data={props.data[i]} />
+  </div>)
+ 
+  }
+  
+}
+
+
+let data =[];
+const prepHome =() => {
+let round = 0;
+  for(let i=0;i <props.data.length;i= i+3){
+    if(round %2 ==0){
+      data.push(
+  
+        <div className="row">
+        
+          <div className="col-sm-12 col-md-6">
+            <NewsCard data={props.data[i]} />
+          </div>
+         {check(props.data, i+1)}
+         {check(props.data, i+2)}
+         
+        </div>);
+    } else {
+      data.push(
+  
+        <div className="row">
+          {check(props.data, i+1)}
+         {check(props.data, i+2)}
+          <div className="col-sm-12 col-md-6">
+            <NewsCard data={props.data[i]} />
+          </div>
+       
+         
+        </div>);
+    }
+round++;
+
+  }
+  
+  return data;
+}
+
+
   return (
     <Layout
       {...props}
@@ -27,63 +78,67 @@ const Index = (props) => {
       image="" //image for social share
       data={props}
     >
+      {/* {console.log(props.data)} */}
       <div className="container">
         <div className="news-section">
-          <div className="row">
-            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      
+         
+           { prepHome()}
+         
+            {/* <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
               <div className="row">
                 <div className="col-sm-12 col-md-12">
-                  <NewsCard data={props.gadgetsCategory} />
+                  <NewsCard data={props.data[4]} />
                 </div>
                 <div className="col-sm-12 col-md-6">
-                  <NewsCardSmall data={props.technologyCategory} />
+                  <NewsCardSmall data={props.data[4]} />
                 </div>
                 <div className="col-sm-12 col-md-6">
-                  <NewsCardSmall data={props.businessCategory} />
+                  <NewsCardSmall data={props.data[4]} />
                 </div>
               </div>
-            </div>
-            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            </div> */}
+            {/* <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
               <div className="row">
                 <div className="col-sm-6 col-md-6">
-                  <NewsCardSmall data={props.businessCategory} />
+                  <NewsCardSmall data={props.data[4]} />
                 </div>
                 <div className="col-sm-6 col-md-6">
-                  <NewsCardSmall data={props.gamesCategory} />
+                  <NewsCardSmall data={props.data[4]} />
                 </div>
               </div>
-            </div>
+            </div> */}
+         
+        </div>
+        {/* <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <NewsCardSmall data={props.data[4]} />
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <NewsCardSmall data={props.data[4]} />
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <NewsCardSmall data={props.data[4]} />
           </div>
         </div>
         <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <NewsCardSmall data={props.laptopsCategory} />
+            <NewsCardSmall data={props.data[4]} />
           </div>
           <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <NewsCardSmall data={props.mobilesCategory} />
+            <NewsCardSmall data={props.data[4]} />
           </div>
           <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <NewsCardSmall data={props.entertainmentCategory} />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <NewsCardSmall data={props.worldCategory} />
+            <NewsCardSmall data={props.data[4]} />
           </div>
           <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <NewsCardSmall data={props.indiaCategory} />
+            <NewsCardSmall data={props.data[4]} />
           </div>
-          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <NewsCardSmall data={props.worldCategory} />
-          </div>
-          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <NewsCardSmall data={props.indiaCategory} />
-          </div>
-        </div>
+        </div> */}
       </div>
-      <div className="container-fluid">
+      {/* <div className="container-fluid">
         <h3 className="category-header">Ads Section</h3>
-      </div>
+      </div> */}
     </Layout>
   );
 };
@@ -148,29 +203,21 @@ Index.getInitialProps = async (ctx) => {
   let json = await news.json();
   let head = await header.json();
 
-  let games = home.result[0];
-  let business = home.result[1];
-  let gadgets = home.result[2];
-  let laptops = home.result[3];
-  let mobiles = home.result[4];
-  let technology = home.result[5];
-  let entertainment = home.result[6];
-  let world = home.result[7];
-  let india = home.result[8];
+  let data = []
 
+  for(let i =0;i <home.result.length; i++){
+    if(home.result[i].data.length > 0){
+      data.push(home.result[i])
+     
+    }
+  
+  }
+  
   return {
     news: json,
     header: head,
     home: home,
-    gadgetsCategory: gadgets,
-    technologyCategory: technology,
-    businessCategory: business,
-    gamesCategory: games,
-    laptopsCategory: laptops,
-    mobilesCategory: mobiles,
-    entertainmentCategory: entertainment,
-    worldCategory: world,
-    indiaCategory: india,
+    data,
     category: cat,
   };
 };
