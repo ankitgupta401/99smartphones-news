@@ -62,7 +62,7 @@ export default function MyApp({ Component, pageProps }) {
      } 
       
       }
-
+console.log(localStorage.getItem('token') !== tok)
       if (localStorage.getItem('token') !== tok) {
         localStorage.setItem('token', tok);
         console.log('Token : ', tok)
