@@ -159,14 +159,14 @@ const Navbar = (props) => {
               alt="facebook"
             />
           </a>
-          <a href="" rel="noopener">
+          <a href="https://twitter.com/99Smartphones" rel="noopener">
             <img
               className="social-icon"
               src="/images/icons8-twitter-480.png"
               alt="twitter"
             />
           </a>
-          <a href="" rel="noopener">
+          <a href="https://www.linkedin.com/company/66595605/admin/" rel="noopener">
             <img
               className="social-icon"
               src="/images/icons8-linkedin-480.png"
@@ -181,7 +181,7 @@ const Navbar = (props) => {
               alt="youtube"
             />
           </a>
-          <a href="">
+          <a href="https://www.instagram.com/99smartphones/?hl=en">
             <img
               className="social-icon"
               src="/images/icons8-instagram-512.png"
