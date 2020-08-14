@@ -40,6 +40,7 @@ const Layout = (props) => (
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8" type="text/javascript" defer=""></script>
       <script src="/js/custom.js"></script>
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <link rel="manifest" href="/manifest.json" />
     </Head>
     <div onClick={handleBackdrop}>
       <Header {...props.header} />

@@ -12,6 +12,10 @@ import BigCard from "../components/BigCard";
 import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
 
+
+
+
+
 const Index = (props) => {
 
 const check =(data ,i) => {
@@ -34,7 +38,7 @@ let round = 0;
     if(round %2 ==0){
       data.push(
   
-        <div className="row">
+        <div key={i} className="row">
         
           <div className="col-sm-12 col-md-6">
             <NewsCard data={props.data[i]} />
