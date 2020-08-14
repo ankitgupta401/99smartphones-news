@@ -56,8 +56,9 @@ export default function MyApp({ Component, pageProps }) {
         },});
         id = await (await server_id).json();
      console.log(id)
-    id = id.result
+ 
      if(id.code === 0){
+      id = id.result
       localStorage.setItem('user_id', id);
      } 
       
