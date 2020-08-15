@@ -22,21 +22,22 @@ self.addEventListener('push', function(event) {
   }
 });
 
-firebase.messaging().setBackgroundMessageHandler((payload) => console.log('payload', payload));
+
+// firebase.messaging().setBackgroundMessageHandler((payload) => showNotification(payload.notification));
 
 
-function showNotification(notification) {
-  console.log(notification);
-  var click_action = notification.click_action; //<-- This is correct!
-  var options = {
-      body: notification.body,
-      icon: notification.icon,
-      subtitle: notification.subtitle,
-      data: {
-          url: click_action
-      }
-  };
-  if (self.registration.showNotification) {
-      return self.registration.showNotification(notification.title, options);
-  }
-}
+// function showNotification(notification) {
+//   console.log(notification);
+//   var click_action = notification.click_action; //<-- This is correct!
+//   var options = {
+//       body: notification.body,
+//       icon: notification.icon,
+//       subtitle: notification.subtitle,
+//       data: {
+//           url: click_action
+//       }
+//   };
+//   if (self.registration.showNotification) {
+//       return self.registration.showNotification(notification.title, options);
+//   }
+// }

@@ -22,7 +22,7 @@ self.addEventListener('push', function(event) {
   }
 });
 
-firebase.messaging().setBackgroundMessageHandler((payload) => console.log('payload', payload));
+firebase.messaging().setBackgroundMessageHandler((payload) => showNotification(payload.notification));
 
 
 function showNotification(notification) {
