@@ -98,8 +98,8 @@ const Pages = (props) => {
           </div>
 
           <div className="row" style={{ margin: "30px 0px" }}>
-            <div className="col-sm-2 col-md-0 col-lg-2"></div>
-            <div className="col-sm-7 col-md-12 col-lg-7">
+            <div className="col-sm-0 col-md-0 col-lg-0 col-xl-2"></div>
+            <div className="col-sm-12 col-md-12 col-lg-12 col-xl-8">
               <AuthorDetailed {...props.writer} />
             </div>
           </div>

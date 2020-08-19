@@ -90,7 +90,7 @@ const Author = (props) => {
           })}
 
           <div
-            className="col-sm-2 col-md-2 col-lg-0 col-xl-2 right-side"
+            className="col-sm-0 col-md-0 col-lg-2 col-xl-2 right-side"
             style={{ marginTop: "20px", position: "absolute", right: "15px" }}
           >
             <Category category={props.category} />

@@ -68,7 +68,7 @@ const Pages = (props) => {
             return (
               <div
                 key={i}
-                className="col-sm-10 col-md-10 col-lg-10 "
+                className="col-sm-12 col-md-12 col-lg-12 col-xl-10"
                 style={{
                   marginTop: "20px",
                   display: "flex",
@@ -77,7 +77,7 @@ const Pages = (props) => {
               >
                 <div className="row" style={{ width: "100%" }}>
                   <div
-                    className="col-md-2 col-lg-2 col-sm-2 left-side"
+                    className="col-md-0 col-lg-0 col-sm-0 col-xl-2 left-side"
                     style={{ margin: "20px auto" }}
                   >
                     <AuthorSmall
@@ -85,7 +85,7 @@ const Pages = (props) => {
                     />
                   </div>
                   <div
-                    className="col-md-10 col-lg-8 col-sm-10"
+                    className="col-md-12 col-lg-12 col-sm-12 col-xl-10"
                     style={{
                       margin: "20px auto",
                       boxShadow: "0px 0px 5px 5px rgba(227,227,227,.3)",
@@ -99,7 +99,7 @@ const Pages = (props) => {
           })}
 
           <div
-            className="col-sm-2 col-md-2 col-lg-2 right-side"
+            className="col-sm-0 col-md-0 col-lg-0 col-xl-2 right-side"
             style={{ marginTop: "20px", position: "absolute", right: "15px" }}
           >
             <Category category={props.category} />
