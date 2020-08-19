@@ -65,7 +65,7 @@ const Author = (props) => {
             return (
               <div
                 key={i}
-                className="col-sm-10 col-md-10 col-lg-10 "
+                className="col-sm-12 col-md-12 col-lg-12 col-xl-10"
                 style={{
                   marginTop: "20px",
                   display: "flex",
@@ -74,14 +74,14 @@ const Author = (props) => {
               >
                 <div className="row" style={{ width: "100%" }}>
                   <div
-                    className="col-md-2 left-side"
+                    className="col-sm-0 col-md-0 col-lg-0 col-xl-2 left-side"
                     style={{ marginTop: "20px" }}
                   >
                     <AuthorSmall
                       author={props.writer[props.news.result[i].writer]}
                     />
                   </div>
-                  <div className="col-md-10">
+                  <div className="col-sm-12 col-md-12 col-lg-12 col-xl-10">
                     <BigCard news={props.news.result[i]} pid={pid} />
                   </div>
                 </div>
@@ -90,7 +90,7 @@ const Author = (props) => {
           })}
 
           <div
-            className="col-sm-2 col-md-2 col-lg-2 right-side"
+            className="col-sm-2 col-md-2 col-lg-0 col-xl-2 right-side"
             style={{ marginTop: "20px", position: "absolute", right: "15px" }}
           >
             <Category category={props.category} />

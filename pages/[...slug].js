@@ -41,13 +41,16 @@ const Pages = (props) => {
           </div>
         </div>
         <div className="container">
-          <div className="row" style={{ marginTop: "60px" }}>
-            <div className="col-sm-2 col-md-2 col-lg-2">
+          <div
+            className="row"
+            style={{ marginTop: "60px" }}
+          >
+            <div className="col-sm-2 col-md-0 col-lg-0 col-xl-2">
               <div className="small-author">
                 <AuthorSmall author={props.writer} />
               </div>
             </div>
-            <div className="col-sm-12 col-md-12 col-lg-7">
+            <div className="col-sm-9 col-md-12 col-lg-12 col-xl-8">
               {/* All The Content Begins Here */}
               <div>
                 <img
@@ -91,7 +94,7 @@ const Pages = (props) => {
                 })}
               </div>
             </div>
-            <div className="col-sm-2 col-md-2 col-lg-2"></div>
+            <div className="col-sm-2 col-md-0 col-lg-2"></div>
           </div>
 
           <div className="row" style={{ margin: "30px 0px" }}>
