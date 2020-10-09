@@ -11,17 +11,15 @@ const Author = (props) => {
   const router = useRouter();
   const { pid } = router.query;
 
-
   return (
     <Layout
-      data={{ category: props.category}}
+      data={{ category: props.category }}
       title={props.writer.name}
       desc={props.news.description} // Update the desc to update the meta
       keyword={props.news.description}
       subject="99news based on high quality data-driven comparison"
       author={props.writer.name}
-      url="https://news.99smartphones.in/"
-   
+      url={"https://news.99smartphones.in/" + pid}
       revised={props.news.date}
       image={props.news.mainImage} //image for social share
     >
@@ -159,7 +157,7 @@ Author.getInitialProps = async ({ query }) => {
       [writer.result[i].username]: writer.result[i],
     };
   }
-  
+
   return { data: query, news: data, writer: actualWriter, category: cat };
   //...
 };
