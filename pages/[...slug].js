@@ -143,7 +143,11 @@ Pages.getInitialProps = async ({ query }) => {
       },
     });
 
-    let dataParas = await paras.json();
+    let dataParas =[]
+    if(paras){
+      await paras.json();
+    }
+   
 
     parasData.push({
       sub_title: data.result[0].paras[i].sub_title,

@@ -16,16 +16,19 @@ const NewsCard = ({ data }) => {
         as={"/" + data.category + "/" + data.data[0].link}
        
       >
-       
+        <a> 
+     
         <div className="article-container" style={{cursor:"pointer"}}>
           <div className="card-category">
             {data.data[0].category.map((category, i) => (
               <Link key={i}  href={"/[pid]"} as={"/" + category}>
+                      <a> 
               <div  className="category">
                 
                   <a>{category.split("-").join(" ")}</a>
                 
               </div>
+              </a>
               </Link>
             ))}
           </div>
@@ -49,6 +52,7 @@ const NewsCard = ({ data }) => {
             }}
           ></div>
         </div>
+        </a>
       </Link>
 </div>
       )}

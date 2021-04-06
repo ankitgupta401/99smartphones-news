@@ -14,6 +14,7 @@ const NewsCardSmall = ({ data }) => {
           href="/[...slug]"
           as={"/" + data.category + "/" + data.data[0].link}
         >
+          <a>
           <div className="article-container" style={{ cursor: "pointer" }}>
             <div className="card-category">
               {data.data[0].category.map((category, i) => (
@@ -38,6 +39,7 @@ const NewsCardSmall = ({ data }) => {
               style={{ backgroundImage: "url(" + data.data[0].mainImage + ")" }}
             ></div>
           </div>
+          </a>
         </Link>
         </div>
       )}

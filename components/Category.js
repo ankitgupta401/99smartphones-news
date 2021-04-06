@@ -22,6 +22,8 @@ const Category = (props) => {
               href="/[pid]"
               as={"/" + props.category.result[i].category}
             >
+              <a>
+            
               <div
                 style={{
                   display: "flex",
@@ -41,6 +43,7 @@ const Category = (props) => {
                   {props.category.result[i].category.split("-").join(" ")}
                 </a>
               </div>
+              </a>
             </Link>
           </div>
         );
