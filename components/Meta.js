@@ -16,7 +16,14 @@ const Meta = ({ meta }) => {
 
       <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
-      <meta name="description" content={!meta.desc ? "" : meta.desc} />
+      <meta
+        name="description"
+        content={
+          !meta.desc
+            ? "Tech News, the latest technology news of the day, reviews of the new best tech gadgets include mobile, tablets, laptops, video games. As a tech news site, we cover online tech news online in India and around the world with technology related updates from new and upcoming mobiles, cameras, laptops, video games like Google, Apple, Samsung and others."
+            : meta.desc
+        }
+      />
 
       <meta
         name="keywords"
@@ -48,10 +55,16 @@ const Meta = ({ meta }) => {
       <meta name="designer" content="" />
       <meta name="reply-to" content="email@hotmail.com" />
       <meta name="owner" content="" />
-      <meta name="url" content={!meta.url?"https://99smartphones.com":meta.url} />
+      <meta
+        name="url"
+        content={!meta.url ? "https://99smartphones.com" : meta.url}
+      />
       <meta name="identifier-URL" content="http://www.websiteaddress.com" />
       <meta name="directory" content="submission" />
-      <meta name="category" content={!meta.category2?"News":meta.category2}/>
+      <meta
+        name="category"
+        content={!meta.category2 ? "News" : meta.category2}
+      />
       <meta name="coverage" content="Worldwide" />
       <meta name="distribution" content="Global" />
       <meta name="rating" content="General" />
@@ -60,6 +73,7 @@ const Meta = ({ meta }) => {
       <meta httpEquiv="Pragma" content="no-cache" />
       <meta httpEquiv="Cache-Control" content="no-cache" />
 
+      <link rel="canonical" href={!meta.url ? "https://99smartphones.com" : meta.url} />
       <meta
         name="og:title"
         content={
@@ -69,7 +83,10 @@ const Meta = ({ meta }) => {
         }
       />
       <meta name="og:type" content="news" />
-      <meta name="og:url" content={!meta.url?"https://99smartphones.com":meta.url} />
+      <meta
+        name="og:url"
+        content={!meta.url ? "https://99smartphones.com" : meta.url}
+      />
 
       <meta
         name="og:image"
