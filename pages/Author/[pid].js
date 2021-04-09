@@ -14,14 +14,14 @@ const Author = (props) => {
   return (
     <Layout
       data={{ category: props.category }}
-      title={props.writer.name}
-      desc={props.news.description} // Update the desc to update the meta
-      keyword={props.news.description}
+      title={props.writer?.name}
+      desc={props.news?.description} // Update the desc to update the meta
+      keyword={props.news?.description}
       subject="99news based on high quality data-driven comparison"
-      author={props.writer.name}
+      author={props.writer?.name}
       url={"https://news.99smartphones.in/" + pid}
-      revised={props.news.date}
-      image={props.news.mainImage} //image for social share
+      revised={props.news?.date}
+      image={props.news?.mainImage} //image for social share
     >
       {/* {console.log(props.writer.name)}
       {console.log(title)} */}
@@ -38,11 +38,11 @@ const Author = (props) => {
                 </a>
               </Link>
               <div className="dot"></div>
-              <p className="address-header">{props.writer[pid].name}</p>
+              <p className="address-header">{props.writer[pid]?.name}</p>
             </div>
             <div className="" style={{ paddingTop: "20px" }}>
               <h1 className="category-header">
-                Author: {props.writer[pid].name}
+                Author: {props.writer[pid]?.name}
               </h1>
             </div>
           </div>
@@ -154,7 +154,7 @@ Author.getInitialProps = async ({ query }) => {
   for (let i = 0; i < writer.result.length; i++) {
     actualWriter = {
       ...actualWriter,
-      [writer.result[i].username]: writer.result[i],
+      [writer.result[i]?.username]: writer.result[i],
     };
   }
 

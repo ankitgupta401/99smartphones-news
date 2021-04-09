@@ -12,13 +12,13 @@ const AuthorDetailed = (props) => {
         />
       </div>
       <div style={{ margin: "10px" }}>
-        <h3 style={{ fontSize: "27px", fontWeight: "bolder" }}>{props.name}</h3>
+        <h3 style={{ fontSize: "27px", fontWeight: "bolder" }}>{props?.name}</h3>
         <p style={{ fontSize: "17px", fontWeight: "normal" }}>
           {props.designation}
         </p>
         <div style={{ display: "flex" }}>
           <a
-            href={"../author/" + props.username}
+            href={"../author/" +  props?.username}
             className="view-all-author"
           >
             VIEW ALL POSTS

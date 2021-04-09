@@ -15,7 +15,7 @@ const Pages = (props) => {
       desc={props.news.description} // Update the desc to update the meta
       keyword={props.news.description}
       subject="99news based on high quality data-driven comparison"
-      author={props.writer.name}
+      author={props.writer?.name}
       url={
         "https://news.99smartphones.in/" +
         props.data.slug[0] +
@@ -31,7 +31,7 @@ const Pages = (props) => {
           <div className="container">
             <h1
               style={{
-                lineHeight: "60px",
+                lineHeight: "6z0px",
                 margin: "0px 40px",
                 padding: "20px 0px",
               }}
@@ -85,7 +85,7 @@ const Pages = (props) => {
                         <div
                           className="ql-editor container"
                           dangerouslySetInnerHTML={{
-                            __html: props.paras[i].paras,
+                            __html: props.paras[i].content,
                           }}
                         />
                       </div>
@@ -128,33 +128,9 @@ Pages.getInitialProps = async ({ query }) => {
   });
 
   let data = await news.json();
-  let parasData = [];
-  // console.log(data,  query.slug[1]);
-  for (let i = 0; i < data.result[0].paras.length; i++) {
-    const paras = await fetch(url.url + "get_paras", {
-      method: "POST",
-      // Adding body or contents to send
-      body: JSON.stringify({
-        filename: data.result[0].paras[i].content,
-      }),
-      // Adding headers to the request
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
+  let parasData = data.result[0].paras;
 
-    let dataParas =[]
-    if(paras){
-      await paras.json();
-    }
-   
-
-    parasData.push({
-      sub_title: data.result[0].paras[i].sub_title,
-      image: data.result[0].paras[i].image,
-      paras: dataParas.result,
-    });
-  }
+  
 
   const category = await fetch(url.url + "common_get_with_table_name", {
     method: "POST",
@@ -187,7 +163,7 @@ Pages.getInitialProps = async ({ query }) => {
   });
 
   const writer = await writerapi.json();
-
+console.log(parasData)
   return {
     data: query,
     news: data.result[0],
