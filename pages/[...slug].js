@@ -120,6 +120,7 @@ Pages.getInitialProps = async ({ query }) => {
       data: {
         link: query.slug[1],
       },
+      includeParas: true
     }),
     // Adding headers to the request
     headers: {
