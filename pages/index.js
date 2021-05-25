@@ -149,7 +149,7 @@ round++;
 Index.getInitialProps = async (ctx) => {
   
   const url = urls.getURL();
-  console.log(url);
+  console.log(url , new Date().getDate());
   const category = await fetch(url  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
