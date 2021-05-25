@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 import Layout from "../components/Layout";
-import * as url from "../pages/api.json";
+import * as urls from "../getUrl";
 import ListNews from "../components/ListNews";
 import ListCard from "../components/ListCard";
 import AuthorBig from "../components/AuthorBig";
@@ -11,7 +11,6 @@ import CardNews from "../components/CardNews";
 import BigCard from "../components/BigCard";
 import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
-
 
 
 
@@ -148,7 +147,8 @@ round++;
 };
 
 Index.getInitialProps = async (ctx) => {
-  const news = await fetch(url.url + "get_news_list", {
+  
+  const news = await fetch(urls.getURL()  + "get_news_list", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -163,7 +163,7 @@ Index.getInitialProps = async (ctx) => {
   });
 
 
-  const category = await fetch(url.url + "common_get_with_table_name", {
+  const category = await fetch(urls.getURL()  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -178,7 +178,7 @@ Index.getInitialProps = async (ctx) => {
 
   const cat = await category.json();
 
-  const header = await fetch(url.url + "common_get_with_table_name", {
+  const header = await fetch( urls.getURL()  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -191,7 +191,7 @@ Index.getInitialProps = async (ctx) => {
     },
   });
 
-  const homeData = await fetch(url.url + "get_news_for_home_page", {
+  const homeData = await fetch(urls.getURL()  + "get_news_for_home_page", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({

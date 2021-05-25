@@ -5,7 +5,8 @@ import BigCard from "../components/BigCard";
 import Category from "../components/Category";
 import Link from "next/link";
 import AuthorSmall from "../components/AuthorSmall";
-import * as url from "../pages/api.json";
+import * as urls from "../getUrl";
+
 // posts will be populated at build time by getStaticProps()
 const Pages = (props) => {
   const router = useRouter();
@@ -112,7 +113,7 @@ const Pages = (props) => {
 
 Pages.getInitialProps = async ({ query }) => {
   console.log(query.pid);
-  const news = await fetch(url.url + "get_news_list", {
+  const news = await fetch(urls.getURL()  + "get_news_list", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -130,7 +131,7 @@ Pages.getInitialProps = async ({ query }) => {
   });
   const data = await news.json();
 
-  const writerapi = await fetch(url.url + "common_get_with_table_name", {
+  const writerapi = await fetch(urls.getURL()  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -143,7 +144,7 @@ Pages.getInitialProps = async ({ query }) => {
     },
   });
 
-  const category = await fetch(url.url + "common_get_with_table_name", {
+  const category = await fetch(urls.getURL()  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({

@@ -2,8 +2,8 @@ import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import AuthorDetailed from "../components/AuthorDetailed";
 import AuthorSmall from "../components/AuthorSmall";
-import * as url from "../pages/api.json";
-// posts will be populated at build time by getStaticProps()
+import * as urls from "../getUrl";
+
 const Pages = (props) => {
   const router = useRouter();
   const { slug } = router.query;
@@ -110,7 +110,7 @@ const Pages = (props) => {
 };
 
 Pages.getInitialProps = async ({ query }) => {
-  const news = await fetch(url.url + "get_news_list", {
+  const news = await fetch(urls.getURL()+ "get_news_list", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -133,7 +133,7 @@ Pages.getInitialProps = async ({ query }) => {
 
   
 
-  const category = await fetch(url.url + "common_get_with_table_name", {
+  const category = await fetch(urls.getURL() + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -148,7 +148,7 @@ Pages.getInitialProps = async ({ query }) => {
 
   const cat = await category.json();
 
-  const writerapi = await fetch(url.url + "common_get_with_table_name", {
+  const writerapi = await fetch(urls.getURL() + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
