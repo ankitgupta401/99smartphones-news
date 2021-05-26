@@ -13,7 +13,7 @@ import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
 
 
-const url = urls.getURL();
+
 
 const Index = (props) => {
 
@@ -148,7 +148,7 @@ round++;
 
 Index.getInitialProps = async (ctx) => {
   
-
+  const url = urls.getURL();
   const category = await fetch(url  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send

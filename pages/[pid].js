@@ -113,8 +113,8 @@ const Pages = (props) => {
 };
 
 Pages.getInitialProps = async ({ query }) => {
-
-  const blog = await fetch(urls.getURL()  + "get_blog_list", {
+  const url = urls.getURL();
+  const blog = await fetch( url + "get_blog_list", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -134,7 +134,7 @@ Pages.getInitialProps = async ({ query }) => {
 
 
 
-  const category = await fetch(urls.getURL()  + "common_get_with_table_name", {
+  const category = await fetch(url  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({

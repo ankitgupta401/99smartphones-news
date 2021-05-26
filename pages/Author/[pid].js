@@ -7,7 +7,6 @@ import Link from "next/link";
 import AuthorSmall from "../../components/AuthorSmall";
 import * as urls from "../../getUrl";
 
-const url = urls.getURL();
 // posts will be populated at build time by getStaticProps()
 const Author = (props) => {
   const router = useRouter();
@@ -102,6 +101,7 @@ const Author = (props) => {
 
 Author.getInitialProps = async ({ query }) => {
 
+  const url = urls.getURL();
   const blog = await fetch(url + "get_blogs_list", {
     method: "POST",
     // Adding body or contents to send
