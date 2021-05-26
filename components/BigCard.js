@@ -5,17 +5,17 @@ const BigCard = (props) => {
   return (
     <div style={{ padding: "20px" }}>
       <img
-        src={props.news.mainImage}
+        src={props.news.image}
         alt={props.news.alt_image}
-        style={{ width: "100%", maxWidth: "1000px" }}
+        style={{ width: "100%", maxWidth: "1000px"}}
       />
-      {/* {console.log(props)} */}
+
       <div style={{ display: "flex", padding: "20px 0px" }}>
         {props.news.category.map((val, i) => {
           return (
-            <a key={i} href={"/" + val}>
+            <a key={i} href={"/" + val.category.split(" ").join("-")}>
               {" "}
-              <div className="category">{val}</div>
+              <div className="category">{val.category}</div>
             </a>
           );
         })}

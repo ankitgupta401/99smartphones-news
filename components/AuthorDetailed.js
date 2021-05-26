@@ -4,9 +4,10 @@ const AuthorDetailed = (props) => {
   return (
     <div className="author-detail-div" style={{ borderRadius: "5px" }}>
       <div style={{ margin: "10px", width: "200px", height: "120px" }}>
+        {console.log(props)}
         <img
           style={{ borderRadius: "50%", width: "inherit", height: "inherit" }}
-          src={props.image2}
+          src={props.profilePicture["200x100"]}
           alt=""
           className="img-fluid"
         />
@@ -14,11 +15,11 @@ const AuthorDetailed = (props) => {
       <div style={{ margin: "10px" }}>
         <h3 style={{ fontSize: "27px", fontWeight: "bolder" }}>{props?.name}</h3>
         <p style={{ fontSize: "17px", fontWeight: "normal" }}>
-          {props.designation}
+          {props.description}
         </p>
         <div style={{ display: "flex" }}>
           <a
-            href={"../author/" +  props?.username}
+            href={"../author?userId=" +  props?._id}
             className="view-all-author"
           >
             VIEW ALL POSTS

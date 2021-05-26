@@ -14,30 +14,3 @@ firebase.initializeApp({
 
 
 const messaging = firebase.messaging();
-// self.addEventListener('push', function(event) {
-//   if (event.data) {
-//     console.log('This push event has data: ', event.data.text());
-//   } else {
-//     console.log('This push event has no data.');
-//   }
-// });
-
-
-// firebase.messaging().setBackgroundMessageHandler((payload) => showNotification(payload.notification));
-
-
-// function showNotification(notification) {
-//   console.log(notification);
-//   var click_action = notification.click_action; //<-- This is correct!
-//   var options = {
-//       body: notification.body,
-//       icon: notification.icon,
-//       subtitle: notification.subtitle,
-//       data: {
-//           url: click_action
-//       }
-//   };
-//   if (self.registration.showNotification) {
-//       return self.registration.showNotification(notification.title, options);
-//   }
-// }

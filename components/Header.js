@@ -47,7 +47,7 @@ const Header = (props) => {
     // add a zero in front of numbers<10
     m = checkTime(m);
     s = checkTime(s);
-    console.log();
+
     if (!document.getElementById("time")) {
       return;
     } else {

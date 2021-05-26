@@ -1,7 +1,7 @@
 import {useState} from 'react'
-import * as url from "../pages/api.json";
+import * as urls from "../getUrl";
 
-
+const url = urls.getURL();
 
 
 const Footer = () => {
@@ -52,7 +52,7 @@ const Footer = () => {
   }
 
   const handleChange =(e) => {
-     console.log(e.target.value);
+
     setState(e.target.value)
   }
  return (

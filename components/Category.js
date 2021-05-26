@@ -14,13 +14,13 @@ const Category = (props) => {
       }}
     >
           
-      {props.category.result.map((val, i) => {
+      {props.category.map((val, i) => {
         return (
           <div key={i} className="category-list">
             <Link
               
               href="/[pid]"
-              as={"/" + props.category.result[i].category}
+              as={"/" + props.category[i].category.split(" ").join("-")}
             >
               <a>
             
@@ -40,7 +40,7 @@ const Category = (props) => {
                     lineHeight: "30px",
                   }}
                 >
-                  {props.category.result[i].category.split("-").join(" ")}
+                  {props.category[i].category}
                 </a>
               </div>
               </a>

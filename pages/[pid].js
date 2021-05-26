@@ -55,7 +55,8 @@ const Pages = (props) => {
       </div>
       <div className="container">
         <div className="row">
-          {props.news.result.length === 0 ? (
+
+          {props.blog.result.length === 0 ? (
             <div>
               <br />
               <h3>Sorry No Results Found</h3>
@@ -65,7 +66,7 @@ const Pages = (props) => {
             ""
           )}
 
-          {props.news.result.map((val, i) => {
+          {props.blog.result.map((val, i) => {
             return (
               <div
                 key={i}
@@ -82,7 +83,7 @@ const Pages = (props) => {
                     style={{ margin: "20px auto" }}
                   >
                     <AuthorSmall
-                      author={props.writer[props.news.result[i].writer]}
+                      author={props.writer}
                     />
                   </div>
                   <div
@@ -92,7 +93,7 @@ const Pages = (props) => {
                       boxShadow: "0px 0px 5px 5px rgba(227,227,227,.3)",
                     }}
                   >
-                    <BigCard news={props.news.result[i]} pid={pid} />
+                    <BigCard news={props.blog.result[i]} pid={pid} />
                   </div>
                 </div>
               </div>
@@ -112,16 +113,16 @@ const Pages = (props) => {
 };
 
 Pages.getInitialProps = async ({ query }) => {
-  console.log(query.pid);
-  const news = await fetch(urls.getURL()  + "get_news_list", {
+
+  const blog = await fetch(urls.getURL()  + "get_blog_list", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
-      no_of_news: 10,
+      no_of_blogs: 10,
       page_no: 0,
       search: "",
       data: {
-        category: query.pid,
+        category: query.pid.split("-").join(" "),
       },
     }),
     // Adding headers to the request
@@ -129,26 +130,15 @@ Pages.getInitialProps = async ({ query }) => {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-  const data = await news.json();
+  const data = await blog.json();
 
-  const writerapi = await fetch(urls.getURL()  + "common_get_with_table_name", {
-    method: "POST",
-    // Adding body or contents to send
-    body: JSON.stringify({
-      table: "writer",
-      data: {},
-    }),
-    // Adding headers to the request
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  });
+
 
   const category = await fetch(urls.getURL()  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
-      table: "news_category_list",
+      table: "blogs_category_list",
       data: {},
     }),
     // Adding headers to the request
@@ -159,17 +149,8 @@ Pages.getInitialProps = async ({ query }) => {
 
   const cat = await category.json();
 
-  const writer = await writerapi.json();
-  //  console.log(writer);
-  let actualWriter = {};
-  for (let i = 0; i < writer.result.length; i++) {
-    actualWriter = {
-      ...actualWriter,
-      [writer.result[i].username]: writer.result[i],
-    };
-  }
-  //console.log(actualWriter);
-  return { data: query, news: data, writer: actualWriter, category: cat };
+
+  return { data: query, blog: data, writer: data.result[0].writer, category: cat.result };
   //...
 };
 

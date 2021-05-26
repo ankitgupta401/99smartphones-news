@@ -91,7 +91,8 @@ const Navbar = (props) => {
           Categories
         </a>
         <div id="mobile-nav">
-          {props.data.category.result.map((val, i) => {
+
+          {props.data.map((val, i) => {
             return (
               <Link  key={i} href="/[pid]"
               as={"/" + val.category} >
@@ -210,7 +211,7 @@ const Navbar = (props) => {
                   </Link>
                   <div className="sub-ul">
                     <div className="sub-u">
-                      {props.data.category.result.map((val, i) => {
+                      {props.data.map((val, i) => {
                         return (
                           <Link key={i} href="/[pid]"
                           as={"/" + val.category} >

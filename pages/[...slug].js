@@ -4,6 +4,7 @@ import AuthorDetailed from "../components/AuthorDetailed";
 import AuthorSmall from "../components/AuthorSmall";
 import * as urls from "../getUrl";
 
+
 const Pages = (props) => {
   const router = useRouter();
   const { slug } = router.query;
@@ -11,9 +12,9 @@ const Pages = (props) => {
   return (
     <Layout
       data={props}
-      title={props.news.title}
-      desc={props.news.description} // Update the desc to update the meta
-      keyword={props.news.description}
+      title={props.blog.title}
+      desc={props.blog.description} // Update the desc to update the meta
+      keyword={props.blog.description}
       subject="99news based on high quality data-driven comparison"
       author={props.writer?.name}
       url={
@@ -22,10 +23,11 @@ const Pages = (props) => {
         "/" +
         props.data.slug[1]
       }
-      category={props.category}
-      revised={props.news.date}
-      image={props.news.mainImage} //image for social share
+
+      revised={props.blog.date}
+      image={props.blog.image} //image for social share
     >
+
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">
@@ -36,7 +38,7 @@ const Pages = (props) => {
                 padding: "20px 0px",
               }}
             >
-              {props.news.title}
+              {props.blog.title}
             </h1>
           </div>
         </div>
@@ -55,43 +57,28 @@ const Pages = (props) => {
               <div>
                 <img
                   className="img-fluid"
-                  src={props.news.mainImage}
+                  src={props.blog.image}
                   style={{ height: "auto" }}
-                  alt={props.news.alt_image ? props.news.alt_image : ""}
+                  alt={"image"}
                 />
                 {/* Printing The paragraphs */}
-                {props.paras.map((val, i) => {
-                  return (
-                    <div key={i}>
+           
+                
+                    <div >
                       <br />
-                      {/* Subtitle for the news paragraph */}
-                      <h2 style={{ color: "black" }}>
-                        {" "}
-                        {props.paras[i].sub_title}
-                      </h2>
-                      <br />
-                      {/* image for the paragraph */}
-                      {props.paras[i].image ? (
-                        <img
-                          src={props.paras[i].image}
-                          style={{ height: "auto" }}
-                          alt={props.paras[i].sub_title}
-                        />
-                      ) : (
-                        ""
-                      )}
-                      {/* content of the paragraph */}
+              
+  
                       <div className="ql-snow">
                         <div
                           className="ql-editor container"
                           dangerouslySetInnerHTML={{
-                            __html: props.paras[i].content,
+                            __html: props.content,
                           }}
                         />
                       </div>
                     </div>
-                  );
-                })}
+                
+                
               </div>
             </div>
             <div className="col-sm-2 col-md-0 col-lg-2"></div>
@@ -110,34 +97,24 @@ const Pages = (props) => {
 };
 
 Pages.getInitialProps = async ({ query }) => {
-  const news = await fetch(urls.getURL()+ "get_news_list", {
+  const blog = await fetch(urls.getURL()+ "get_blog", {
     method: "POST",
-    // Adding body or contents to send
+ 
     body: JSON.stringify({
-      no_of_news: 1,
-      page_no: 0,
-      search: "",
-      data: {
-        link: query.slug[1],
-      },
-      includeParas: true
+     
+        link: query.slug[1]
+
     }),
-    // Adding headers to the request
+
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-
-  let data = await news.json();
-  let parasData = data.result[0].paras;
-
-  
-
-  const category = await fetch(urls.getURL() + "common_get_with_table_name", {
+  const category = await fetch(urls.getURL()  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
-      table: "news_category_list",
+      table: "blogs_category_list",
       data: {},
     }),
     // Adding headers to the request
@@ -148,29 +125,16 @@ Pages.getInitialProps = async ({ query }) => {
 
   const cat = await category.json();
 
-  const writerapi = await fetch(urls.getURL() + "common_get_with_table_name", {
-    method: "POST",
-    // Adding body or contents to send
-    body: JSON.stringify({
-      table: "writer",
-      data: {
-        username: data.result[0].writer,
-      },
-    }),
-    // Adding headers to the request
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  });
 
-  const writer = await writerapi.json();
-console.log(parasData)
+  let data = await blog.json();
+
+
   return {
     data: query,
-    news: data.result[0],
-    paras: parasData,
-    writer: writer.result[0],
-    category: cat,
+    blog: data.result.blog,
+    content: data.result.content,
+    writer: data.result.blog.writer,
+    category: cat.result,
   };
   //...
 };

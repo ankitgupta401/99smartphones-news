@@ -5,7 +5,9 @@ import BigCard from "../../components/BigCard";
 import Category from "../../components/Category";
 import Link from "next/link";
 import AuthorSmall from "../../components/AuthorSmall";
-import * as url from "../api.json";
+import * as urls from "../../getUrl";
+
+const url = urls.getURL();
 // posts will be populated at build time by getStaticProps()
 const Author = (props) => {
   const router = useRouter();
@@ -15,16 +17,15 @@ const Author = (props) => {
     <Layout
       data={{ category: props.category }}
       title={props.writer?.name}
-      desc={props.news?.description} // Update the desc to update the meta
-      keyword={props.news?.description}
+      desc={props.writer?.description} // Update the desc to update the meta
+      keyword={props.writer?.description}
       subject="99news based on high quality data-driven comparison"
       author={props.writer?.name}
       url={"https://news.99smartphones.in/" + pid}
-      revised={props.news?.date}
-      image={props.news?.mainImage} //image for social share
+      revised={props.writer?.date || new Date(Date.now())}
+      image={props.writer?.image} //image for social share
     >
-      {/* {console.log(props.writer.name)}
-      {console.log(title)} */}
+
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">
@@ -38,11 +39,11 @@ const Author = (props) => {
                 </a>
               </Link>
               <div className="dot"></div>
-              <p className="address-header">{props.writer[pid]?.name}</p>
+              <p className="address-header">{props.writer.name}</p>
             </div>
             <div className="" style={{ paddingTop: "20px" }}>
               <h1 className="category-header">
-                Author: {props.writer[pid]?.name}
+                Author: {props.writer.name}
               </h1>
             </div>
           </div>
@@ -50,7 +51,7 @@ const Author = (props) => {
       </div>
       <div className="container">
         <div className="row">
-          {props.news.result.length === 0 ? (
+          {props.blog.length === 0 ? (
             <div key="1">
               <br />
               <h3>Sorry No Results Found</h3>
@@ -59,7 +60,7 @@ const Author = (props) => {
           ) : (
             ""
           )}
-          {props.news.result.map((val, i) => {
+          {props.blog.map((val, i) => {
             return (
               <div
                 key={i}
@@ -76,11 +77,11 @@ const Author = (props) => {
                     style={{ marginTop: "20px" }}
                   >
                     <AuthorSmall
-                      author={props.writer[props.news.result[i].writer]}
+                      author={val.writer}
                     />
                   </div>
                   <div className="col-sm-12 col-md-12 col-lg-12 col-xl-10">
-                    <BigCard news={props.news.result[i]} pid={pid} />
+                    <BigCard news={val} pid={pid} />
                   </div>
                 </div>
               </div>
@@ -100,12 +101,12 @@ const Author = (props) => {
 };
 
 Author.getInitialProps = async ({ query }) => {
-  console.log(query.pid);
-  const news = await fetch(url.url + "get_news_list", {
+
+  const blog = await fetch(url + "get_blogs_list", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
-      no_of_news: 10,
+      no_of_blogs: 10,
       page_no: 0,
       search: "",
       data: {
@@ -117,24 +118,11 @@ Author.getInitialProps = async ({ query }) => {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-  const data = await news.json();
+  const data = await blog.json();
 
-  const writerapi = await fetch(url.url + "common_get_with_table_name", {
-    method: "POST",
-    // Adding body or contents to send
-    body: JSON.stringify({
-      table: "writer",
-      data: {
-        username: query.pid,
-      },
-    }),
-    // Adding headers to the request
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  });
 
-  const category = await fetch(url.url + "common_get_with_table_name", {
+
+  const category = await fetch(url + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -148,17 +136,10 @@ Author.getInitialProps = async ({ query }) => {
   });
 
   const cat = await category.json();
-  const writer = await writerapi.json();
-  //  console.log(writer);
-  let actualWriter = {};
-  for (let i = 0; i < writer.result.length; i++) {
-    actualWriter = {
-      ...actualWriter,
-      [writer.result[i]?.username]: writer.result[i],
-    };
-  }
 
-  return { data: query, news: data, writer: actualWriter, category: cat };
+
+
+  return { data: query, blog: data.result, category: cat.result };
   //...
 };
 

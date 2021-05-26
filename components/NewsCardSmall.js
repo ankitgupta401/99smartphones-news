@@ -9,7 +9,7 @@ const NewsCardSmall = ({ data }) => {
         <div></div>
       ) : (
         <div>
-        <h3 className="category-header">{data.category}</h3>
+        <h3 className="category-header">{data.category} </h3>
         <Link
           href="/[...slug]"
           as={"/" + data.category + "/" + data.data[0].link}
@@ -19,8 +19,8 @@ const NewsCardSmall = ({ data }) => {
             <div className="card-category">
               {data.data[0].category.map((category, i) => (
                 <div key={i} className="category">
-                  <Link href={"/[pid]"} as={"/" + category}>
-                    <a>{category.split("-").join(" ")}</a>
+                  <Link href={"/[pid]"} as={"/" + category.category.split("").join("-")}>
+                    <a>{category.category.split("-").join(" ")}</a>
                   </Link>
                 </div>
               ))}
@@ -36,7 +36,7 @@ const NewsCardSmall = ({ data }) => {
             </div>
             <div
               className="article-img-holder"
-              style={{ backgroundImage: "url(" + data.data[0].mainImage + ")" }}
+              style={{ backgroundImage: "url(" + data.data[0].image + ")" }}
             ></div>
           </div>
           </a>

@@ -4,7 +4,7 @@ import React from "react";
 const Meta = ({ meta }) => {
   return (
     <Head>
-      {/* {console.log(meta)} */}
+   
 
       <title>
         {!meta.title

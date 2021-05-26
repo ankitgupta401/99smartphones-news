@@ -45,7 +45,8 @@ const Layout = (props) => (
     <div onClick={handleBackdrop}>
       <Header {...props.header} />
     </div>
-    <Navbar data={props.data} />
+ 
+    <Navbar data={props.data.category} />
     <div onClick={handleBackdrop}>{props.children}</div>
     <div onClick={handleBackdrop}>
       <Footer />

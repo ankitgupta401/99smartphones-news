@@ -10,7 +10,8 @@ const NewsCard = ({ data }) => {
         <div></div>
       ) : (
         <div>
-      <h3 className="category-header">{data.category.split("-").join(" ")}</h3>
+
+      <h3 className="category-header">{data.category}</h3>
       <Link
         href="/[...slug]"
         as={"/" + data.category + "/" + data.data[0].link}
@@ -20,17 +21,20 @@ const NewsCard = ({ data }) => {
      
         <div className="article-container" style={{cursor:"pointer"}}>
           <div className="card-category">
-            {data.data[0].category.map((category, i) => (
-              <Link key={i}  href={"/[pid]"} as={"/" + category}>
+           
+            {data.data[0].category.map((category, i) => {
+  
+             return  <Link key={i}  href={"/[pid]"} as={"/" + category.category.split(" ").join("-")}>
                       <a> 
               <div  className="category">
                 
-                  <a>{category.split("-").join(" ")}</a>
+                  <a>{category.category.split("-").join(" ")}</a>
                 
               </div>
               </a>
               </Link>
-            ))}
+            }
+            )}
           </div>
           <div className="card-header">
             <p className="header-date">
@@ -47,7 +51,7 @@ const NewsCard = ({ data }) => {
           <div
             className="article-img-holder"
             style={{
-              backgroundImage: "url(" + data.data[0].mainImage + ")",
+              backgroundImage: "url(" + data.data[0].image + ")",
               width: "100%",
             }}
           ></div>

@@ -13,7 +13,7 @@ import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
 
 
-
+const url = urls.getURL();
 
 const Index = (props) => {
 
@@ -81,7 +81,7 @@ round++;
       image="" //image for social share
       data={props}
     >
-      {/* {console.log(props.data)} */}
+  
       <div className="container">
         <div className="news-section">
       
@@ -148,26 +148,12 @@ round++;
 
 Index.getInitialProps = async (ctx) => {
   
-  const news = await fetch(urls.getURL()  + "get_news_list", {
+
+  const category = await fetch(url  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
-      no_of_news: 10,
-      page_no: 0,
-      search: "",
-    }),
-    // Adding headers to the request
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  });
-
-
-  const category = await fetch(urls.getURL()  + "common_get_with_table_name", {
-    method: "POST",
-    // Adding body or contents to send
-    body: JSON.stringify({
-      table: "news_category_list",
+      table: "blogs_category_list",
       data: {},
     }),
     // Adding headers to the request
@@ -178,11 +164,11 @@ Index.getInitialProps = async (ctx) => {
 
   const cat = await category.json();
 
-  const header = await fetch( urls.getURL()  + "common_get_with_table_name", {
+  const header = await fetch( url  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
-      table: "news_navbar",
+      table: "blog_navbar",
       data: {},
     }),
     //Adding header to the request
@@ -191,7 +177,7 @@ Index.getInitialProps = async (ctx) => {
     },
   });
 
-  const homeData = await fetch(urls.getURL()  + "get_news_for_home_page", {
+  const homeData = await fetch(url  + "get_blogs_for_home_page", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -204,7 +190,7 @@ Index.getInitialProps = async (ctx) => {
 
 
   let home = await homeData.json();
-  let json = await news.json();
+  // let json = await news.json();
   let head = await header.json();
 
   let data = []
@@ -218,11 +204,11 @@ Index.getInitialProps = async (ctx) => {
   }
   
   return {
-    news: json,
+    // news: json,
     header: head,
     home: home,
     data,
-    category: cat,
+    category: cat.result,
   };
 };
 

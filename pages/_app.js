@@ -52,14 +52,13 @@ export default function MyApp({ Component, pageProps }) {
     }).then(async (token) => {
       let tok = token;
       let id = localStorage.getItem('user_id');
-      console.log(tok, id);
+
       if (!id) {
         let server_id = fetch(urls.getURL() + "get_user_id_for_news" ,{ headers: {
           "Content-type": "application/json; charset=UTF-8",
         },});
         id = await (await server_id).json();
-     console.log(id)
- 
+
      if(id.code === 0){
       id = id.result
       localStorage.setItem('user_id', id);
@@ -69,7 +68,7 @@ export default function MyApp({ Component, pageProps }) {
 
       if (localStorage.getItem('token') !== tok) {
         localStorage.setItem('token', tok);
-        console.log('Token : ', tok)
+
         const token = await fetch(urls.getURL() + "update_token_of_user", {
           method: "POST",
           // Adding body or contents to send
@@ -83,7 +82,7 @@ export default function MyApp({ Component, pageProps }) {
           },
         });
         const data = await token.json();
-        console.log(data);
+
       }
     }).catch((err) => {
       console.log(err);
@@ -92,7 +91,7 @@ export default function MyApp({ Component, pageProps }) {
 
 
     messaging.onMessage((payload) => {
-       console.log(payload);
+
       notify(payload.notification)
 
     })
