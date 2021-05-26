@@ -98,6 +98,7 @@ const Pages = (props) => {
 
 Pages.getInitialProps = async ({ query }) => {
   const url = urls.getURL();
+  console.log(url , new Date().getUTCDate());
   const blog = await fetch(url+ "get_blog", {
     method: "POST",
  
