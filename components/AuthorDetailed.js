@@ -4,7 +4,7 @@ const AuthorDetailed = (props) => {
   return (
     <div className="author-detail-div" style={{ borderRadius: "5px" }}>
       <div style={{ margin: "10px", width: "200px", height: "120px" }}>
-        {console.log(props)}
+
         <img
           style={{ borderRadius: "50%", width: "inherit", height: "inherit" }}
           src={props.profilePicture["200x100"]}
