@@ -3,7 +3,7 @@ const url2= "https://smartphones99-node-2.herokuapp.com/api/common/" ;
 
 
 export const getURL =() => {
-    const newUrl = (new Date().getDate()) %2 ==0 ? url2 : url
+    const newUrl = (new Date().getUTCDate()) %2 ==0 ? url : url2
     return newUrl;
     // return "http://localhost:5000/api/common/"
 }
