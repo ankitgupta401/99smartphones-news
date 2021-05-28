@@ -18,9 +18,9 @@ const Author = (props) => {
       title={props.writer?.name}
       desc={props.writer?.description} // Update the desc to update the meta
       keyword={props.writer?.description}
-      subject="99news based on high quality data-driven comparison"
+      subject="99Blogs based on high quality data-driven comparison"
       author={props.writer?.name}
-      url={"https://news.99smartphones.in/" + pid}
+      url={"https://blog.99smartphones.in/" + pid}
       revised={props.writer?.date || new Date(Date.now())}
       image={props.writer?.image} //image for social share
     >

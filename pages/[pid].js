@@ -58,11 +58,11 @@ const fetchMoreData = async() => {
         props.data.pid.split("-").join(" ") +
         " at 99Blog " + new Date().getFullYear()
       }
-      desc={props.data.pid.split("-").join(" ") + "update The description"} // Update the desc to update the meta
+      desc={props.data.pid.split("-").join(" ") } // Update the desc to update the meta
       keyword={props.data.pid.split("-").join(" ")}
       subject="99Blogs based on high quality data-driven comparison"
       author="99smartphones"
-      url={"https://news.99smartphones.in/" + props.data.pid.split("-").join(" ")}
+      url={"https://blog.99smartphones.in/" + props.data.pid.split(" ").join("-")}
       category="Blogs"
       revised=""
       image="" //image for social share

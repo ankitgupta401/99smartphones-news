@@ -18,7 +18,7 @@ const Pages = (props) => {
       subject="99Blogs based on high quality data-driven comparison"
       author={props.writer?.name}
       url={
-        "https://news.99smartphones.in/" +
+        "https://blog.99smartphones.in/" +
         props.data.slug[0] +
         "/" +
         props.data.slug[1]

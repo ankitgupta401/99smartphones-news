@@ -70,10 +70,10 @@ round++;
   return (
     <Layout
       {...props}
-      title="Tech News,Business News,Review Products,Best News, News Tips, Top News ,Find News 2020 – 99News" // Update the title to update the title
-      desc="99news is a place for latest news in Mobiles, Laptops, Business" // Update the desc to update the meta
-      keyword="Mobiles News,Tech News,Laptop,Mobiles,Laptop News"
-      subject="99news based on high quality data-driven comparison"
+      title={`Tech Blogs ,Business Blogs,Review Products,Best Blogs, Blogs Tips, Top Blogs ,Find Blogs ${new Date().getFullYear()} – 99Blogs`} // Update the title to update the title
+      desc="99Blogs is a place for latest Blogs in Mobiles, Laptops, Business, Entertainment, etc.." // Update the desc to update the meta
+      keyword="Mobiles Blogs,Tech Blogs,Laptop,Mobiles,Laptop Blogs"
+      subject="99Blogs based on high quality data-driven comparison"
       author="99smartphones"
       url="https://blog.99smartphones.in/"
       category2="Blog & Media"
