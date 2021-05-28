@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import * as urls from "../getUrl";
-
+import Swal from 'sweetalert2'
 const url = urls.getURL();
 
 
@@ -23,7 +23,7 @@ const Footer = () => {
     if (!email) {
       return;
     } else if (validateEmail(email)) {
-      fetch(url.url + "/add_subscriber", {
+      fetch(url + "/add_subscriber", {
         method: "post",
         body: JSON.stringify({ email: email, deleted: false }),
         headers: {
@@ -31,7 +31,7 @@ const Footer = () => {
         },
       }).then((res) => {
         res.json().then((response) => {
-          if (response.code === 0) {
+          if (response.status) {
             Swal.fire({
               title: "Thank You For Your Subscription!",
               text: "We will inform you when we have something new",
