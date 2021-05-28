@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
           <div className="col-xl-4 col-md-4 mb-30">
             <div className="single-cta">
-              <i aria-hidden className="far fa-envelope-open"></i>
+              <img style={{width: "40px"}} src="/images/maild.png" alt="mail"></img>
               <div id="contact" className="cta-text">
                 <h4>Mail us</h4>
                 <span>99smartphones@protonmail.com</span>
@@ -180,8 +180,8 @@ const Footer = () => {
               <div className="subscribe-form">
                 <form onSubmit={addSub}>
                   <input type="text" name="email" onChange={handleChange} value={state}  placeholder="Email Address" />
-                  <button type="submit">
-                    <i aria-hidden className="fab fa-telegram-plane"></i>
+                  <button style={{ padding: "7px 20px"}} type="submit">
+                  <img style={{width: "40px", margin: "0px 0px"}} src="/images/send.png" alt="mail"></img>
                   </button>
                 </form>
               </div>
