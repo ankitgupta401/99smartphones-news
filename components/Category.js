@@ -13,7 +13,7 @@ const Category = (props) => {
         top: 0,
       }}
     >
-          
+         <h4  className="category-header">CATAGORIES</h4>   
       {props.category.map((val, i) => {
         return (
           <div key={i} className="category-list">

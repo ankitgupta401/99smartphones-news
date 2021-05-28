@@ -1,14 +1,14 @@
 import fetch from "node-fetch";
 import Layout from "../components/Layout";
 import * as urls from "../getUrl";
-import ListNews from "../components/ListNews";
-import ListCard from "../components/ListCard";
-import AuthorBig from "../components/AuthorBig";
-import AuthorDetailed from "../components/AuthorDetailed";
-import AuthorSmall from "../components/AuthorSmall";
-import Category from "../components/Category";
-import CardNews from "../components/CardNews";
-import BigCard from "../components/BigCard";
+// import ListNews from "../components/ListNews";
+// import ListCard from "../components/ListCard";
+// import AuthorBig from "../components/AuthorBig";
+// import AuthorDetailed from "../components/AuthorDetailed";
+// import AuthorSmall from "../components/AuthorSmall";
+// import Category from "../components/Category";
+// import CardNews from "../components/CardNews";
+// import BigCard from "../components/BigCard";
 import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
 
@@ -75,8 +75,8 @@ round++;
       keyword="Mobiles News,Tech News,Laptop,Mobiles,Laptop News"
       subject="99news based on high quality data-driven comparison"
       author="99smartphones"
-      url="https://news.99smartphones.in/"
-      category2="News & Media"
+      url="https://blog.99smartphones.in/"
+      category2="Blog & Media"
       revised=""
       image="" //image for social share
       data={props}

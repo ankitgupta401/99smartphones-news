@@ -15,7 +15,7 @@ const Pages = (props) => {
       title={props.blog.title}
       desc={props.blog.description} // Update the desc to update the meta
       keyword={props.blog.description}
-      subject="99news based on high quality data-driven comparison"
+      subject="99Blogs based on high quality data-driven comparison"
       author={props.writer?.name}
       url={
         "https://news.99smartphones.in/" +

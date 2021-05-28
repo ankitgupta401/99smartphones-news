@@ -1,5 +1,8 @@
-// import { parseBody } from "next/dist/next-server/server/api-utils";
+
 import { useRouter } from "next/router";
+import { setState, useState } from "react";
+import InfiniteScroll from 'react-infinite-scroll-component';
+
 import Layout from "../components/Layout";
 import BigCard from "../components/BigCard";
 import Category from "../components/Category";
@@ -7,29 +10,65 @@ import Link from "next/link";
 import AuthorSmall from "../components/AuthorSmall";
 import * as urls from "../getUrl";
 
+const url = urls.getURL();
+
 // posts will be populated at build time by getStaticProps()
 const Pages = (props) => {
   const router = useRouter();
   const { pid } = router.query;
+  const [blog, setBlog] = useState(props.blog.result)
+  const [pageNo, setPageNo] = useState(0)
+
+
+const fetchMoreData = async() => {
+  setPageNo((pageNo) => {
+    return pageNo +1;
+  })
+  let search = "";
+  if(props.data.search) { search=props.data.search}
+ const blog = await fetch( url + "get_blog_list", {
+   method: "POST",
+   // Adding body or contents to send
+   body: JSON.stringify({
+     no_of_blogs: 10,
+     page_no: pageNo,
+     search: search,
+     data: search? {}: {
+       category: props.data.pid.split("-").join(" "),
+     },
+   }),
+   // Adding headers to the request
+   headers: {
+     "Content-type": "application/json; charset=UTF-8",
+   },
+ });
+ const data = await blog.json();
+ setBlog((prevBlog) => {
+   return [...prevBlog, ...data.result];
+ })
+}
+
 
   return (
     <Layout
       data={props}
       title={
         props.data.pid.split("-").join(" ") +
-        " : Latest News on " +
+        " : Latest Blog on " +
         props.data.pid.split("-").join(" ") +
-        " at 99News 2020"
+        " at 99Blog " + new Date().getFullYear()
       }
       desc={props.data.pid.split("-").join(" ") + "update The description"} // Update the desc to update the meta
       keyword={props.data.pid.split("-").join(" ")}
-      subject="99news based on high quality data-driven comparison"
+      subject="99Blogs based on high quality data-driven comparison"
       author="99smartphones"
       url={"https://news.99smartphones.in/" + props.data.pid.split("-").join(" ")}
-      category="News"
+      category="Blogs"
       revised=""
       image="" //image for social share
     >
+
+      
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">
@@ -47,7 +86,7 @@ const Pages = (props) => {
             </div>
             <div className="" style={{ paddingTop: "20px" }}>
               <h1 className="category-header">
-                Category: {pid.split("-").join(" ")}
+                Category: &nbsp;{pid.split("-").join(" ")}
               </h1>
             </div>
           </div>
@@ -56,17 +95,53 @@ const Pages = (props) => {
       <div className="container">
         <div className="row">
 
-          {props.blog.result.length === 0 ? (
-            <div>
-              <br />
-              <h3>Sorry No Results Found</h3>
-              <br />
-            </div>
-          ) : (
-            ""
-          )}
 
-          {props.blog.result.map((val, i) => {
+<div className="col-md-12">
+
+  <InfiniteScroll
+  dataLength={blog.length}
+  next={fetchMoreData}
+  hasMore={blog.length < props.count}
+  loader={ <div>
+    <div className="spinner-grow text-primary" role="status">
+  <span className="sr-only">Loading...</span>
+</div>
+<div className="spinner-grow text-secondary" role="status">
+  <span className="sr-only">Loading...</span>
+</div>
+<div className="spinner-grow text-success" role="status">
+  <span className="sr-only">Loading...</span>
+</div>
+<div className="spinner-grow text-danger" role="status">
+  <span className="sr-only">Loading...</span>
+</div>
+<div className="spinner-grow text-warning" role="status">
+  <span className="sr-only">Loading...</span>
+</div>
+<div className="spinner-grow text-info" role="status">
+  <span className="sr-only">Loading...</span>
+</div>
+<div className="spinner-grow text-dark" role="status">
+  <span className="sr-only">Loading...</span>
+</div>
+  </div>}
+  endMessage={
+    <p style={{ textAlign: 'center' }}>
+      <b>No More Results</b>
+    </p>
+  }
+  // // below props only if you need pull down functionality
+  // refreshFunction={this.refresh}
+  // pullDownToRefresh
+  // pullDownToRefreshThreshold={50}
+  pullDownToRefreshContent={
+    <h3 style={{ textAlign: 'center' }}>&#8595; Pull down to refresh</h3>
+  }
+  releaseToRefreshContent={
+    <h3 style={{ textAlign: 'center' }}>&#8593; Release to refresh</h3>
+  }
+>
+{blog.map((val, i) => {
             return (
               <div
                 key={i}
@@ -83,7 +158,7 @@ const Pages = (props) => {
                     style={{ margin: "20px auto" }}
                   >
                     <AuthorSmall
-                      author={props.writer}
+                      author={val.writer}
                     />
                   </div>
                   <div
@@ -93,17 +168,24 @@ const Pages = (props) => {
                       boxShadow: "0px 0px 5px 5px rgba(227,227,227,.3)",
                     }}
                   >
-                    <BigCard news={props.blog.result[i]} pid={pid} />
+                    <BigCard blog={val} pid={pid} />
                   </div>
                 </div>
               </div>
             );
           })}
+</InfiniteScroll>
+
+</div>
+
+
+
 
           <div
             className="col-sm-0 col-md-0 col-lg-0 col-xl-2 right-side"
             style={{ marginTop: "20px", position: "absolute", right: "15px" }}
           >
+          
             <Category category={props.category} />
           </div>
         </div>
@@ -113,15 +195,18 @@ const Pages = (props) => {
 };
 
 Pages.getInitialProps = async ({ query }) => {
-  const url = urls.getURL();
+ 
+   let search = "";
+   if(query.search) { search=query.search}
+
   const blog = await fetch( url + "get_blog_list", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
       no_of_blogs: 10,
       page_no: 0,
-      search: "",
-      data: {
+      search: search,
+      data: search? {}: {
         category: query.pid.split("-").join(" "),
       },
     }),
@@ -149,8 +234,13 @@ Pages.getInitialProps = async ({ query }) => {
 
   const cat = await category.json();
 
+  let count=0
+  if(data){
+    count = data.count;
+ 
+  }
 
-  return { data: query, blog: data, writer: data.result[0].writer, category: cat.result };
+  return { data: query, blog: data, category: cat.result  , count: count};
   //...
 };
 

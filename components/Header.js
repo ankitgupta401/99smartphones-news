@@ -1,8 +1,10 @@
 import Link from "next/link";
-import moment from "moment";
 import { useEffect } from "react";
+import { Search } from "./Search";
+
 
 const Header = (props) => {
+
   useEffect(() => {
     startTime();
     getDate();
@@ -74,7 +76,7 @@ const Header = (props) => {
           </div>
         </div> */}
       </div>
-      <div className="container-fluid">
+      <div style={{ backgroundColor: "yellow"}} className="container-fluid">
         <div className="sub-header-second">
           <div className="container">
             <div
@@ -83,21 +85,25 @@ const Header = (props) => {
             >
               <div className="date">
                 <i
-                  className="text-danger fa fa-calendar"
+                  style={{ color: "red"}}
+                  className=" fa fa-calendar"
                   aria-hidden="true"
-                ></i>
+                > </i> &nbsp;
                 <a id="date"></a>
                 <a id="time"></a>
               </div>
+
+  
+
               <div className="contact">
-                <a href="#">
+                <a href="#contact">
                   <i
                     className="text-danger fa fa-address-book"
                     aria-hidden="true"
                   ></i>{" "}
                   Contact
                 </a>
-                <a href="#">
+                <a href="#about">
                   <i
                     className="text-danger fa fa-newspaper-o"
                     aria-hidden="true"
@@ -106,16 +112,18 @@ const Header = (props) => {
                 </a>
               </div>
             </div>
-            <hr/>
+            {/* <hr/> */}
           </div>
           
         </div>
        
       </div>
-      <br/>
+
       <div className="main-header">
         <div className="logo">
           <div className="container">
+            <div className="row" style={{ alignItems:"baseline"}}>
+            <div className="col-md-9">
             <div>
               <Link href="/">
                 <a>
@@ -127,14 +135,23 @@ const Header = (props) => {
                       fontSize: "50px",
                     }}
                   >
-                    99 News
+                    <img src="/images/logo3.jpeg" style={{ width: "70px"}} ></img> Blogs
                   </span>
                 </a>
               </Link>
             </div>
+        </div>
+        <div className="col-md-3">
+
+            <Search/>
+       
+  </div>
+  </div>
           </div>
         </div>
       </div>
+
+ 
     </>
   );
 };

@@ -301,7 +301,7 @@ a:hover {
 }
 
 .mobile-nav-open {
-  height: 840px !important;
+  height: 500px !important;
 }
 
 .navbar-link {
@@ -554,7 +554,7 @@ h2 {
 
   .container-fluid-navq {
     background-color: rgb(255, 238, 0);
-    height: 40px;
+
     position: relative;
   }
   .navbar {
@@ -576,7 +576,7 @@ h2 {
 
   .container-fluid-navq {
     background-color: rgb(255, 238, 0);
-    height: 40px;
+
     position: relative;
   }
 
@@ -640,7 +640,7 @@ h2 {
 
   .container-fluid-navq {
     background-color: rgb(255, 238, 0);
-    height: 40px;
+
     position: relative;
   }
 
@@ -1314,3 +1314,8 @@ ul {
     display: none;
   }
 }
+
+
+
+
+

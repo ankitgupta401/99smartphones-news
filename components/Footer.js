@@ -83,7 +83,7 @@ const Footer = () => {
           <div className="col-xl-4 col-md-4 mb-30">
             <div className="single-cta">
               <i aria-hidden className="far fa-envelope-open"></i>
-              <div className="cta-text">
+              <div id="contact" className="cta-text">
                 <h4>Mail us</h4>
                 <span>99smartphones@protonmail.com</span>
               </div>
@@ -91,16 +91,16 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="footer-content pt-5 pb-5">
+      <div id="about" className="footer-content pt-5 pb-5">
         <div className="row">
           <div className="col-xl-4 col-lg-4 mb-50">
             <div className="footer-widget">
               <div className="footer-logo">
-                <h1 className="footerl" style={{color:"white"}}>99 News</h1>
+                <h1 className="footerl" style={{color:"white"}}>  <img src="/images/logo3.jpeg" style={{ width: "70px"}} ></img>  Blogs</h1>
               </div>
               <div className="footer-text">
                 <p>
-                Good news is rare these days, and every glittering ounce of 
+                Good Blogs is rare these days, and every glittering ounce of 
                 it should be cherished and hoarded and worshipped and fondled like a priceless diamond.
                 </p>
               </div>
@@ -134,14 +134,14 @@ const Footer = () => {
               </div>
               <ul>
                 <li>
-                  <a href="#">Home</a>
+                  <a href="/">Home</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#">about us</a>
                 </li>
                 <li>
                   <a href="#">services</a>
-                </li>
+                </li> */}
                 {/* <li>
                   <a href="#">portfolio</a>
                 </li> */}

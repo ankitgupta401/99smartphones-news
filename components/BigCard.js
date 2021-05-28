@@ -5,13 +5,13 @@ const BigCard = (props) => {
   return (
     <div style={{ padding: "20px" }}>
       <img
-        src={props.news.image}
-        alt={props.news.alt_image}
+        src={props.blog?.image || ""}
+        alt={props.blog?.alt_image || ""}
         style={{ width: "100%", maxWidth: "1000px"}}
       />
 
       <div style={{ display: "flex", padding: "20px 0px" }}>
-        {props.news.category.map((val, i) => {
+        {props.blog.category.map((val, i) => {
           return (
             <a key={i} href={"/" + val.category.split(" ").join("-")}>
               {" "}
@@ -20,9 +20,9 @@ const BigCard = (props) => {
           );
         })}
       </div>
-      <Link  href="../[...slug]" as={"../" + props.pid + "/" + props.news.link}>
+      <Link  href="../[...slug]" as={"../" + props.pid + "/" + props.blog.link}>
       <a className="big-card-link" style={{ fontSize: "32px", fontWeight: "bolder", color: "#000" }}>
-        {props.news.title}
+        {props.blog.title}
       </a>
       
       </Link>
@@ -30,11 +30,11 @@ const BigCard = (props) => {
 
       <label style={{margin:"10px 0px"}}>
         <i className="fa fa-calendar" aria-hidden="true"></i> &nbsp;{" "}
-        {new Date(props.news.date).toDateString()}
+        {new Date(props.blog.date).toDateString()}
       </label>
 
       <p style={{ fontSize: "16px", fontWeight: "500",fontWeight:"23px" }}>
-        {props.news.description.slice(0,200)+" ..."}
+        {props.blog.description.slice(0,200)+" ..."}
       </p>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="share-area">
@@ -47,7 +47,7 @@ const BigCard = (props) => {
             boxShadow: "rgb(236 45 45 / 35%) 0px 0px 4px 1px",
           }}
         >
-          <Link  href="../[...slug]" as={"../" + props.pid + "/" + props.news.link}>
+          <Link  href="../[...slug]" as={"../" + props.pid + "/" + props.blog.link}>
             <a className="continue-reading" style={{ display: "flex",color:"#fff" }}>
               Continue Reading{" "}
               <div
