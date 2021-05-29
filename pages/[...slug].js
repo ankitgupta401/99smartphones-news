@@ -86,7 +86,7 @@ const Pages = (props) => {
                 
               </div>
             </div>
-            <div className="col-sm-2 col-md-0 col-lg-2">
+            <div className="col-sm-0 col-md-0 col-lg-2">
 
             <div class="card" >
   <div class="card-body">
