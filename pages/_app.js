@@ -1,4 +1,5 @@
 import "../style.css";
+import '../style.scss'
 
 import Router from "next/router";
 import firebase from '../firebase'

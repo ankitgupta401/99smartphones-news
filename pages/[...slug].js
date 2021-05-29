@@ -1,14 +1,18 @@
 import { useRouter } from "next/router";
+import {useEffect, useState} from 'react'
 import Layout from "../components/Layout";
 import AuthorDetailed from "../components/AuthorDetailed";
 import AuthorSmall from "../components/AuthorSmall";
 import * as urls from "../getUrl";
 
-
 const Pages = (props) => {
   const router = useRouter();
   const { slug } = router.query;
+  const [location ,setLocation] = useState();
+   useEffect(() => {
 
+     setLocation(window.location.href)
+   }, [])
   return (
     <Layout
       data={props}
@@ -27,7 +31,7 @@ const Pages = (props) => {
       revised={props.blog.date}
       image={props.blog.image} //image for social share
     >
-
+     
       <div className="container-fluid">
         <div className="shadow-section">
           <div className="container">
@@ -50,6 +54,7 @@ const Pages = (props) => {
             <div className="col-sm-2 col-md-0 col-lg-0 col-xl-2">
               <div className="small-author">
                 <AuthorSmall author={props.writer} />
+               
               </div>
             </div>
             <div className="col-sm-9 col-md-12 col-lg-12 col-xl-8">
@@ -81,11 +86,37 @@ const Pages = (props) => {
                 
               </div>
             </div>
-            <div className="col-sm-2 col-md-0 col-lg-2"></div>
-          </div>
+            <div className="col-sm-2 col-md-0 col-lg-2">
 
+            <div class="card" >
+  <div class="card-body">
+    <p>This Blog Has</p>
+    <h5 class="card-title"> <i class="fa fa-eye" style={{ fontSize: "25px"}} aria-hidden="true"></i>
+ &nbsp; {props.blog.views} Views</h5>
+    {/* <h6 class="card-subtitle mb-2 text-muted"></h6> */}
+
+  </div>
+</div>
+      <ul className="menu bottomRight">
+  <li className="share top">
+    <i className="fa fa-share-alt"></i>
+    <ul className="submenu">
+
+      <li><a href={"https://www.facebook.com/sharer/sharer.php?[url]=" +location}  target="_blank"  class="facebook"><i class="fa fa-facebook"></i></a></li>
+      <li><a href={"https://twitter.com/intent/tweet?url=" + location}  target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>
+      {/* <li><a  href={"https://twitter.com/intent/tweet?url=" + location}    target="_blank" class="googlePlus"><i class="fa fa-google-plus"></i></a></li> */}
+      <li><a  href={"https://www.linkedin.com/shareArticle?mini=true&url=" + location}  target="_blank" class="instagram"><i class="fa fa-linkedin"></i></a></li>
+    </ul>
+  </li>
+</ul>
+
+            </div>
+          </div>
+            
           <div className="row" style={{ margin: "30px 0px" }}>
-            <div className="col-sm-0 col-md-0 col-lg-0 col-xl-2"></div>
+            <div className="col-sm-0 col-md-0 col-lg-0 col-xl-2">
+
+            </div>
             <div className="col-sm-12 col-md-12 col-lg-12 col-xl-8">
               <AuthorDetailed {...props.writer} />
             </div>

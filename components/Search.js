@@ -5,19 +5,24 @@ export const Search = () => {
     const router = useRouter()
     const [search ,setSearch] = useState("")
     return (
-        <form onSubmit={ (e)=> { e.preventDefault();  if(search){ router.push('Search?search=' + search)} } }  className="form-inline">
-        <div  className="col-md-9 ">
+     
+        <form onSubmit={ (e)=> { e.preventDefault();  if(search){ router.push('Search?search=' + search)} } }  >
+<div className="row" style={{alignItems:"center"}}>
 
             <div className=" text-danger ">
 
-                <input type="text"  className="form-control  rounded-pill"
+                <input type="text" style={{   
+                     backgroundColor: "#fff",
+                    backgroundClip: "padding-box",
+                    border: "1px solid #ced4da",
+                    height: "40px",
+                    paddingLeft: "10px"
+                }}  className=" rounded-pill"
                    onChange={ (e) => setSearch(e.target.value) } name="search"
                     placeholder="Search..."/>
 
             </div>
 
-    </div>
-    <div className=" col-md-2">
 
         <button className=" text-danger  btn btn-warning rounded-pill" type="submit">
             <i style={
@@ -28,7 +33,9 @@ export const Search = () => {
                 }
                 className="fa fa-search"></i>
         </button>
-    </div>
+        </div>
+
 </form>
+
     )
 }

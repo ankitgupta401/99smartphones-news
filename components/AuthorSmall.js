@@ -25,21 +25,21 @@ const AuthorSmall = ({ author }) => {
       </p>
 
       <div className="icon-div">
-        {author.fb_link?  <a href={author?.fb_link || "#"}>
+        {author.fb_link?  <a target="_blank"  href={author?.fb_link || "#"}>
           <img
             className="social-icon"
             src="/images/icons8-facebook-480.png"
             alt="facebook"
           />
         </a>:"" }
-        {author.twitter_link? <a href={author?.twitter_link}>
+        {author.twitter_link? <a target="_blank" href={author?.twitter_link}>
           <img
             className="social-icon"
             src="/images/icons8-twitter-480.png"
             alt="twitter"
           />
         </a>: ""}
-        {author.twitter_link?  <a href={author?.linkedin_link}>
+        {author.twitter_link?  <a target="_blank" href={author?.linkedin_link}>
           <img
             className="social-icon"
             src="/images/icons8-linkedin-480.png"

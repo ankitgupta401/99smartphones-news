@@ -6,20 +6,21 @@ export const SearchMobile = () => {
     const [search ,setSearch] = useState("")
     return (
       
-        <form style={{ paddingLeft: "20px"}}   onSubmit={ (e)=> { e.preventDefault();  if(search){ router.push('Search?search=' + search)} } }  className="form-inline">
-              <div className="row" style={{ alignItems:"baseline"}}>
-        <div  >
+        <form style={{ paddingLeft: "20px"}}   onSubmit={ (e)=> { e.preventDefault();  if(search){ router.push('Search?search=' + search)} } } >
+            <div className="row" style={{ alignItems: "center"}} >
 
-         
-                <input type="text"  className="form-control  rounded-pill"
+  
+                <input type="text"  style={{   
+                     backgroundColor: "#fff",
+                    backgroundClip: "padding-box",
+                    border: "1px solid #ced4da",
+                    height: "40px",
+                    paddingLeft: "10px"
+                }}  className="  rounded-pill"
                    onChange={ (e) => setSearch(e.target.value) } name="search"
                     placeholder="Search..."/>
 
-    
-
-    </div>
     &nbsp;
-    <div>
 
         <button className="  btn btn-warning rounded-pill" type="submit">
             <i style={
@@ -30,8 +31,9 @@ export const SearchMobile = () => {
                 }
                 className="fa fa-search"></i>
         </button>
-    </div>
-    </div>
+        </div>
+ 
+ 
 </form>
 
     )
