@@ -100,12 +100,26 @@ const Pages = (props) => {
       <ul className="menu bottomRight">
   <li className="share top">
     <i className="fa fa-share-alt"></i>
-    <ul className="submenu">
+    <ul className="submenu">icons8-linkedin-480.png
 
-      <li><a href={"https://www.facebook.com/sharer/sharer.php?[url]=" +location}  target="_blank"  class="facebook"><i class="fa fa-facebook"></i></a></li>
-      <li><a href={"https://twitter.com/intent/tweet?url=" + location}  target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>
+      <li><a  href={"https://www.facebook.com/sharer/sharer.php?[url]=" +location}  target="_blank"  class="facebook">   <img
+                  className="social-icon"
+                  src="/images/icons8-facebook-480.png"
+                  alt="facebook"
+                /></a></li>
+      <li><a href={"https://twitter.com/intent/tweet?url=" + location}  target="_blank" class="twitter">  <img
+                  className="social-icon"
+                  src="/images/icons8-twitter-480.png"
+                  alt="twitter"
+                /></a></li>
       {/* <li><a  href={"https://twitter.com/intent/tweet?url=" + location}    target="_blank" class="googlePlus"><i class="fa fa-google-plus"></i></a></li> */}
-      <li><a  href={"https://www.linkedin.com/shareArticle?mini=true&url=" + location}  target="_blank" class="instagram"><i class="fa fa-linkedin"></i></a></li>
+      <li><a  href={"https://www.linkedin.com/shareArticle?mini=true&url=" + location}  target="_blank" class="facebook"><img
+                  className="social-icon"
+                  src="/images/icons8-linkedin-480.png"
+                  alt="instagram"
+                /></a></li>
+ 
+
     </ul>
   </li>
 </ul>

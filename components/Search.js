@@ -6,7 +6,10 @@ export const Search = () => {
     const [search ,setSearch] = useState("")
     return (
      
-        <form onSubmit={ (e)=> { e.preventDefault();  if(search){ router.push('Search?search=' + search)} } }  >
+        <form onSubmit={ (e)=> { e.preventDefault();  if(search){ router.push({
+           pathname: '/[pid]' , 
+           query: { pid: "Search" , search: search },
+        })}} }  >
 <div className="row" style={{alignItems:"center"}}>
 
             <div className=" text-danger ">

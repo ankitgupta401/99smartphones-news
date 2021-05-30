@@ -6,7 +6,7 @@ export const SearchMobile = () => {
     const [search ,setSearch] = useState("")
     return (
       
-        <form style={{ paddingLeft: "20px"}}   onSubmit={ (e)=> { e.preventDefault();  if(search){ router.push('Search?search=' + search)} } } >
+        <form style={{ paddingLeft: "20px"}}   onSubmit={ (e)=> { e.preventDefault();  if(search){ router.replace('Search?search=' + search)} } } >
             <div className="row" style={{ alignItems: "center"}} >
 
   

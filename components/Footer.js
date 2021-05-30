@@ -161,7 +161,7 @@ const Footer = () => {
                   <a href="#">Contact us</a>
                 </li> */}
                 <li>
-                  <a href="#">Latest News</a>
+                  <a href="#">Latest Blogs</a>
                 </li> 
               </ul>
             </div>
