@@ -100,7 +100,7 @@ const Pages = (props) => {
       <ul className="menu bottomRight">
   <li className="share top">
     <i className="fa fa-share-alt"></i>
-    <ul className="submenu">icons8-linkedin-480.png
+    <ul className="submenu">
 
       <li><a  href={"https://www.facebook.com/sharer/sharer.php?[url]=" +location}  target="_blank"  class="facebook">   <img
                   className="social-icon"
