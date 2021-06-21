@@ -6,8 +6,8 @@ const AuthorDetailed = (props) => {
       <div style={{ margin: "10px", width: "200px" }}>
 
         <img
-          style={{ borderRadius: "50%", width: "inherit", height: "inherit" }}
-          src={props.profilePicture["200x100"]}
+          style={{ borderRadius: "48%", width: "inherit", height: "inherit" }}
+          src={props.profilePicture["200x150"]}
           alt=""
           className="img-fluid"
         />

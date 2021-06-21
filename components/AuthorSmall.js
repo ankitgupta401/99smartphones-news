@@ -9,7 +9,7 @@ const AuthorSmall = ({ author }) => {
     >
 
       <img
-        src={author?.profilePicture["200x100"]}
+        src={author?.profilePicture["200x150"]}
         alt="author"
         style={{
           borderRadius: "50%",

@@ -22,7 +22,7 @@ const Author = (props) => {
       author={props.writer?.name}
       url={"https://blog.99smartphones.in/" + pid}
       revised={props.writer?.date || new Date(Date.now())}
-      image={props.writer?.image} //image for social share
+      image={props.writer?.image["200x150"]} //image for social share
     >
 
       <div className="container-fluid">
