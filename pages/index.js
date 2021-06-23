@@ -154,7 +154,7 @@ Index.getInitialProps = async (ctx) => {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
-      table: "blogs_category_list",
+      table: "blogs_category_list_front",
       data: {},
     }),
     // Adding headers to the request

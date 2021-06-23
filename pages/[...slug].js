@@ -38,7 +38,7 @@ const Pages = (props) => {
 
 
       revised={props.blog.date || props.blog.revised }
-      image={props.blog.image} //image for social share
+      image={props.blog.image["600x300"]} //image for social share
     >
      
       <div className="container-fluid">
@@ -71,7 +71,7 @@ const Pages = (props) => {
               <div>
                 <img
                   className="img-fluid"
-                  src={props.blog.image}
+                  src={props.blog.image["600x300"]}
                   style={{ height: "auto" }}
                   alt={"image"}
                 />
@@ -170,7 +170,7 @@ Pages.getInitialProps = async ({ query }) => {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
-      table: "blogs_category_list",
+      table: "blogs_category_list_front",
       data: {},
     }),
     // Adding headers to the request

@@ -136,10 +136,11 @@ const Navbar = (props) => {
         <div id="mobile-nav">
 
           {props.data.map((val, i) => {
+        
             return (
               <Link  key={i} href="/[pid]"
               as={"/" + val.category} >
-                <a className="navbar-link mobile">{val.category.split("-").join(" ")}</a>
+                <a className="navbar-link mobile">{val.category.split("-").join(" ")} {" "} ({val.count})</a>
               </Link>
             );
           })}
@@ -172,7 +173,7 @@ const Navbar = (props) => {
                         return (
                           <Link key={i} href="/[pid]"
                           as={"/" + val.category} >
-                            <a className="navbar-link">{val.category.split("-").join(" ")}</a>
+                            <a className="navbar-link">{val.category.split("-").join(" ") } <span style={{fontSize:"13px"}}> {" (" + (val.count > 100 ? "100+" : val.count)  +")"}</span>  </a> 
                           </Link>
                         );
                       })}

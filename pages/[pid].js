@@ -154,7 +154,7 @@ const fetchMoreData = async() => {
               >
                 <div className="row" style={{ width: "100%" }}>
                   <div
-                    className="col-md-0 col-lg-0 col-sm-0 col-xl-2 left-side"
+                    className="col-md-2 col-lg-2 col-sm-2 col-xl-2 left-side"
                     style={{ margin: "20px auto" }}
                   >
                     <AuthorSmall
@@ -162,7 +162,7 @@ const fetchMoreData = async() => {
                     />
                   </div>
                   <div
-                    className="col-md-12 col-lg-12 col-sm-12 col-xl-10"
+                    className="col-md-11 col-lg-11 col-sm-11 col-xl-10"
                     style={{
                       margin: "20px auto",
                       boxShadow: "0px 0px 5px 5px rgba(227,227,227,.3)",
@@ -223,7 +223,7 @@ Pages.getInitialProps = async ({ query }) => {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
-      table: "blogs_category_list",
+      table: "blogs_category_list_front",
       data: {},
     }),
     // Adding headers to the request

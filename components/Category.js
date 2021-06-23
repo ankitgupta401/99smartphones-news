@@ -40,7 +40,7 @@ const Category = (props) => {
                     lineHeight: "30px",
                   }}
                 >
-                  {props.category[i].category}
+                  {props.category[i].category + " (" + (val.count > 100 ? "100+" : val.count ) +")"}
                 </a>
               </div>
               </a>

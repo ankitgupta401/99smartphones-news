@@ -51,7 +51,7 @@ const NewsCard = ({ data }) => {
           <div
             className="article-img-holder"
             style={{
-              backgroundImage: "url(" + data.data[0].image + ")",
+              backgroundImage: "url(" + data.data[0].image["600x300"] + ")",
               width: "100%",
             }}
           ></div>

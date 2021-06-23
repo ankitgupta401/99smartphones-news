@@ -5,7 +5,7 @@ const BigCard = (props) => {
   return (
     <div style={{ padding: "20px" }}>
       <img
-        src={props.blog?.image || ""}
+        src={props.blog?.image["600x300"] || ""}
         alt={props.blog?.alt_image || ""}
         style={{ width: "100%", maxWidth: "1000px"}}
       />
