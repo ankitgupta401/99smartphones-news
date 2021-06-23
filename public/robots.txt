@@ -1,4 +1,4 @@
-Sitemap: https://news.99smartphones.in
+Sitemap: https://blog.99smartphones.in
 
 User-agent: *
 Allow: /*

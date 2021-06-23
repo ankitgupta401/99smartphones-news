@@ -25,25 +25,32 @@ const AuthorSmall = ({ author }) => {
       </p>
 
       <div className="icon-div">
-        {author.fb_link?  <a target="_blank"  href={author?.fb_link || "#"}>
+        {author?.facebook ? <a target="_blank"  href={author?.facebook || "#"}>
           <img
             className="social-icon"
             src="/images/icons8-facebook-480.png"
             alt="facebook"
           />
         </a>:"" }
-        {author.twitter_link? <a target="_blank" href={author?.twitter_link}>
+        {author?.twitter ? <a target="_blank" href={author?.twitter}>
           <img
             className="social-icon"
             src="/images/icons8-twitter-480.png"
             alt="twitter"
           />
         </a>: ""}
-        {author.twitter_link?  <a target="_blank" href={author?.linkedin_link}>
+        {author?.linkedIn?  <a target="_blank" href={author?.linkedIn}>
           <img
             className="social-icon"
             src="/images/icons8-linkedin-480.png"
             alt="linkedin"
+          />
+        </a>:""}
+        {author?.github?  <a target="_blank" href={author?.github}>
+          <img
+            className="social-icon"
+            src="/images/icons8-github-480.png"
+            alt="github"
           />
         </a>:""}
       </div>

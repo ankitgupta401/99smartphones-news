@@ -17,6 +17,46 @@ const AuthorDetailed = (props) => {
         <p style={{ fontSize: "17px", fontWeight: "normal" }}>
           {props.description}
         </p>
+
+      <div className="icon-div">
+        {props?.facebook ? <a target="_blank"  href={props?.facebook || "#"}>
+          <img
+            className="social-icon"
+            src="/images/icons8-facebook-480.png"
+            alt="facebook"
+          />
+        </a>:"" }
+        {props?.instagram?  <a target="_blank" href={props?.instagram}>
+          <img
+             style={{width: "25px"}}
+            className="social-icon"
+            src="/images/icons8-insta-480.png"
+            alt="instagram"
+          />
+        </a>:""}
+        {props?.twitter ? <a target="_blank" href={props?.twitter}>
+          <img
+            className="social-icon"
+            src="/images/icons8-twitter-480.png"
+            alt="twitter"
+          />
+        </a>: ""}
+        {props?.linkedIn?  <a target="_blank" href={props?.linkedIn}>
+          <img
+            className="social-icon"
+            src="/images/icons8-linkedin-480.png"
+            alt="linkedin"
+          />
+        </a>:""}
+        {props?.github?  <a target="_blank" href={props?.github}>
+          <img
+            className="social-icon"
+            src="/images/icons8-github-480.png"
+            alt="github"
+          />
+        </a>:""}
+ 
+      </div>
         <div style={{ display: "flex" }}>
           <a
             href={"../author?userId=" +  props?._id}

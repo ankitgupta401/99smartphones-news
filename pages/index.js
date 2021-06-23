@@ -191,7 +191,7 @@ Index.getInitialProps = async (ctx) => {
 
 
   let home = await homeData.json();
-  // let json = await news.json();
+
   let head = await header.json();
 
   let data = []

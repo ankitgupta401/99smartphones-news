@@ -18,8 +18,8 @@ const Pages = (props) => {
       data={props}
       title={props.blog.title}
       desc={props.blog.description} // Update the desc to update the meta
-      keyword={props.blog.description}
-      subject="99Blogs based on high quality data-driven comparison"
+      keyword={props.blog.keywords}
+      subject={props.blog.subject}
       author={props.writer?.name}
       url={
         "https://blog.99smartphones.in/" +
@@ -27,8 +27,17 @@ const Pages = (props) => {
         "/" +
         props.data.slug[1]
       }
+      abstract ={ props.blog.abstract }
+      topic = {  props.blog.topic  }
 
-      revised={props.blog.date}
+      summary={  props.blog.summary  }
+
+      classification ={props.blog.classification }
+
+      designer={props.blog.designer || props.writer.name}
+
+
+      revised={props.blog.date || props.blog.revised }
       image={props.blog.image} //image for social share
     >
      
@@ -89,7 +98,7 @@ const Pages = (props) => {
             <div className="col-sm-0 col-md-0 col-lg-2">
 
             <div class="card" >
-  <div class="card-body">
+  <div className="card-body">
     <p>This Blog Has</p>
     <h5 class="card-title"> <i class="fa fa-eye" style={{ fontSize: "25px"}} aria-hidden="true"></i>
  &nbsp; {props.blog.views} Views</h5>
@@ -102,18 +111,18 @@ const Pages = (props) => {
     <i className="fa fa-share-alt"></i>
     <ul className="submenu">
 
-      <li><a  href={"https://www.facebook.com/sharer/sharer.php?[url]=" +location}  target="_blank"  class="facebook">   <img
+      <li><a  href={"https://www.facebook.com/sharer/sharer.php?[url]=" +location}  target="_blank"  className="facebook">   <img
                   className="social-icon"
                   src="/images/icons8-facebook-480.png"
                   alt="facebook"
                 /></a></li>
-      <li><a href={"https://twitter.com/intent/tweet?url=" + location}  target="_blank" class="twitter">  <img
+      <li><a href={"https://twitter.com/intent/tweet?url=" + location}  target="_blank" className="twitter">  <img
                   className="social-icon"
                   src="/images/icons8-twitter-480.png"
                   alt="twitter"
                 /></a></li>
       {/* <li><a  href={"https://twitter.com/intent/tweet?url=" + location}    target="_blank" class="googlePlus"><i class="fa fa-google-plus"></i></a></li> */}
-      <li><a  href={"https://www.linkedin.com/shareArticle?mini=true&url=" + location}  target="_blank" class="facebook"><img
+      <li><a  href={"https://www.linkedin.com/shareArticle?mini=true&url=" + location}  target="_blank" className="facebook"><img
                   className="social-icon"
                   src="/images/icons8-linkedin-480.png"
                   alt="instagram"

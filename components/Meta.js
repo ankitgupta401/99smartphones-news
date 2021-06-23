@@ -8,7 +8,7 @@ const Meta = ({ meta }) => {
 
       <title>
         {!meta.title
-          ? "Tech News, Latest Technology, Mobiles, Laptops,Business 2020 – 99News"
+          ? "Tech Blog, Latest Technology, Mobiles, Laptops,Business 2020 – 99Blogs"
           : meta.title}
       </title>
 
@@ -20,7 +20,7 @@ const Meta = ({ meta }) => {
         name="description"
         content={
           !meta.desc
-            ? "Tech News, the latest technology news of the day, reviews of the new best tech gadgets include mobile, tablets, laptops, video games. As a tech news site, we cover online tech news online in India and around the world with technology related updates from new and upcoming mobiles, cameras, laptops, video games like Google, Apple, Samsung and others."
+            ? "Tech Blogs, the latest technology blog of the day, reviews of the new best tech gadgets include mobile, tablets, laptops, video games. As a tech blog site, we cover online tech blogs online in India and around the world with technology related updates from new and upcoming mobiles, cameras, laptops, video games like Google, Apple, Samsung and others."
             : meta.desc
         }
       />
@@ -29,7 +29,7 @@ const Meta = ({ meta }) => {
         name="keywords"
         content={
           !meta.keyword
-            ? "Mobiles News,Tech News,Laptop,Mobiles,Laptop News"
+            ? "Mobiles Blogs,Tech Blogs,Laptop,Mobiles,Laptop Blogs"
             : meta.keyword
         }
       />
@@ -38,7 +38,7 @@ const Meta = ({ meta }) => {
         name="subject"
         content={
           !meta.subject
-            ? "99news based on high quality data-driven comparison"
+            ? "99Blogs based on high quality data-driven comparison"
             : meta.subject
         }
       />
@@ -46,24 +46,24 @@ const Meta = ({ meta }) => {
       <meta name="language" content="ES" />
       <meta name="robots" content="index,follow" />
 
-      <meta name="revised" content={meta.revised ? "" : ""} />
-      <meta name="abstract" content="" />
-      <meta name="topic" content="" />
-      <meta name="summary" content="" />
-      <meta name="Classification" content="" />
-      <meta name="author" content="sanjay sarkar, email@hotmail.com" />
-      <meta name="designer" content="" />
-      <meta name="reply-to" content="email@hotmail.com" />
-      <meta name="owner" content="" />
+      <meta name="revised" content={meta.revised ? meta.revised : ""} />
+      <meta name="abstract" content={meta.abstract ? meta.abstract : ""} />
+      <meta name="topic" content={meta.topic ? meta.topic : ""} />
+      <meta name="summary" content={meta.summary ? meta.summary : ""} />
+      <meta name="Classification"  content={meta.classification ? meta.classification : ""}  />
+      <meta name="author"  content={meta.author ? meta.author : "99smartphones.in"}  />
+      <meta name="designer" content={meta.designer ? meta.designer : "99smartphones.in"}  />
+      <meta name="reply-to" content={meta.designer ? meta.designer : "99smartphones.in"}/>
+      <meta name="owner" content={meta.owner ? meta.owner : "99smartphones.in"}/>
       <meta
         name="url"
-        content={!meta.url ? "https://99smartphones.com" : meta.url}
+        content={!meta.url ? "https://blog.99smartphones.in" : meta.url}
       />
-      <meta name="identifier-URL" content="http://www.websiteaddress.com" />
+      <meta name="identifier-URL" content="https://blog.99smartphones.in" />
       <meta name="directory" content="submission" />
       <meta
         name="category"
-        content={!meta.category2 ? "News" : meta.category2}
+        content={!meta.category2 ? "Blog" : meta.category2}
       />
       <meta name="coverage" content="Worldwide" />
       <meta name="distribution" content="Global" />
@@ -73,27 +73,27 @@ const Meta = ({ meta }) => {
       <meta httpEquiv="Pragma" content="no-cache" />
       <meta httpEquiv="Cache-Control" content="no-cache" />
 
-      <link rel="canonical" href={!meta.url ? "https://99smartphones.com" : meta.url} />
+      <link rel="canonical" href={!meta.url ? "https://blog.99smartphones.in" : meta.url} />
       <meta
         name="og:title"
         content={
           !meta.title
-            ? "Tech News, Latest Technology, Mobiles, Laptops,Business 2020 – 99News"
+            ? "Tech Blogs, Latest Technology, Mobiles, Laptops,Business 2020 – 99Blogs"
             : meta.title
         }
       />
-      <meta name="og:type" content="news" />
+      <meta name="og:type" content="blogs" />
       <meta
         name="og:url"
-        content={!meta.url ? "https://99smartphones.com" : meta.url}
+        content={!meta.url ? "https://blog.99smartphones.in" : meta.url}
       />
 
       <meta
         name="og:image"
-        content={!meta.image ? "https://99smartphones.com" : meta.image}
+        content={!meta.image ? "https://blog.99smartphones.in" : meta.image}
       />
 
-      <meta name="og:site_name" content="99News" />
+      <meta name="og:site_name" content="99Blogs" />
 
       <meta name="og:description" content={!meta.desc ? "" : meta.desc} />
 
