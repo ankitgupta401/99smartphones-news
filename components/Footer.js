@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import * as urls from "../getUrl";
+import * as urls from "../utils/getUrl";
 import Swal from 'sweetalert2'
 const url = urls.getURL();
 

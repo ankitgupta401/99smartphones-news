@@ -5,7 +5,8 @@ import BigCard from "../../components/BigCard";
 import Category from "../../components/Category";
 import Link from "next/link";
 import AuthorSmall from "../../components/AuthorSmall";
-import * as urls from "../../getUrl";
+import * as urls from "../../utils/getUrl";
+import { fetchWithTimeout } from "../../utils/fetchWithGreaterTimeout";
 
 // posts will be populated at build time by getStaticProps()
 const Author = (props) => {
@@ -102,7 +103,7 @@ const Author = (props) => {
 Author.getInitialProps = async ({ query }) => {
 
   const url = urls.getURL();
-  const blog = await fetch(url + "get_blogs_list", {
+  const blog = await fetchWithTimeout(url + "get_blogs_list", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -122,7 +123,7 @@ Author.getInitialProps = async ({ query }) => {
 
 
 
-  const category = await fetch(url + "common_get_with_table_name", {
+  const category = await fetchWithTimeout(url + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({

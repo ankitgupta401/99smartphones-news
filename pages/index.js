@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 import Layout from "../components/Layout";
-import * as urls from "../getUrl";
+import * as urls from "../utils/getUrl";
 // import ListNews from "../components/ListNews";
 // import ListCard from "../components/ListCard";
 // import AuthorBig from "../components/AuthorBig";
@@ -11,7 +11,7 @@ import * as urls from "../getUrl";
 // import BigCard from "../components/BigCard";
 import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
-
+import { fetchWithTimeout } from "../utils/fetchWithGreaterTimeout";
 
 
 
@@ -149,8 +149,8 @@ round++;
 Index.getInitialProps = async (ctx) => {
   
   const url = urls.getURL();
-  console.log(url , new Date().getUTCDate());
-  const category = await fetch(url  + "common_get_with_table_name", {
+
+  const category = await fetchWithTimeout(url  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -165,7 +165,7 @@ Index.getInitialProps = async (ctx) => {
 
   const cat = await category.json();
 
-  const header = await fetch( url  + "common_get_with_table_name", {
+  const header = await fetchWithTimeout( url  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -178,7 +178,7 @@ Index.getInitialProps = async (ctx) => {
     },
   });
 
-  const homeData = await fetch(url  + "get_blogs_for_home_page", {
+  const homeData = await fetchWithTimeout(url  + "get_blogs_for_home_page", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
