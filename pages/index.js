@@ -11,7 +11,6 @@ import * as urls from "../utils/getUrl";
 // import BigCard from "../components/BigCard";
 import NewsCard from "../components/NewsCard";
 import NewsCardSmall from "../components/NewsCardSmall";
-import { fetchWithTimeout } from "../utils/fetchWithGreaterTimeout";
 
 
 
@@ -150,7 +149,7 @@ Index.getInitialProps = async (ctx) => {
   
   const url = urls.getURL();
 
-  const category = await fetchWithTimeout(url  + "common_get_with_table_name", {
+  const category = await fetch(url  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -165,7 +164,7 @@ Index.getInitialProps = async (ctx) => {
 
   const cat = await category.json();
 
-  const header = await fetchWithTimeout( url  + "common_get_with_table_name", {
+  const header = await fetch( url  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -178,7 +177,7 @@ Index.getInitialProps = async (ctx) => {
     },
   });
 
-  const homeData = await fetchWithTimeout(url  + "get_blogs_for_home_page", {
+  const homeData = await fetch(url  + "get_blogs_for_home_page", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({

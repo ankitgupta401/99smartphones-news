@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import * as urls from "../utils/getUrl";
 
 import 'react-toastify/dist/ReactToastify.css';
-import { fetchWithTimeout } from "../utils/fetchWithGreaterTimeout";
+
 // import navigator from 'Navigator'
 // This default export is required in a new `pages/_app.js` file.
 
@@ -56,7 +56,7 @@ export default function MyApp({ Component, pageProps }) {
       let id = localStorage.getItem('user_id');
 
       if (!id) {
-        let server_id = fetchWithTimeout(urls.getURL() + "get_user_id_for_news" ,{ headers: {
+        let server_id = fetch(urls.getURL() + "get_user_id_for_news" ,{ headers: {
           "Content-type": "application/json; charset=UTF-8",
         },});
         id = await (await server_id).json();
@@ -71,7 +71,7 @@ export default function MyApp({ Component, pageProps }) {
       if (localStorage.getItem('token') !== tok) {
         localStorage.setItem('token', tok);
 
-        const token = await fetchWithTimeout(urls.getURL() + "update_token_of_user", {
+        const token = await fetch(urls.getURL() + "update_token_of_user", {
           method: "POST",
           // Adding body or contents to send
           body: JSON.stringify({

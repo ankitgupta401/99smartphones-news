@@ -9,7 +9,6 @@ import Category from "../components/Category";
 import Link from "next/link";
 import AuthorSmall from "../components/AuthorSmall";
 import * as urls from "../utils/getUrl";
-import { fetchWithTimeout } from "../utils/fetchWithGreaterTimeout";
 
 
 const url = urls.getURL();
@@ -201,7 +200,7 @@ Pages.getInitialProps = async ({ query }) => {
    let search = "";
    if(query.search) { search=query.search}
 
-  const blog = await fetchWithTimeout( url + "get_blog_list", {
+  const blog = await fetch( url + "get_blog_list", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
@@ -221,7 +220,7 @@ Pages.getInitialProps = async ({ query }) => {
 
 
 
-  const category = await fetchWithTimeout(url  + "common_get_with_table_name", {
+  const category = await fetch(url  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({

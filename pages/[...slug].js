@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import AuthorDetailed from "../components/AuthorDetailed";
 import AuthorSmall from "../components/AuthorSmall";
 import * as urls from "../utils/getUrl";
-import { fetchWithTimeout } from "../utils/fetchWithGreaterTimeout";
 
 const Pages = (props) => {
   const router = useRouter();
@@ -154,7 +153,7 @@ const Pages = (props) => {
 Pages.getInitialProps = async ({ query }) => {
   const url = urls.getURL();
   console.log(url , new Date().getUTCDate());
-  const blog = await fetchWithTimeout(url+ "get_blog", {
+  const blog = await fetch(url+ "get_blog", {
     method: "POST",
  
     body: JSON.stringify({
@@ -167,7 +166,7 @@ Pages.getInitialProps = async ({ query }) => {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-  const category = await fetchWithTimeout(url  + "common_get_with_table_name", {
+  const category = await fetch(url  + "common_get_with_table_name", {
     method: "POST",
     // Adding body or contents to send
     body: JSON.stringify({
