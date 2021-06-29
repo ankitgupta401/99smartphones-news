@@ -93,6 +93,11 @@ const Meta = ({ meta }) => {
         content={!meta.image ? "https://blog.99smartphones.in" : meta.image}
       />
 
+<meta
+        name="image"
+        content={!meta.image ? "https://blog.99smartphones.in" : meta.image}
+      />
+
       <meta name="og:site_name" content="99Blogs" />
 
       <meta name="og:description" content={!meta.desc ? "" : meta.desc} />
