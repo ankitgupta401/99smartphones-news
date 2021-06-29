@@ -89,12 +89,16 @@ const Meta = ({ meta }) => {
       />
 
       <meta
-        name="og:image:secure"
+        name="og:image"
+        content={!meta.image ? "https://blog.99smartphones.in" : meta.image}
+      />
+            <meta
+        name="og:image:url"
         content={!meta.image ? "https://blog.99smartphones.in" : meta.image}
       />
 
 <meta
-        name="image"
+        name="og:image:secure_url"
         content={!meta.image ? "https://blog.99smartphones.in" : meta.image}
       />
 
